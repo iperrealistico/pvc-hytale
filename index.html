@@ -1267,8 +1267,14 @@
       .nav-drawer .nav-drawer-cta {
         margin-top: 0.7rem;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
         gap: 0.6rem;
+      }
+
+      .nav-drawer .nav-drawer-cta .btn {
+        width: 100%;
+        justify-content: center;
       }
 
       body.nav-open .nav-drawer {
@@ -1457,9 +1463,9 @@
                 </li>
               </ol>
               <div class="ip-tag">
-                <span>Planned server address</span>
+                <span>Discord server address</span>
                 <span class="ip-copy" id="ip-copy">
-                  <code id="server-ip">hytale.peacefulvanilla.club</code>
+                  <code id="server-ip">https://discord.gg/KJevquhs39</code>
                   <span class="ip-copy-icon" aria-hidden="true">
                     <i class="fa-regular fa-copy"></i>
                   </span>
