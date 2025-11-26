@@ -4,23 +4,31 @@
   <!-- Basic SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Peaceful Vanilla Club - Hytale vanilla survival server without pay to win</title>
-  <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale vanilla survival server without pay to win, griefing or random PvP. Long term worlds, cozy gameplay and a friendly community.">
+  <title>Peaceful Vanilla Club - Hytale peaceful vanilla survival server</title>
+  <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale vanilla survival server, born from a long running Minecraft community. No pay to win, no griefing, no random PvP.">
 
   <link rel="canonical" href="https://peacefulvanilla.club/hytale-server">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
-  <meta property="og:description" content="Cozy Hytale vanilla survival server without pay to win or griefing. Long term worlds and a friendly community.">
+  <meta property="og:description" content="Cozy Hytale vanilla survival server without pay to win or griefing, created by the Peaceful Vanilla Club Minecraft community.">
   <meta property="og:url" content="https://peacefulvanilla.club/hytale-server">
   <meta property="og:image" content="https://peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
-  <meta name="twitter:description" content="Cozy Hytale vanilla survival server without pay to win or griefing. Long term worlds and a friendly community.">
+  <meta name="twitter:description" content="Cozy Hytale vanilla survival server without pay to win or griefing, backed by years of Minecraft experience.">
   <meta name="twitter:image" content="https://peacefulvanilla.club/assets/img/hytale-hero-preview.png">
+
+  <!-- Google Fonts: Nunito Sans (matches Hytale body font style) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons (Discord, arrows, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Favicon (placeholder) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff9b3c'/%3E%3Ctext x='50%25' y='52%25' font-size='28' text-anchor='middle' fill='%23050509' font-family='system-ui'%3EPV%3C/text%3E%3C/svg%3E">
@@ -42,7 +50,7 @@
       --color-pill-text: #a5f3fc;
       --color-danger: #fb7185;
 
-      --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-base: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
       --radius-sm: 0.5rem;
       --radius-md: 0.75rem;
@@ -125,6 +133,7 @@
       margin: 0 0 var(--space-xs);
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      font-weight: 800;
     }
 
     .section-heading p {
@@ -187,7 +196,7 @@
     }
 
     .brand-name {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.98rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -255,7 +264,7 @@
       border: 1px solid transparent;
       padding: 0.5rem 1.3rem;
       font-size: 0.88rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
@@ -300,6 +309,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .btn-icon i {
+      font-size: 0.95rem;
     }
 
     /* Mobile nav */
@@ -416,6 +429,7 @@
       font-size: clamp(2.25rem, 3vw, 3rem);
       line-height: 1.1;
       margin: 0 0 var(--space-sm);
+      font-weight: 800;
     }
 
     .hero-title span.highlight {
@@ -700,7 +714,7 @@
       }
     }
 
-    /* What is PVC */
+    /* Intro */
 
     #what-is-pvc {
       background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
@@ -759,9 +773,9 @@
       box-shadow: 0 14px 32px rgba(0,0,0,0.7);
     }
 
-    /* Principles */
+    /* Goals (ex principles) */
 
-    #principles {
+    #goals {
       background: #050509;
       border-top: 1px solid rgba(15,23,42,0.95);
       border-bottom: 1px solid rgba(15,23,42,0.95);
@@ -805,7 +819,7 @@
 
     .principle-title {
       font-size: 0.96rem;
-      font-weight: 600;
+      font-weight: 700;
       margin: 0;
     }
 
@@ -826,181 +840,7 @@
       color: var(--color-muted);
     }
 
-    /* Worlds and gameplay */
-
-    #worlds {
-      background: radial-gradient(circle at top, #020617 0, #050509 60%);
-    }
-
-    .worlds-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr);
-      gap: var(--space-md);
-    }
-
-    .world-card {
-      background: var(--color-card-alt);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-border);
-      padding: var(--space-md);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .world-card-label {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-muted);
-    }
-
-    .world-card h3 {
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    .world-card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--color-text-soft);
-    }
-
-    .world-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: var(--color-muted);
-    }
-
-    .world-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .world-meta svg {
-      width: 0.9rem;
-      height: 0.9rem;
-    }
-
-    .world-media {
-      margin-top: var(--space-sm);
-    }
-
-    /* Features */
-
-    #features {
-      background: #050509;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: var(--space-md);
-    }
-
-    .feature-card {
-      background: var(--color-card);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      padding: var(--space-md);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.7);
-    }
-
-    .feature-icon {
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 999px;
-      background: radial-gradient(circle at 25% 20%, #eff6ff, #3b82f6 42%, #1e40af 100%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-      box-shadow: 0 12px 25px rgba(37,99,235,0.45);
-    }
-
-    .feature-icon svg {
-      width: 1.3rem;
-      height: 1.3rem;
-      color: #020617;
-    }
-
-    .feature-card h3 {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: var(--color-text-soft);
-      font-size: 0.9rem;
-    }
-
-    .feature-meta {
-      margin-top: 0.75rem;
-      font-size: 0.8rem;
-      color: var(--color-muted);
-    }
-
-    /* Why players love */
-
-    #why-players-love {
-      background: radial-gradient(circle at top, #0f172a 0, #020617 65%);
-    }
-
-    .love-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: var(--space-xl);
-      align-items: center;
-    }
-
-    .love-item {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: var(--space-md);
-      align-items: center;
-      margin-bottom: var(--space-md);
-    }
-
-    .love-item:nth-child(even) {
-      direction: rtl;
-    }
-
-    .love-item:nth-child(even) .love-text {
-      direction: ltr;
-    }
-
-    .love-text h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1rem;
-    }
-
-    .love-text p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--color-text-soft);
-    }
-
-    .quote {
-      margin-top: 0.75rem;
-      font-size: 0.85rem;
-      color: var(--color-muted);
-      border-left: 2px solid rgba(148,163,184,0.7);
-      padding-left: 0.75rem;
-      font-style: italic;
-    }
-
-    /* Stats */
+    /* Legacy stats (Minecraft) */
 
     #stats {
       background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35) 0, #020617 65%);
@@ -1025,7 +865,7 @@
     .stat-number {
       margin: 0;
       font-size: 1.7rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.04em;
     }
 
@@ -1092,13 +932,13 @@
       align-items: center;
       justify-content: center;
       font-size: 0.88rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--color-primary);
     }
 
     .step-title {
       font-size: 0.98rem;
-      font-weight: 600;
+      font-weight: 700;
       margin: 0;
     }
 
@@ -1129,6 +969,7 @@
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 0.95rem;
+      font-weight: 700;
     }
 
     .mini-card ul {
@@ -1176,7 +1017,7 @@
 
     .faq-question-text {
       font-size: 0.94rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .faq-toggle-icon {
@@ -1231,6 +1072,7 @@
       margin-bottom: 0.4rem;
       font-size: 0.96rem;
       color: var(--color-text);
+      font-weight: 700;
     }
 
     .footer-col p {
@@ -1381,18 +1223,8 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .worlds-layout,
-      .love-grid,
       .join-layout {
         grid-template-columns: minmax(0, 1fr);
-      }
-
-      .love-item {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .love-item:nth-child(even) {
-        direction: ltr;
       }
 
       header.site-header {
@@ -1504,9 +1336,8 @@
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="#what-is-pvc">About</a></li>
-          <li><a href="#principles">Principles</a></li>
-          <li><a href="#worlds">Worlds</a></li>
-          <li><a href="#features">Features</a></li>
+          <li><a href="#goals">Our goals</a></li>
+          <li><a href="#stats">Legacy</a></li>
           <li><a href="#how-to-join">How to join</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -1514,9 +1345,7 @@
           <a href="#how-to-join" class="btn btn-primary">
             <span>Join Hytale server</span>
             <span class="btn-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path d="M4 10h9.2L9 5.8 10.4 4l6.6 6-6.6 6L9 14.2 13.2 10H4z" fill="currentColor"/>
-              </svg>
+              <i class="fa-solid fa-right-to-bracket"></i>
             </span>
           </a>
         </div>
@@ -1526,15 +1355,22 @@
       <div class="nav-drawer-inner">
         <ul>
           <li><a href="#what-is-pvc">About</a></li>
-          <li><a href="#principles">Principles</a></li>
-          <li><a href="#worlds">Worlds</a></li>
-          <li><a href="#features">Features</a></li>
+          <li><a href="#goals">Our goals</a></li>
+          <li><a href="#stats">Legacy</a></li>
           <li><a href="#how-to-join">How to join</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="nav-drawer-cta">
-          <a href="#how-to-join" class="btn btn-primary">Join Hytale server</a>
+          <a href="#how-to-join" class="btn btn-primary">
+            Join Hytale server
+            <span class="btn-icon" aria-hidden="true">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </span>
+          </a>
           <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <span class="btn-icon" aria-hidden="true">
+              <i class="fa-brands fa-discord"></i>
+            </span>
             Discord
           </a>
         </div>
@@ -1551,13 +1387,13 @@
           <div class="hero-left animate-fade-up">
             <div class="eyebrow">
               <span class="eyebrow-pill">Since 2019</span>
-              <span>Cozy sandbox survival without pay to win</span>
+              <span>Cozy survival worlds without pay to win</span>
             </div>
             <h1 class="hero-title">
-              The peaceful <span class="highlight">Hytale vanilla survival</span> server for long term worlds.
+              The peaceful <span class="highlight">Hytale vanilla survival</span> server built by a long running community.
             </h1>
             <p class="hero-subtitle">
-              Peaceful Vanilla Club is a Hytale vanilla survival server focused on relaxed cooperative gameplay. No pay to win, no griefing, no random PvP. Just a persistent world, player stories and a friendly community.
+              Peaceful Vanilla Club started as a Minecraft survival server and is now bringing the same no-PvP, no-grief, no pay to win philosophy to Hytale. One shared world, relaxed survival and a friendly community.
             </p>
             <div class="hero-badges">
               <span class="badge">
@@ -1570,75 +1406,69 @@
               </span>
               <span class="badge">
                 <span class="badge-icon" aria-hidden="true">⏳</span>
-                No world resets
+                No planned world resets
               </span>
             </div>
             <div class="hero-actions">
               <a href="#how-to-join" class="btn btn-primary">
-                <span>Join the Hytale server</span>
+                <span>How to join on Hytale</span>
                 <span class="btn-icon" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" fill="none">
-                    <path d="M4 10h9.2L9 5.8 10.4 4l6.6 6-6.6 6L9 14.2 13.2 10H4z" fill="currentColor"/>
-                  </svg>
+                  <i class="fa-solid fa-right-to-bracket"></i>
                 </span>
               </a>
               <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                <span>Join our Discord</span>
                 <span class="btn-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M19.9 5.4A18 18 0 0 0 15.8 4l-.2.3c1.5.4 2.4 1 2.4 1l-.4-.1C16.6 5 15.7 5 14.8 5.1h-.1l-.1.1c-1 .1-2 .3-3 .7-1 .4-1.9.9-2.8 1.5-.7.5-1.3 1-1.8 1.5-.4.4-.8.9-1.1 1.4-.5.8-.9 1.6-1.1 2.5-.1.4-.2.9-.2 1.3v.3c0 .3 0 .6.1.9v.1c.1.4.2.7.4 1 .2.4.4.7.7 1 .6.7 1.3 1.2 2.1 1.6.8.5 1.7.8 2.6 1 .8.2 1.7.3 2.5.3.8 0 1.7-.1 2.5-.3a9.1 9.1 0 0 0 2.6-1c.8-.4 1.5-1 2.1-1.6.3-.3.5-.6.7-1 .2-.3.3-.7.4-1 0 0 .1-.3.1-.7 0-.2.1-.4 0-.7.1-1-.1-2-.4-2.9-.3-.9-.7-1.7-1.2-2.5-.3-.5-.7-1-1.1-1.4-.5-.5-1.1-1-1.8-1.5l-.1-.1z" fill="currentColor"/>
-                  </svg>
+                  <i class="fa-brands fa-discord"></i>
                 </span>
+                Join our Discord
               </a>
             </div>
             <p class="hero-note">
-              Built for players who want a safe, chill and nostalgic survival experience rather than minigame chaos.
+              The Hytale world will start fresh, but it is backed by years of experience running Peaceful Vanilla Club on Minecraft.
             </p>
           </div>
 
           <div class="hero-right animate-fade-up">
             <div class="join-card">
               <div class="join-card-header">
-                <span class="join-card-title">Join in 3 steps</span>
-                <span class="join-chip">No whitelist</span>
+                <span class="join-card-title">Get ready in 3 steps</span>
+                <span class="join-chip">Hytale launch</span>
               </div>
               <ol>
                 <li class="join-step">
                   <div class="join-step-number">1</div>
                   <div>
-                    <div class="join-step-title">Install Hytale on your PC</div>
+                    <div class="join-step-title">Join the Discord community</div>
                   </div>
                   <p class="join-step-text">
-                    Download Hytale from the official launcher when it is available and make sure you run the latest version supported by the server.
+                    Our Discord server is the hub for announcements, rules and support. Join now to get notified when the Hytale server goes live.
                   </p>
                 </li>
                 <li class="join-step">
                   <div class="join-step-number">2</div>
                   <div>
-                    <div class="join-step-title">Add the Peaceful Vanilla Club server</div>
+                    <div class="join-step-title">Read the rules and info</div>
                   </div>
                   <p class="join-step-text">
-                    Open the multiplayer menu inside Hytale and add a new server entry using the server address below.
+                    The full rules and detailed info about the Hytale world will be published in the Discord. Reading them is required before playing.
                   </p>
                 </li>
                 <li class="join-step">
                   <div class="join-step-number">3</div>
                   <div>
-                    <div class="join-step-title">Read the rules and start playing</div>
+                    <div class="join-step-title">Add the server in the Hytale client</div>
                   </div>
                   <p class="join-step-text">
-                    Take one minute to read the few simple rules about griefing and PvP, then jump into the world and start your survival journey.
+                    When Hytale servers open, you will find the official server address and connection instructions pinned in the Discord announcements.
                   </p>
                 </li>
               </ol>
               <div class="ip-tag">
-                <span>Server address</span>
+                <span>Planned server address</span>
                 <span class="ip-copy" id="ip-copy">
                   <code id="server-ip">hytale.peacefulvanilla.club</code>
                   <span class="ip-copy-icon" aria-hidden="true">
-                    <svg viewBox="0 0 20 20" fill="none">
-                      <path d="M6 3a2 2 0 0 0-2 2v8h2V5h8V3H6zm3 4a2 2 0 0 0-2 2v6h9a2 2 0 0 0 2-2V7H9zm7 2v4h-7V9h7z" fill="currentColor"/>
-                    </svg>
+                    <i class="fa-regular fa-copy"></i>
                   </span>
                 </span>
               </div>
@@ -1647,12 +1477,12 @@
             <div class="hero-media">
               <div class="media-frame">
                 <!-- Replace src with your actual Hytale hero image when available -->
-                <img src="assets/img/hytale-hero.webp" alt="View of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
+                <img src="assets/img/hytale-hero.webp" alt="Concept view of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
               </div>
               <div class="media-caption">
                 <span>
                   <span class="pill-small">Hytale survival</span>
-                  Long term worlds with player built towns.
+                  One shared world, peaceful survival.
                 </span>
                 <span>Screenshot placeholder</span>
               </div>
@@ -1668,20 +1498,20 @@
         <div class="section-heading animate-fade-up">
           <h2>What is Peaceful Vanilla Club in Hytale</h2>
           <p>
-            A cozy survival server for players who are tired of minigames, pay to win ranks and chaotic PvP. If you love slow exploration, building and community stories, this is for you.
+            Peaceful Vanilla Club is a peaceful vanilla survival community that has been running on Minecraft for years and is now preparing a shared survival world for Hytale.
           </p>
         </div>
 
         <div class="two-col">
           <div class="two-col-text animate-fade-up">
             <p>
-              Peaceful Vanilla Club is a Hytale vanilla survival server focused on long term, low stress gameplay. You spawn in a shared world that never resets and you write your own story with friends and strangers who play the same way.
+              On Hytale, Peaceful Vanilla Club will be a single shared survival world with no random PvP and no griefing. The focus is on exploration, building, long term towns and cooperative projects rather than minigames or fast seasons.
             </p>
             <p>
-              There are no kits that break the game, no overpowered donor items and no random teleport spam. We keep the core Hytale sandbox experience intact and add only a few quality of life features that help with safety and social interaction.
+              There are no pay to win ranks, no overpowered donor kits and no aggressive monetization. We keep the vanilla sandbox feeling intact and build a safe environment where players of all ages can relax and enjoy survival.
             </p>
             <p>
-              The community is inclusive and LGBTQ+ friendly. Moderation is strict against harassment, toxicity and griefing. Our goal is to make you feel at home in a persistent world that rewards creativity and collaboration instead of speed and aggression.
+              The community is inclusive and LGBTQ+ friendly. Moderation is strict against harassment, slurs and exploit abuse. Our goal is to offer a space that feels calm, cozy and reliable, whether you log in a few evenings per week or every day.
             </p>
             <div class="pill-row">
               <span class="pill">
@@ -1692,15 +1522,16 @@
               </span>
               <span class="pill">
                 <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 4h12v2H4zm0 5h12v2H4zm0 5h12v2H4z" fill="currentColor"/>
+                  <path d="M4 6h12v2H4zm0 4h7v2H4zm0 4h4v2H4z" fill="currentColor"/>
                 </svg>
-                No pay to win or aggressive monetization
+                No pay to win or unfair advantages
               </span>
               <span class="pill">
                 <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 4h12l-1 10H5L4 4zm6 2v6m-3-3h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 9.5 10 4l6 5.5V16H4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                 </svg>
-                Long term worlds without resets
+                One persistent shared world
               </span>
             </div>
           </div>
@@ -1708,13 +1539,13 @@
           <div class="animate-fade-up">
             <div class="mini-gallery">
               <figure class="media-frame mini-gallery-main">
-                <img src="assets/img/hytale-village.webp" alt="Player village on the Peaceful Vanilla Club Hytale server" loading="lazy">
+                <img src="assets/img/hytale-village.webp" alt="Concept of a player village on the Peaceful Vanilla Club Hytale server" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img src="assets/img/hytale-forest.webp" alt="Nostalgic forest landscape on the Hytale world" loading="lazy">
+                <img src="assets/img/hytale-forest.webp" alt="Forest landscape in a Hytale survival world" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img src="assets/img/hytale-town.webp" alt="Town center and marketplace on the Hytale survival server" loading="lazy">
+                <img src="assets/img/hytale-town.webp" alt="Town center for the Hytale world community" loading="lazy">
               </figure>
             </div>
           </div>
@@ -1722,13 +1553,13 @@
       </div>
     </section>
 
-    <!-- Principles -->
-    <section id="principles">
+    <!-- Our goals (ex principles) -->
+    <section id="goals">
       <div class="container">
         <div class="section-heading animate-fade-up">
-          <h2>Our principles</h2>
+          <h2>Our goals</h2>
           <p>
-            The design rules that shape how the Hytale server feels. These principles apply to every world we run, and they are what make Peaceful Vanilla Club different from most Hytale servers.
+            These are the core goals that guide how we run Peaceful Vanilla Club on Hytale. They are the same values that kept our Minecraft survival worlds alive for years.
           </p>
         </div>
 
@@ -1741,7 +1572,7 @@
             </div>
             <h3 class="principle-title">No fast travel spam</h3>
             <p class="principle-text">
-              There are no instant warps or random teleport commands that break the scale of the world. Travel is done by walking, sailing, building roads and rails. The world feels big and your builds feel grounded.
+              There are no instant warps or random teleport commands that break the scale of the world. The world feels big and your builds feel grounded.
             </p>
             <span class="principle-tag">Exploration first</span>
           </article>
@@ -1749,14 +1580,14 @@
           <article class="principle-card animate-fade-up">
             <div class="principle-icon" aria-hidden="true">
               <svg viewBox="0 0 20 20" fill="none">
-                <path d="M3 5h14v10H3z" fill="#f97316"/>
-                <path d="M4 6h12v8H4z" fill="#111827"/>
-                <path d="M7 8h6v1.2H7zM7 10.8h6V12H7z" fill="#f97316"/>
+                <path d="M4 4h12v2H4zm0 5h12v2H4zm0 5h12v2H4z" fill="#f97316"/>
+                <path d="M5 5h10v10H5z" fill="#111827"/>
+                <path d="M7.5 8.5H9v3H7.5zM11 8.5h1.5v3H11z" fill="#f97316"/>
               </svg>
             </div>
             <h3 class="principle-title">No random PvP</h3>
             <p class="principle-text">
-              PvP is not enabled in the open world. If you enjoy fighting you can join specific opt in events and arenas. The rest of the time you can build and explore without worrying about getting ambushed.
+              PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated. For everyday play you can explore and build without stress.
             </p>
             <span class="principle-tag">Stress free</span>
           </article>
@@ -1770,24 +1601,9 @@
             </div>
             <h3 class="principle-title">A peaceful place</h3>
             <p class="principle-text">
-              Survival can be challenging, but the social atmosphere is meant to be calm and friendly. You can log in after work or school, do a small project and log out without drama or pressure.
+              We design the server so that you can log in, relax, make progress on your base or town and log out without drama or pressure. Chat, voice and events follow the same calm, respectful tone.
             </p>
             <span class="principle-tag">Mood</span>
-          </article>
-
-          <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path d="M4 4h12v12H4z" fill="#f97316"/>
-                <path d="M5.5 5.5h9v9h-9z" fill="#111827"/>
-                <path d="M7 8h6v1.2H7zM7 10.4h4v1.2H7z" fill="#f97316"/>
-              </svg>
-            </div>
-            <h3 class="principle-title">Quality of life</h3>
-            <p class="principle-text">
-              We keep the vanilla Hytale feeling, but add small quality of life tools that protect builds, simplify trading and make navigation easier. No features that trivialize the survival loop or progression.
-            </p>
-            <span class="principle-tag">Vanilla plus</span>
           </article>
 
           <article class="principle-card animate-fade-up">
@@ -1797,11 +1613,11 @@
                 <path d="M6 4v11M10 4v11M14 4v11" stroke="#111827" stroke-width="1.2"/>
               </svg>
             </div>
-            <h3 class="principle-title">Nostalgic feeling</h3>
+            <h3 class="principle-title">Community-first decisions</h3>
             <p class="principle-text">
-              The world generation, pacing and survival rules are tuned to feel closer to the golden age of sandbox survival than to modern fast content loops. Builds and landscapes are meant to last and be remembered.
+              Changes and new features are introduced slowly and discussed with the community. Stability and fairness come before hype. We prefer fewer systems that work well over a long list of unfinished features.
             </p>
-            <span class="principle-tag">Vibes</span>
+            <span class="principle-tag">Governance</span>
           </article>
 
           <article class="principle-card animate-fade-up">
@@ -1811,9 +1627,9 @@
                 <path d="M7 12 4 15l3-7" stroke="#111827" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="principle-title">No world resets</h3>
+            <h3 class="principle-title">Long term worlds</h3>
             <p class="principle-text">
-              We do not plan regular world resets. Your base, your town and your landmarks are meant to stay. We handle new content and updates with care, preserving as much history as possible.
+              Our goal is to avoid routine world resets. When new Hytale content lands, we look for ways to integrate it without wiping everything, so that towns and landscapes can gain history over time.
             </p>
             <span class="principle-tag">Persistence</span>
           </article>
@@ -1821,233 +1637,38 @@
       </div>
     </section>
 
-    <!-- Worlds -->
-    <section id="worlds">
-      <div class="container">
-        <div class="section-heading animate-fade-up">
-          <h2>Worlds and gameplay structure</h2>
-          <p>
-            Peaceful Vanilla Club for Hytale is built around a small number of carefully curated worlds. Each world has a clear purpose and follows the same peaceful and vanilla friendly philosophy.
-          </p>
-        </div>
-
-        <div class="worlds-layout">
-          <article class="world-card animate-fade-up">
-            <span class="world-card-label">Main world</span>
-            <h3>Mondo - the shared Hytale survival world</h3>
-            <p>
-              Mondo is the primary Hytale vanilla survival world. It is where everyone spawns, builds, explores and creates towns. Land protection, community projects and the main player economy all live here.
-            </p>
-            <div class="world-meta">
-              <span>
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 9.5 10 4l6 5.5V16H4z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-                  <path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-                Player towns and long term bases
-              </span>
-              <span>
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 6h12v2H4zm0 4h7v2H4zm0 4h4v2H4z" fill="currentColor"/>
-                </svg>
-                Land claims and trading hubs
-              </span>
-            </div>
-            <div class="world-media">
-              <div class="media-frame">
-                <img src="assets/img/hytale-mondo.webp" alt="Bird view of Mondo, the main Hytale survival world" loading="lazy">
-              </div>
-            </div>
-          </article>
-
-          <article class="world-card animate-fade-up">
-            <span class="world-card-label">Optional world</span>
-            <h3>Pure vanilla world for purists</h3>
-            <p>
-              For players who want a completely untouched experience we run an additional pure vanilla world. No extra features, no economy, nothing on top. Just the raw Hytale survival sandbox for long term SMP style play.
-            </p>
-            <div class="world-meta">
-              <span>
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 4h12v7H4z" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M7 14h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                  <path d="M6 16h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-                No extra systems or plugins
-              </span>
-              <span>
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 10a6 6 0 1 1 12 0 6 6 0 0 1-12 0z" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Slow SMP style progression
-              </span>
-            </div>
-            <div class="world-media">
-              <div class="media-frame">
-                <img src="assets/img/hytale-vanilla.webp" alt="Simple Hytale landscape on the pure vanilla world" loading="lazy">
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features">
-      <div class="container">
-        <div class="section-heading animate-fade-up">
-          <h2>Core features for Hytale players</h2>
-          <p>
-            These systems make the Hytale vanilla survival experience safer, more social and more interesting without breaking the core sandbox gameplay loop.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <article class="feature-card animate-fade-up">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path d="M4 9h12v7H4z" fill="#f97316"/>
-                <path d="M6 5h8v4H6z" fill="#111827"/>
-                <path d="M7 6.5h6v1H7z" fill="#f97316"/>
-              </svg>
-            </div>
-            <h3>Land claims and protection</h3>
-            <p>
-              Secure your base and builds with a simple land claiming system. Claim only what you need and expand over time. This protects against griefing while still allowing organic towns and shared projects.
-            </p>
-            <p class="feature-meta">
-              No random protected chunks that break the map. Claims are visible, fair and tuned for long term survival.
-            </p>
-          </article>
-
-          <article class="feature-card animate-fade-up">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path d="M4 5h12v10H4z" fill="#111827"/>
-                <path d="M5.5 6.5h9v7h-9z" fill="#f97316"/>
-                <path d="M7 8h2v2H7zm4 0h2v2h-2zm-4 3h2v2H7zm4 3h2v-2h-2z" fill="#111827"/>
-              </svg>
-            </div>
-            <h3>Player driven economy</h3>
-            <p>
-              Set up shops, trade resources and run services. The economy is entirely player driven, with no pay to win shortcuts or admin shops that flood the market. Prices and meta evolve naturally.
-            </p>
-            <p class="feature-meta">
-              Town markets, trading halls and small personal shops are all welcome as long as they respect the peaceful nature of the server.
-            </p>
-          </article>
-
-          <article class="feature-card animate-fade-up">
-            <div class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 20 20" fill="none">
-                <path d="M5 15.5 9 4.5l4 11" stroke="#111827" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 13.5 5 16h10l1-2.5" fill="#f97316"/>
-              </svg>
-            </div>
-            <h3>Playtime ranks</h3>
-            <p>
-              The more you play, the more you unlock small perks like extra set homes, cosmetic titles or access to special community areas. No gameplay advantages tied to real money, only to time and trust.
-            </p>
-            <p class="feature-meta">
-              Ranks act as a measure of trust and commitment, not as a paywall. New players can enjoy the full survival experience from day one.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why players love -->
-    <section id="why-players-love">
-      <div class="container">
-        <div class="section-heading animate-fade-up">
-          <h2>Why players love Peaceful Vanilla Club</h2>
-          <p>
-            Every Hytale server can list features. What keeps players around is the feeling of the world and the community. These are the main reasons people stay on PVC for years.
-          </p>
-        </div>
-
-        <div class="love-grid">
-          <div>
-            <div class="love-item animate-fade-up">
-              <div class="media-frame">
-                <img src="assets/img/hytale-cozy-base.webp" alt="Cozy base lit at night on the Hytale survival world" loading="lazy">
-              </div>
-              <div class="love-text">
-                <h3>Cozy survival instead of constant pressure</h3>
-                <p>
-                  There is no scoreboard shouting at you, no daily login streaks and no forced grind. You can take your time, build something beautiful and log off. The world will still be there the next week.
-                </p>
-                <p class="quote">
-                  "It feels like playing single player Hytale with friends, but in a shared world that remembers everyone's projects."
-                </p>
-              </div>
-            </div>
-
-            <div class="love-item animate-fade-up">
-              <div class="media-frame">
-                <img src="assets/img/hytale-town-square.webp" alt="Town square built by the community on the Hytale server" loading="lazy">
-              </div>
-              <div class="love-text">
-                <h3>Long term towns and shared history</h3>
-                <p>
-                  No world resets means that towns and landmarks gain history over years. New players can walk through old builds and see how the community evolved, instead of starting from a blank map every few months.
-                </p>
-                <p class="quote">
-                  "Finding an old portal or abandoned base from two years ago is part of the fun. The world feels like a real place, not a seasonal reset."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="animate-fade-up">
-            <div class="media-frame">
-              <img src="assets/img/hytale-community-night.webp" alt="Players gathering at night on the Peaceful Vanilla Club Hytale server" loading="lazy">
-            </div>
-            <div class="media-caption">
-              <span>
-                <span class="pill-small">Community first</span>
-                Events, meetups and chill sessions.
-              </span>
-              <span>Friendly Discord and helpful staff.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
+    <!-- Legacy stats (Minecraft) -->
     <section id="stats">
       <div class="container">
         <div class="section-heading animate-fade-up">
-          <h2>Numbers that matter</h2>
+          <h2>Our Minecraft legacy in numbers</h2>
           <p>
-            Stats do not tell the whole story, but they show that Peaceful Vanilla Club is a serious project and not a weekend experiment. We care about uptime, backups and long term stability.
+            Peaceful Vanilla Club is new to Hytale, but not new to running survival worlds. These numbers come from our long running Minecraft server and show the kind of stability and commitment you can expect.
           </p>
         </div>
 
         <div class="stats-grid">
           <article class="stat-card animate-fade-up">
             <p class="stat-number">2019</p>
-            <p class="stat-label">Running since</p>
+            <p class="stat-label">Online since</p>
             <p class="stat-text">
-              Peaceful Vanilla Club has been online since June 2019. Worlds are carefully migrated and maintained to keep player history alive across updates and expansions.
+              Our Minecraft survival server has been online since 2019, surviving major updates, technical changes and thousands of player projects without losing its core identity.
             </p>
           </article>
 
           <article class="stat-card animate-fade-up">
             <p class="stat-number">100k+</p>
-            <p class="stat-label">Players joined</p>
+            <p class="stat-label">Unique players</p>
             <p class="stat-text">
-              Over one hundred thousand players have joined our worlds. Many stay for months or years and build long lasting bases, towns and survival projects.
+              Over one hundred thousand players have joined Peaceful Vanilla Club on Minecraft. Many stayed for months or years, building towns, megabases and shared infrastructure.
             </p>
           </article>
 
           <article class="stat-card animate-fade-up">
             <p class="stat-number">24/7</p>
-            <p class="stat-label">Uptime</p>
+            <p class="stat-label">Monitored uptime</p>
             <p class="stat-text">
-              Dedicated hosting, monitoring and off site backups ensure that the Hytale server stays online around the clock, with quick recovery options if something goes wrong.
+              We already run dedicated infrastructure, monitoring and backups for the Minecraft server. The same level of care will be applied to the Hytale world when it launches.
             </p>
           </article>
 
@@ -2055,13 +1676,13 @@
             <p class="stat-number">Daily</p>
             <p class="stat-label">Backups</p>
             <p class="stat-text">
-              Automated backups run multiple times per day. Your builds, inventory and progress are protected as much as possible from hardware failures and human mistakes.
+              Automated backups and logs are part of our daily operations. Your builds and progress are treated seriously, not as disposable content for a short season.
             </p>
           </article>
         </div>
 
         <p class="stats-note">
-          Technical specs are tuned as Hytale evolves. We always prioritize stability and low lag over flashy but unstable features.
+          The Hytale world will start fresh, but it is backed by the same team, tools and philosophy that kept Peaceful Vanilla Club alive on Minecraft for years.
         </p>
       </div>
     </section>
@@ -2072,7 +1693,7 @@
         <div class="section-heading animate-fade-up">
           <h2>How to join the Hytale server</h2>
           <p>
-            Joining Peaceful Vanilla Club in Hytale is simple. You do not need a rank, an invite or an application. You only need the official game, a stable internet connection and respect for a few basic rules.
+            Joining Peaceful Vanilla Club in Hytale will be simple. You will not need an application or paywall, but you will need to join the Discord and read the rules before connecting.
           </p>
         </div>
 
@@ -2082,35 +1703,35 @@
               <li class="step-item">
                 <div class="step-number">1</div>
                 <div>
-                  <h3 class="step-title">Install and update Hytale</h3>
+                  <h3 class="step-title">Join the Discord server</h3>
                 </div>
                 <p class="step-text">
-                  Download Hytale from the official launcher on your PC and keep it updated. Peaceful Vanilla Club always targets a stable and widely used version. When major updates happen we announce support in advance on Discord.
+                  Discord is where we coordinate everything. Join the Peaceful Vanilla Club Discord using the link below and verify your account if required. This is where we will post the Hytale launch date and server address.
                 </p>
               </li>
 
               <li class="step-item">
                 <div class="step-number">2</div>
                 <div>
-                  <h3 class="step-title">Add the server to your multiplayer list</h3>
+                  <h3 class="step-title">Read the full rules</h3>
                 </div>
                 <p class="step-text">
-                  Open the multiplayer section from the Hytale main menu. Add a new server using the address <strong>hytale.peacefulvanilla.club</strong>. Give it a custom name if you like, for example "Peaceful Vanilla Club".
+                  The complete rules will be published in a dedicated Discord channel. Reading them is required before playing. They explain how we handle griefing, chat behaviour, claims and community projects.
                 </p>
               </li>
 
               <li class="step-item">
                 <div class="step-number">3</div>
                 <div>
-                  <h3 class="step-title">Read the rules and spawn safely</h3>
+                  <h3 class="step-title">Add the server when Hytale launches</h3>
                 </div>
                 <p class="step-text">
-                  When you join for the first time you spawn in a safe hub. Take a moment to read the rules on the signs or via the in game guide. From there you can walk out into the world and start your survival journey.
+                  When Hytale servers open, you will find the server address, recommended client settings and any technical notes pinned in the announcements channel. Add the server in the Hytale multiplayer menu and join the world.
                 </p>
               </li>
             </ol>
             <p class="join-extra">
-              If you ever feel lost you can ask for help in the Discord server. Staff and long term players are used to guiding new Hytale players through their first steps on PVC.
+              If you are already part of the Minecraft server, you will feel at home. If you are new to Peaceful Vanilla Club, the Discord is the best place to ask questions and understand how the Hytale world will work.
             </p>
           </div>
 
@@ -2125,10 +1746,12 @@
                 <li>Respect public builds, towns and infrastructure projects.</li>
               </ul>
               <p style="margin-top:0.6rem;">
-                The full rules are available in game and in the Discord. The short version is simple: play fair, be kind and remember that you share the world with others.
+                The full rules are available in our Discord and you are required to read them before playing. The short version is simple: play fair, be kind and remember that you share the world with others.
               </p>
               <p style="margin-top:0.6rem;">
-                <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="footer-link">Open the Discord rules channel</a>
+                <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  Open the Discord rules channel
+                </a>
               </p>
             </div>
           </div>
@@ -2142,7 +1765,7 @@
         <div class="section-heading animate-fade-up">
           <h2>Frequently asked questions about our Hytale server</h2>
           <p>
-            A few quick answers to common questions. If you do not find what you are looking for here you can always ask in the Discord server.
+            A few quick answers to common questions. For more details, you can always ask directly in the Discord server.
           </p>
         </div>
 
@@ -2154,7 +1777,7 @@
             </button>
             <div class="faq-answer" id="faq1" hidden>
               <p>
-                No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. If we ever accept donations they only support hosting costs and optional cosmetics that do not affect survival balance.
+                No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and purely cosmetic things that do not affect survival balance.
               </p>
             </div>
           </article>
@@ -2166,43 +1789,43 @@
             </button>
             <div class="faq-answer" id="faq2" hidden>
               <p>
-                You do not need a whitelist application to join. The server is open and you can connect as soon as you have Hytale installed. Some areas and optional worlds might require a minimum playtime or trust level, but the main survival world is available from day one.
+                You will not need a classic written application. Joining the Discord and reading the rules will be enough for most players. Some areas, plots or staff roles might require extra steps, but the main survival world will be open to everyone who follows the rules.
               </p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-              <span class="faq-question-text">Is Peaceful Vanilla Club an English only Hytale server?</span>
+              <span class="faq-question-text">Is Peaceful Vanilla Club official or affiliated with Hytale?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq3" hidden>
               <p>
-                The main language for chat, rules and documentation is English in order to keep moderation clear and accessible. Players from all countries are welcome and you are free to speak other languages in private channels or local chats when it does not exclude others.
+                No. Peaceful Vanilla Club is an independent fan project. We are not affiliated with or endorsed by Hypixel Studios or Riot Games. We respect their terms and guidelines and clearly separate our community identity from the official game.
               </p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq4">
-              <span class="faq-question-text">Is this Hytale server friendly for beginners and casual players?</span>
+              <span class="faq-question-text">Will there be multiple worlds on the Hytale server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq4" hidden>
               <p>
-                Yes. Peaceful Vanilla Club is built for casual and long term players, not only for hardcore grinders. You can log in a few evenings per week, slowly work on your base and still feel part of the world. Experienced players are usually happy to help newcomers.
+                Our plan is to run one main shared survival world at launch. We prefer one strong, active map instead of many half-empty worlds. In the future we might experiment with side worlds or events, but the core experience will stay focused on a single persistent world.
               </p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq5">
-              <span class="faq-question-text">Will there be regular world resets on the Hytale server?</span>
+              <span class="faq-question-text">What happens to the existing Minecraft server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq5" hidden>
               <p>
-                Our philosophy is to avoid regular resets. We treat the world as a long term story. When new content is released for Hytale we look for ways to integrate it with minimal disruption, for example by expanding borders or opening new regions rather than wiping everything.
+                The Minecraft server remains an active and important part of Peaceful Vanilla Club. The Hytale world is an additional project, not a replacement. Many players will likely enjoy both games and both worlds, and we will keep them clearly separated and supported.
               </p>
             </div>
           </article>
@@ -2214,7 +1837,7 @@
             </button>
             <div class="faq-answer" id="faq6" hidden>
               <p>
-                The fastest way is to open a ticket or ping staff in the Discord server. You can also use in game commands provided in the spawn area. We log important actions and keep backups, so grief can usually be rolled back and the player responsible can be dealt with.
+                The fastest way will be to open a ticket or ping staff in the Discord server. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so that grief can be rolled back and problematic players can be identified and removed.
               </p>
             </div>
           </article>
@@ -2229,13 +1852,17 @@
         <div class="footer-col">
           <h3>Peaceful Vanilla Club</h3>
           <p>
-            A peaceful vanilla survival universe for sandbox games, now coming to Hytale. Built for long term worlds, cozy survival and inclusive communities.
+            A peaceful vanilla survival community for sandbox games, born on Minecraft in 2019 and now preparing a shared survival world for Hytale.
           </p>
           <p>
-            Discord: <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="footer-link">discord.peacefulvanilla.club</a>
+            Discord:
+            <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="footer-link">
+              discord.peacefulvanilla.club
+            </a>
           </p>
           <p>
-            Business contact: <a href="mailto:contact@peacefulvanilla.club" class="footer-link">contact@peacefulvanilla.club</a>
+            Business contact:
+            <a href="mailto:contact@peacefulvanilla.club" class="footer-link">contact@peacefulvanilla.club</a>
           </p>
         </div>
 
@@ -2243,8 +1870,8 @@
           <h3>Hytale server</h3>
           <ul>
             <li><a href="#what-is-pvc" class="footer-link">About the Hytale server</a></li>
-            <li><a href="#worlds" class="footer-link">Worlds and structure</a></li>
-            <li><a href="#features" class="footer-link">Features overview</a></li>
+            <li><a href="#goals" class="footer-link">Our goals and philosophy</a></li>
+            <li><a href="#stats" class="footer-link">Minecraft legacy</a></li>
             <li><a href="#how-to-join" class="footer-link">How to join guide</a></li>
           </ul>
         </div>
@@ -2254,7 +1881,7 @@
           <ul>
             <li><a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="footer-link">Discord server</a></li>
             <li><a href="#faq" class="footer-link">FAQ and help</a></li>
-            <li><a href="#" class="footer-link">Rules (Hytale - coming soon)</a></li>
+            <li><a href="#" class="footer-link">Hytale rules (Discord)</a></li>
             <li><a href="#" class="footer-link">Guides and wiki (coming soon)</a></li>
           </ul>
         </div>
@@ -2262,7 +1889,7 @@
         <div class="footer-col">
           <h3>Other servers</h3>
           <p>
-            Peaceful Vanilla Club also runs a long standing vanilla survival server for other sandbox games.
+            Peaceful Vanilla Club also runs a long standing vanilla survival server for Minecraft, with its own worlds and community projects.
           </p>
           <ul>
             <li><a href="#" class="footer-link">Learn more about the Minecraft server</a></li>
@@ -2279,9 +1906,7 @@
         <div>
           <div class="footer-social">
             <a href="https://discord.peacefulvanilla.club" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M19.9 5.4A18 18 0 0 0 15.8 4l-.2.3c1.5.4 2.4 1 2.4 1l-.4-.1C16.6 5 15.7 5 14.8 5.1h-.1l-.1.1c-1 .1-2 .3-3 .7-1 .4-1.9.9-2.8 1.5-.7.5-1.3 1-1.8 1.5-.4.4-.8.9-1.1 1.4-.5.8-.9 1.6-1.1 2.5-.1.4-.2.9-.2 1.3v.3c0 .3 0 .6.1.9v.1c.1.4.2.7.4 1 .2.4.4.7.7 1 .6.7 1.3 1.2 2.1 1.6.8.5 1.7.8 2.6 1 .8.2 1.7.3 2.5.3.8 0 1.7-.1 2.5-.3a9.1 9.1 0 0 0 2.6-1c.8-.4 1.5-1 2.1-1.6.3-.3.5-.6.7-1 .2-.3.3-.7.4-1 0 0 .1-.3.1-.7 0-.2.1-.4 0-.7.1-1-.1-2-.4-2.9-.3-.9-.7-1.7-1.2-2.5-.3-.5-.7-1-1.1-1.4-.5-.5-1.1-1-1.8-1.5l-.1-.1z" fill="currentColor"/>
-              </svg>
+              <i class="fa-brands fa-discord"></i>
             </a>
           </div>
           <div class="footer-mascots" aria-hidden="true">
@@ -2327,7 +1952,7 @@
   "@type": "Organization",
   "name": "Peaceful Vanilla Club",
   "url": "https://peacefulvanilla.club/hytale-server",
-  "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server focused on long term worlds, cozy survival and inclusive community.",
+  "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server created by the same team behind a long running Minecraft survival community.",
   "sameAs": [
     "https://discord.peacefulvanilla.club"
   ]
@@ -2344,7 +1969,7 @@
       "name": "Is Peaceful Vanilla Club a pay to win Hytale server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. If we ever accept donations they only support hosting costs and optional cosmetics that do not affect survival balance."
+        "text": "No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and purely cosmetic things that do not affect survival balance."
       }
     },
     {
@@ -2352,31 +1977,31 @@
       "name": "Do I need an application or whitelist to join the Hytale server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You do not need a whitelist application to join. The server is open and you can connect as soon as you have Hytale installed. Some areas and optional worlds might require a minimum playtime or trust level, but the main survival world is available from day one."
+        "text": "You will not need a classic written application. Joining the Discord and reading the rules will be enough for most players. Some areas, plots or staff roles might require extra steps, but the main survival world will be open to everyone who follows the rules."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Peaceful Vanilla Club an English only Hytale server?",
+      "name": "Is Peaceful Vanilla Club official or affiliated with Hytale?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The main language for chat, rules and documentation is English in order to keep moderation clear and accessible. Players from all countries are welcome and you are free to speak other languages in private channels or local chats when it does not exclude others."
+        "text": "No. Peaceful Vanilla Club is an independent fan project. We are not affiliated with or endorsed by Hypixel Studios or Riot Games. We respect their terms and guidelines and clearly separate our community identity from the official game."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this Hytale server friendly for beginners and casual players?",
+      "name": "Will there be multiple worlds on the Hytale server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Peaceful Vanilla Club is built for casual and long term players, not only for hardcore grinders. You can log in a few evenings per week, slowly work on your base and still feel part of the world. Experienced players are usually happy to help newcomers."
+        "text": "Our plan is to run one main shared survival world at launch. We prefer one strong, active map instead of many half-empty worlds. In the future we might experiment with side worlds or events, but the core experience will stay focused on a single persistent world."
       }
     },
     {
       "@type": "Question",
-      "name": "Will there be regular world resets on the Hytale server?",
+      "name": "What happens to the existing Minecraft server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our philosophy is to avoid regular resets. We treat the world as a long term story. When new content is released for Hytale we look for ways to integrate it with minimal disruption, for example by expanding borders or opening new regions rather than wiping everything."
+        "text": "The Minecraft server remains an active and important part of Peaceful Vanilla Club. The Hytale world is an additional project, not a replacement. Many players will likely enjoy both games and both worlds, and we will keep them clearly separated and supported."
       }
     },
     {
@@ -2384,7 +2009,7 @@
       "name": "How can I report griefing or problems on the Hytale server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The fastest way is to open a ticket or ping staff in the Discord server. You can also use in game commands provided in the spawn area. We log important actions and keep backups, so grief can usually be rolled back and the player responsible can be dealt with."
+        "text": "The fastest way will be to open a ticket or ping staff in the Discord server. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so that grief can be rolled back and problematic players can be identified and removed."
       }
     }
   ]
