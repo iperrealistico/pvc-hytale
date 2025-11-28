@@ -195,7 +195,7 @@
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 0.05rem;
+      gap: 0.1rem;
       line-height: 1.1;
     }
 
@@ -207,7 +207,7 @@
     }
 
     .brand-tagline {
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       color: var(--color-muted);
     }
 
@@ -600,12 +600,13 @@
       padding: 0.5rem 0.7rem;
       font-size: 0.78rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 0.6rem;
       color: var(--color-text-soft);
       position: relative;
       z-index: 1;
+      flex-wrap: wrap;
     }
 
     .ip-tag code {
@@ -616,6 +617,9 @@
       border: 1px solid rgba(55,65,81,0.9);
       font-size: 0.78rem;
       color: var(--color-text);
+      word-break: break-all;
+      max-width: 100%;
+      display: inline-block;
     }
 
     .ip-copy {
@@ -625,6 +629,8 @@
       font-size: 0.75rem;
       color: var(--color-primary);
       cursor: pointer;
+      flex: 1 1 100%;
+      justify-content: flex-start;
     }
 
     .ip-copy-icon {
@@ -1203,7 +1209,7 @@
       }
 
       .hero-right {
-        order: -1;
+        order: 0;
       }
 
       .two-col {
@@ -1253,14 +1259,14 @@
         gap: 0.35rem;
       }
 
-      .nav-drawer a {
+      .nav-drawer ul a {
         display: block;
         padding: 0.4rem 0;
         font-size: 0.88rem;
         color: var(--color-text-soft);
       }
 
-      .nav-drawer a:hover {
+      .nav-drawer ul a:hover {
         color: var(--color-text);
       }
 
