@@ -919,6 +919,13 @@
     .mini-card ul { padding-left: 1.1rem; margin: 0; }
     .mini-card li { margin-bottom: 0.35rem; }
 
+    /* Moderation */
+    #moderation {
+      background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
+      border-top: 1px solid rgba(15,23,42,0.95);
+      border-bottom: 1px solid rgba(15,23,42,0.95);
+    }
+
     /* Guides */
     #guides {
       background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
@@ -930,8 +937,8 @@
       display: flex;
       gap: var(--space-md);
       overflow-x: auto;
-      overflow-y: hidden;            /* fix scrollbar verticale */
-      align-items: flex-start;        /* fix “tutte le card si allungano” */
+      overflow-y: hidden;
+      align-items: flex-start;
       padding: 0.25rem 0 0.9rem;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -972,7 +979,6 @@
       font-size: 0.95rem;
     }
 
-    /* Read more as small grey italic text */
     .read-more {
       margin-top: 0.5rem;
       background: transparent;
@@ -1011,7 +1017,6 @@
       border-color: rgba(255,155,60,0.35);
     }
 
-    /* Teaser with fade gradient */
     .guide-more {
       overflow: hidden;
       margin-top: 0.75rem;
@@ -1713,17 +1718,50 @@
       </div>
     </section>
 
+    <!-- Moderation and safety (reintroduced “removed” essentials) -->
+    <section id="moderation">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Moderation, safety, and stability</h2>
+          <p>How a peaceful vanilla SMP stays peaceful in practice: consistent rules, clear reporting, and a long-term mindset.</p>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-flag"></i></div>
+            <h3 class="principle-title">Clear reporting path</h3>
+            <p class="principle-text">If something happens, you can report it in Discord. We keep the process simple and consistent, with staff follow-ups and clear outcomes.</p>
+            <span class="principle-tag">Support</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-shield"></i></div>
+            <h3 class="principle-title">No grief enforcement</h3>
+            <p class="principle-text">No grief rules only work if they are enforced. Expect strict handling of stealing, sabotage, and exploit abuse.</p>
+            <span class="principle-tag">Protection</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+            <h3 class="principle-title">Backups and recovery</h3>
+            <p class="principle-text">We run the same operational mindset we used on Minecraft: monitoring, backups, and stability-first decisions for long-term worlds.</p>
+            <span class="principle-tag">Ops</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Guides -->
     <section id="guides">
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Guides</h2>
-          <p>Guides for players searching: <strong>hytale vanilla server</strong>, <strong>hytale vanilla survival server</strong>, <strong>hytale vanilla server</strong>, <strong>hytale smp server</strong>, <strong>hytale no grief server</strong>, <strong>hytale no reset survival server</strong>.</p>
+          <p>Guides for players searching: <strong>hytale vanilla server</strong>, <strong>hytale vanilla survival server</strong>, <strong>hytale smp server</strong>, <strong>hytale no grief server</strong>, <strong>hytale no reset survival server</strong>.</p>
         </div>
 
         <div class="guides-scroller" aria-label="Scrollable guide articles">
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-vanilla-survival-multiplayer">
             <h3>Pure vanilla Hytale server guide: what “vanilla survival multiplayer” really means</h3>
             <p>
               Many servers claim “vanilla”, but a true <strong>pure vanilla Hytale server</strong> keeps the survival loop intact: exploration, gathering, crafting, building, and social progression in a shared world.
@@ -1751,7 +1789,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-peaceful-hytale-survival">
             <h3>Peaceful Hytale survival server guide: no griefing, no random PvP, long-term towns</h3>
             <p>
               If you search for a <strong>peaceful Hytale survival server</strong>, you probably want stability: your base survives, your town grows, and random PvP does not ruin weeks of progress.
@@ -1778,7 +1816,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-not-pay-to-win">
             <h3>Not pay to win Hytale server guide: how to spot fair vanilla SMP communities</h3>
             <p>
               A <strong>not pay to win Hytale server</strong> protects the survival economy and keeps progression meaningful.
@@ -1805,7 +1843,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-how-to-join-checklist">
             <h3>How to join a Hytale server guide: checklist for vanilla survival multiplayer</h3>
             <p>
               If you are new to <strong>Hytale survival multiplayer</strong>, joining the right community is about clarity: rules, moderation, and a stable vanilla SMP approach.
@@ -1829,7 +1867,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-vanilla-smp-starter-town">
             <h3>Vanilla SMP starter guide: building your first town on a Hytale vanilla survival server</h3>
             <p>
               A <strong>vanilla SMP</strong> is at its best when towns grow naturally. On a <strong>Hytale vanilla survival server</strong>, your first week sets the foundation for months of progress.
@@ -1856,7 +1894,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-choose-best-vanilla-server">
             <h3>Choosing the best Hytale vanilla server guide: builders vs explorers vs chill players</h3>
             <p>
               “Best” depends on your playstyle. The best <strong>Hytale vanilla server</strong> for builders is usually peaceful and long-term.
@@ -1883,7 +1921,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-choose-pure-vanilla">
             <h3>Hytale vanilla server guide: how to choose a truly “pure vanilla” survival experience</h3>
             <p>
               People search “<strong>hytale vanilla server</strong>” because they want the default survival loop, not a theme park.
@@ -1906,7 +1944,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-smp-long-term-community">
             <h3>Hytale SMP server guide: what to expect from a long-term survival multiplayer community</h3>
             <p>
               People searching “<strong>Hytale SMP server</strong>” want a social survival multiplayer world, not a competitive PvP arena.
@@ -1929,7 +1967,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-no-grief-enforcement">
             <h3>Hytale no grief server guide: what “no grief” should protect, and how servers enforce it</h3>
             <p>
               People search “<strong>hytale no grief server</strong>” because they want safety: their base, storage, farms, and town projects should survive when they log off.
@@ -1952,7 +1990,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-no-reset-why">
             <h3>Hytale no reset survival server guide: why persistent worlds are better for towns and builders</h3>
             <p>
               A “no reset” survival server means you can build for months or years without losing everything.
@@ -1975,7 +2013,7 @@
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up">
+          <article class="guide-card animate-fade-up" id="guide-builders">
             <h3>Hytale survival server for builders guide: towns, megabases, and calm vanilla SMP</h3>
             <p>
               Builders want a server where effort compounds. If you search “<strong>Hytale survival server for builders</strong>”, you want stable survival multiplayer, peaceful rules, and a community that respects projects.
@@ -2025,7 +2063,7 @@
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq1" hidden>
-              <p>No. We do not sell overpowered items, gameplay advantages or unfair kits.</p>
+              <p>No. We do not sell overpowered items, gameplay advantages, or unfair kits.</p>
             </div>
           </article>
 
@@ -2036,6 +2074,86 @@
             </button>
             <div class="faq-answer" id="faq2" hidden>
               <p>Our goal is a pure vanilla identity: calm Hytale vanilla survival focused on the core survival multiplayer loop.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+              <span class="faq-question-text">Is random PvP enabled in the open world?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq3" hidden>
+              <p>No. The main survival world is designed to be peaceful. Any combat events would be opt-in and clearly separated.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+              <span class="faq-question-text">Is griefing or stealing allowed?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq4" hidden>
+              <p>No. No grief means no stealing, no sabotage, and no destruction of other players’ builds or town projects.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+              <span class="faq-question-text">Will the Hytale world reset regularly?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq5" hidden>
+              <p>No planned resets. The default mindset is a long-term world where towns and builds gain history.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+              <span class="faq-question-text">How do I join the server when Hytale launches?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq6" hidden>
+              <p>Join our Discord first. When Hytale servers open, the official server address and connection instructions will be pinned in announcements.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq7">
+              <span class="faq-question-text">Do I need mods or special installs to play?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq7" hidden>
+              <p>No. The goal is a clean vanilla experience. Any required steps will be documented in Discord if needed.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq8">
+              <span class="faq-question-text">How are rules enforced?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq8" hidden>
+              <p>Through clear rules, staff moderation, and consistent handling of griefing, harassment, exploit abuse, and toxic behavior.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq9">
+              <span class="faq-question-text">Is the community LGBTQ+ friendly?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq9" hidden>
+              <p>Yes. We are inclusive and moderation is strict against harassment and slurs.</p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq10">
+              <span class="faq-question-text">Where can I ask questions or contact staff?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq10" hidden>
+              <p>Discord is the main hub for support and announcements. For business inquiries, use contact@peacefulvanilla.club.</p>
             </div>
           </article>
         </div>
@@ -2067,6 +2185,7 @@
             <li><a href="#server-tags" class="footer-link">Server tags</a></li>
             <li><a href="#pure-vanilla" class="footer-link">Pure vanilla</a></li>
             <li><a href="#how-to-join" class="footer-link">How to join</a></li>
+            <li><a href="#moderation" class="footer-link">Moderation</a></li>
             <li><a href="#guides" class="footer-link">Guides</a></li>
           </ul>
         </div>
@@ -2109,14 +2228,288 @@
   </button>
 </div>
 
+<!-- JSON-LD: Organization + Website + Guides + FAQ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Peaceful Vanilla Club",
-  "url": "https://hytale.peacefulvanilla.club/",
-  "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server created by the same team behind a long running Minecraft vanilla survival community.",
-  "sameAs": ["https://discord.gg/2d9wPbrpEU"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hytale.peacefulvanilla.club/#org",
+      "name": "Peaceful Vanilla Club",
+      "url": "https://hytale.peacefulvanilla.club/",
+      "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server created by the same team behind a long running Minecraft vanilla survival community.",
+      "email": "contact@peacefulvanilla.club",
+      "sameAs": ["https://discord.gg/2d9wPbrpEU"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hytale.peacefulvanilla.club/#website",
+      "url": "https://hytale.peacefulvanilla.club/",
+      "name": "Peaceful Vanilla Club - Hytale vanilla survival server",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://hytale.peacefulvanilla.club/#guides-list",
+      "name": "Hytale vanilla survival server guides",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-vanilla-survival-multiplayer",
+            "url": "https://hytale.peacefulvanilla.club/#guide-vanilla-survival-multiplayer",
+            "headline": "Pure vanilla Hytale server guide: what “vanilla survival multiplayer” really means",
+            "description": "What pure vanilla means in practice, and how to recognize real vanilla survival multiplayer in a long-term shared world.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-peaceful-hytale-survival",
+            "url": "https://hytale.peacefulvanilla.club/#guide-peaceful-hytale-survival",
+            "headline": "Peaceful Hytale survival server guide: no griefing, no random PvP, long-term towns",
+            "description": "What a peaceful survival server should guarantee: safe towns, no random PvP, and consistent moderation.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-not-pay-to-win",
+            "url": "https://hytale.peacefulvanilla.club/#guide-not-pay-to-win",
+            "headline": "Not pay to win Hytale server guide: how to spot fair vanilla SMP communities",
+            "description": "How to recognize a fair vanilla SMP server and avoid pay to win patterns that break survival progression.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-how-to-join-checklist",
+            "url": "https://hytale.peacefulvanilla.club/#guide-how-to-join-checklist",
+            "headline": "How to join a Hytale server guide: checklist for vanilla survival multiplayer",
+            "description": "A simple checklist for joining the right Hytale survival multiplayer community: rules, moderation, and reset policy.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-vanilla-smp-starter-town",
+            "url": "https://hytale.peacefulvanilla.club/#guide-vanilla-smp-starter-town",
+            "headline": "Vanilla SMP starter guide: building your first town on a Hytale vanilla survival server",
+            "description": "How to start strong in a shared world and build a town that scales over months in a long-term vanilla SMP.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-choose-best-vanilla-server",
+            "url": "https://hytale.peacefulvanilla.club/#guide-choose-best-vanilla-server",
+            "headline": "Choosing the best Hytale vanilla server guide: builders vs explorers vs chill players",
+            "description": "How to pick the right vanilla server based on playstyle: builders, explorers, and chill survival players.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-choose-pure-vanilla",
+            "url": "https://hytale.peacefulvanilla.club/#guide-choose-pure-vanilla",
+            "headline": "Hytale vanilla server guide: how to choose a truly “pure vanilla” survival experience",
+            "description": "Common fake-vanilla patterns and what to look for if you want real survival progression and exploration.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-smp-long-term-community",
+            "url": "https://hytale.peacefulvanilla.club/#guide-smp-long-term-community",
+            "headline": "Hytale SMP server guide: what to expect from a long-term survival multiplayer community",
+            "description": "What makes a good SMP: stable culture, clear rules, long-term towns, and consistent moderation.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-no-grief-enforcement",
+            "url": "https://hytale.peacefulvanilla.club/#guide-no-grief-enforcement",
+            "headline": "Hytale no grief server guide: what “no grief” should protect, and how servers enforce it",
+            "description": "What no-grief should cover: bases, storage, farms, town projects, and how enforcement keeps worlds safe.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-no-reset-why",
+            "url": "https://hytale.peacefulvanilla.club/#guide-no-reset-why",
+            "headline": "Hytale no reset survival server guide: why persistent worlds are better for towns and builders",
+            "description": "Why long-term worlds matter, what no-reset usually means, and the operational practices that support it.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Article",
+            "@id": "https://hytale.peacefulvanilla.club/#guide-builders",
+            "url": "https://hytale.peacefulvanilla.club/#guide-builders",
+            "headline": "Hytale survival server for builders guide: towns, megabases, and calm vanilla SMP",
+            "description": "What builders should prioritize: no grief enforcement, peaceful rules, and long-term stability for projects.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://hytale.peacefulvanilla.club/#website" },
+            "author": { "@id": "https://hytale.peacefulvanilla.club/#org" },
+            "publisher": { "@id": "https://hytale.peacefulvanilla.club/#org" }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hytale.peacefulvanilla.club/#faqpage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Peaceful Vanilla Club a pay to win Hytale server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We do not sell overpowered items, gameplay advantages, or unfair kits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a pure vanilla Hytale server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our goal is a pure vanilla identity focused on the core survival multiplayer loop: explore, gather, craft, build, and collaborate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is random PvP enabled in the open world?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The main survival world is designed to be peaceful. Any combat events would be opt-in and clearly separated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is griefing or stealing allowed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. No grief means no stealing, no sabotage, and no destruction of other players’ builds or town projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the Hytale world reset regularly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No planned resets. The default mindset is a long-term world where towns and builds gain history."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I join the server when Hytale launches?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Join our Discord first. When Hytale servers open, the official server address and connection instructions will be pinned in announcements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need mods or special installs to play?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The goal is a clean vanilla experience. Any required steps will be documented in Discord if needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are rules enforced?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through clear rules, staff moderation, and consistent handling of griefing, harassment, exploit abuse, and toxic behavior."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the community LGBTQ+ friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We are inclusive and moderation is strict against harassment and slurs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I ask questions or contact staff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discord is the main hub for support and announcements. For business inquiries, use contact@peacefulvanilla.club."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -2157,13 +2550,24 @@
   function initAccordions() {
     const questions = document.querySelectorAll(".faq-question");
     questions.forEach((btn) => {
+      const icon = btn.querySelector(".faq-toggle-icon");
+      const syncIcon = (expanded) => {
+        if (!icon) return;
+        icon.textContent = expanded ? "−" : "+";
+      };
+
+      syncIcon(false);
+
       btn.addEventListener("click", () => {
         const expanded = btn.getAttribute("aria-expanded") === "true";
         const answerId = btn.getAttribute("aria-controls");
         const answer = document.getElementById(answerId);
         if (!answer) return;
+
         btn.setAttribute("aria-expanded", expanded ? "false" : "true");
         answer.hidden = expanded;
+
+        syncIcon(!expanded);
       });
     });
   }
