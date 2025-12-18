@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Peaceful Vanilla Club - Hytale peaceful vanilla survival server</title>
+  <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale vanilla survival server, born from a long running Minecraft community. No pay to win, no griefing, no random PvP.">
+
+  <link rel="canonical" href="https://peacefulvanilla.club/hytale-server">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
+  <meta property="og:description" content="Cozy Hytale vanilla survival server without pay to win or griefing, created by the Peaceful Vanilla Club Minecraft community.">
+  <meta property="og:url" content="https://peacefulvanilla.club/hytale-server">
+  <meta property="og:image" content="https://peacefulvanilla.club/assets/img/hytale-hero-preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
+  <meta name="twitter:description" content="Cozy Hytale vanilla survival server without pay to win or griefing, backed by years of Minecraft experience.">
+  <meta name="twitter:image" content="https://peacefulvanilla.club/assets/img/hytale-hero-preview.png">
+
+  <!-- Google Fonts: Nunito Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <style>
+    :root {
+      --color-bg: #050509;
+      --color-bg-alt: #0b1020;
+      --color-hero-overlay: rgba(5,5,9,0.72);
+      --color-primary: #ff9b3c;
+      --color-primary-soft: rgba(255,155,60,0.16);
+      --color-text: #f5f5f7;
+      --color-text-soft: #d1d5db;
+      --color-muted: #9ca3af;
+      --color-border: #1f2933;
+      --color-card: #0b0f19;
+      --color-card-alt: #101728;
+      --color-pill-bg: rgba(15,118,110,0.12);
+      --color-pill-text: #a5f3fc;
+      --color-danger: #fb7185;
+
+      --font-base: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --radius-sm: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.25rem;
+      --radius-full: 999px;
+
+      --space-xs: 0.5rem;
+      --space-sm: 0.75rem;
+      --space-md: 1.25rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+
+      --shadow-soft: 0 18px 35px rgba(0,0,0,0.35);
+      --shadow-pill: 0 10px 30px rgba(0,0,0,0.45);
+
+      --content-width: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1b1f3c 0, #050509 52%);
+      color: var(--color-text);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 2.3vw, 2.3rem);
+      margin: 0 0 var(--space-xs);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--color-text-soft);
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.98rem;
+    }
+
+    /* Header and nav */
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(5,5,9,0.92), rgba(5,5,9,0.72));
+      border-bottom: 1px solid rgba(15,23,42,0.75);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem var(--space-md);
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 0.4rem;
+      overflow: hidden;
+      background: #020617;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+      flex-shrink: 0;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-soft);
+      transition: color 0.18s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      transition: width 0.18s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--color-text);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+      padding: 0.9rem 2.1rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s ease, box-shadow 0.18s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      line-height: 1.2;
+      min-height: 44px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffae5f, #ff9b3c);
+      color: #111827;
+      box-shadow: var(--shadow-pill);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: linear-gradient(135deg, #ffc76f, #ffb454);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-text-soft);
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+      border-color: var(--color-primary);
+      color: var(--color-text);
+      background: rgba(15,23,42,0.7);
+    }
+
+    .btn-icon {
+      width: 1.3rem;
+      height: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-icon i {
+      font-size: 0.9rem;
+    }
+
+    /* Mobile nav */
+
+    .nav-toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
+      background: rgba(15,23,42,0.9);
+      color: var(--color-text-soft);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--color-text-soft);
+      transition: transform 0.16s ease, opacity 0.16s ease;
+      position: relative;
+    }
+
+    .nav-toggle span::before {
+      position: absolute;
+      top: -5px;
+    }
+
+    .nav-toggle span::after {
+      position: absolute;
+      top: 5px;
+    }
+
+    .nav-toggle.is-open span {
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle.is-open span::before {
+      opacity: 0;
+    }
+
+    .nav-toggle.is-open span::after {
+      transform: rotate(-90deg);
+      top: 0;
+    }
+
+    .nav-drawer {
+      display: none;
+    }
+
+    /* Hero */
+
+    #hero {
+      position: relative;
+      padding: var(--space-xl) 0 var(--space-2xl);
+      background: radial-gradient(circle at top, rgba(55,65,106,0.8) 0, #050509 55%);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, var(--color-hero-overlay), rgba(5,5,9,0.96)),
+        radial-gradient(circle at top left, rgba(56,189,248,0.2), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(249,115,22,0.18), transparent 55%);
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .hero-left {
+      max-width: 38rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.7rem 0.2rem 0.25rem;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      margin-bottom: var(--space-sm);
+      font-size: 0.78rem;
+      color: var(--color-text-soft);
+    }
+
+    .eyebrow-pill {
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.16);
+      color: #6ee7b7;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 var(--space-sm);
+      font-weight: 800;
+    }
+
+    .hero-title span.highlight {
+      color: var(--color-primary);
+      text-shadow: 0 0 22px rgba(248,250,252,0.18);
+    }
+
+    .hero-subtitle {
+      margin: 0 0 var(--space-md);
+      color: var(--color-text-soft);
+      font-size: 0.98rem;
+      max-width: 32rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .badge {
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(75,85,99,0.9);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--color-text-soft);
+    }
+
+    .badge-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(55,65,81,0.9);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .join-card {
+      background: rgba(15,23,42,0.95);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      border: 1px solid rgba(148,163,184,0.6);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .join-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top right, rgba(248,250,252,0.08), transparent 55%);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .join-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: var(--space-sm);
+      position: relative;
+      z-index: 1;
+    }
+
+    .join-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-soft);
+    }
+
+    .join-chip {
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(22,163,74,0.18);
+      color: #bbf7d0;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .join-card ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .join-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem 0.85rem;
+      align-items: start;
+    }
+
+    .join-step-number {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.75);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+    .join-step-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .join-step-text {
+      grid-column: 2 / -1;
+      font-size: 0.78rem;
+      color: var(--color-text-soft);
+    }
+
+    .ip-tag {
+      margin-top: var(--space-sm);
+      border-radius: 0.6rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px dashed rgba(148,163,184,0.8);
+      padding: 0.5rem 0.7rem;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.6rem;
+      color: var(--color-text-soft);
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .ip-tag code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      padding: 0.16rem 0.45rem;
+      border-radius: 0.4rem;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 0.78rem;
+      color: var(--color-text);
+      word-break: break-all;
+      max-width: 100%;
+      display: inline-block;
+    }
+
+    .ip-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--color-primary);
+      cursor: pointer;
+      flex: 1 1 100%;
+      justify-content: flex-start;
+    }
+
+    .ip-copy-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    .hero-media {
+      background: radial-gradient(circle at top left, rgba(59,130,246,0.1), transparent 55%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55,65,81,0.95);
+      padding: 0.6rem;
+    }
+
+    .media-frame {
+      position: relative;
+      border-radius: calc(var(--radius-lg) - 0.2rem);
+      overflow: hidden;
+      background: #111827;
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .media-frame::before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 56.25%;
+      background-color: #111827;
+    }
+
+    .media-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .media-frame img.is-broken {
+      display: none;
+    }
+
+    .media-caption {
+      padding: 0.4rem 0.4rem 0;
+      font-size: 0.74rem;
+      color: var(--color-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+
+    .media-caption span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .pill-small {
+      padding: 0.14rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.9);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-soft);
+    }
+
+    /* Intro */
+
+    #what-is-pvc {
+      background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: flex-start;
+    }
+
+    .two-col-text p {
+      margin-top: 0;
+      margin-bottom: var(--space-sm);
+      color: var(--color-text-soft);
+      font-size: 0.96rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: var(--space-sm);
+    }
+
+    .pill {
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: var(--color-pill-bg);
+      color: var(--color-pill-text);
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pill svg {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    .mini-gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 0.5rem;
+    }
+
+    .mini-gallery-main {
+      grid-row: span 2;
+    }
+
+    .mini-gallery .media-frame {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.7);
+    }
+
+    /* Goals */
+
+    #goals {
+      background: #050509;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      border-bottom: 1px solid rgba(15,23,42,0.95);
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .principle-card {
+      background: var(--color-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem 0.85rem;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .principle-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 0.9rem;
+      background: radial-gradient(circle at 25% 20%, #fefce8, #f97316 40%, #7c2d12 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+      color: #111827;
+      flex-shrink: 0;
+    }
+
+    .principle-icon i {
+      font-size: 1.35rem;
+    }
+
+    .principle-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin: 0.7rem 0 0;
+    }
+
+    .principle-text {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .principle-tag {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.4rem;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+    }
+
+    /* Legacy stats (Minecraft) */
+
+    #stats {
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35) 0, #020617 65%);
+      border-top: 1px solid rgba(15,23,42,0.9);
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .stat-card {
+      background: rgba(15,23,42,0.92);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148,163,184,0.8);
+      padding: var(--space-md);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.8);
+    }
+
+    .stat-number {
+      margin: 0;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-label {
+      margin: 0.1rem 0 0.4rem;
+      font-size: 0.86rem;
+      color: var(--color-text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stat-text {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .stats-note {
+      margin-top: var(--space-md);
+      font-size: 0.82rem;
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* How to join */
+
+    #how-to-join {
+      background: #050509;
+    }
+
+    .join-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: flex-start;
+    }
+
+    .step-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .step-item {
+      background: var(--color-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.7rem 0.9rem;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.98);
+      border: 1px solid rgba(148,163,184,0.85);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .step-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-text {
+      grid-column: 2 / -1;
+      margin: 0.1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .join-extra {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      margin-top: var(--space-md);
+    }
+
+    .mini-card {
+      background: var(--color-card-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      font-size: 0.88rem;
+      color: var(--color-text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .mini-card ul {
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+
+    .mini-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* FAQ */
+
+    #faq {
+      background: radial-gradient(circle at top, #0f172a 0, #020617 60%);
+    }
+
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: rgba(5,5,9,0.95);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      color: var(--color-text);
+      text-align: left;
+    }
+
+    .faq-question-text {
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .faq-toggle-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+    }
+
+    .faq-question[aria-expanded="true"] .faq-toggle-icon {
+      transform: rotate(90deg);
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+    }
+
+    .faq-answer {
+      padding: 0 1rem 0.9rem;
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .faq-answer p {
+      margin: 0.3rem 0;
+    }
+
+    /* Footer */
+
+    footer.site-footer {
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      padding: var(--space-xl) 0 var(--space-md);
+      font-size: 0.86rem;
+      color: var(--color-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-col h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.96rem;
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    .footer-col p {
+      margin: 0 0 0.35rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-link {
+      color: var(--color-muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-link:hover {
+      color: var(--color-text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-top: 1px solid rgba(31,41,55,0.85);
+      padding-top: var(--space-sm);
+      margin-top: var(--space-sm);
+    }
+
+    .footer-legal {
+      max-width: 34rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .footer-legal i {
+      margin-top: 0.08rem;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(148,163,184,0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-mascots {
+      margin-top: var(--space-md);
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .mascot {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.9rem;
+      background: radial-gradient(circle at 30% 20%, #f9a8d4, #7c3aed);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.8);
+    }
+
+    .mascot.mascot-2 {
+      background: radial-gradient(circle at 30% 20%, #fbbf24, #f97316);
+    }
+
+    .mascot.mascot-3 {
+      background: radial-gradient(circle at 30% 20%, #6ee7b7, #14b8a6);
+    }
+
+    .mascot svg {
+      width: 22px;
+      height: 22px;
+      color: #020617;
+    }
+
+    /* Back to top button */
+
+    #back-to-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.9);
+      background: rgba(5,5,9,0.96);
+      color: var(--color-text-soft);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.85);
+      z-index: 50;
+    }
+
+    #back-to-top svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    #back-to-top.is-visible {
+      display: inline-flex;
+    }
+
+    /* Scroll animations */
+
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px), (max-height: 600px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: 0;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .join-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav.main-nav {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-drawer {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(5,5,9,0.98);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(15,23,42,0.9);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: max-height 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+        z-index: 35;
+      }
+
+      .nav-drawer-inner {
+        max-width: var(--content-width);
+        margin: 0 auto;
+        padding: 0.75rem var(--space-md) var(--space-md);
+      }
+
+      .nav-drawer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .nav-drawer ul a {
+        display: block;
+        padding: 0.4rem 0;
+        font-size: 0.88rem;
+        color: var(--color-text-soft);
+      }
+
+      .nav-drawer ul a:hover {
+        color: var(--color-text);
+      }
+
+      .nav-drawer .nav-drawer-cta {
+        margin-top: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+      }
+
+      .nav-drawer .nav-drawer-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      body.nav-open .nav-drawer {
+        max-height: 80vh;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.nav-open {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: var(--space-xl) 0;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      #back-to-top {
+        right: 0.9rem;
+        bottom: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#hero">
+        <div class="brand-logo" aria-hidden="true">
+          <img src="logo.png" alt="Peaceful Vanilla Club logo">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Peaceful Vanilla Club</span>
+          <span class="brand-tagline">Hytale vanilla survival server</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#what-is-pvc">About</a></li>
+          <li><a href="#goals">Our goals</a></li>
+          <li><a href="#stats">Legacy</a></li>
+          <li><a href="#how-to-join">How to join</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#how-to-join" class="btn btn-primary">
+            <span>Join Hytale server</span>
+            <span class="btn-icon" aria-hidden="true">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="nav-drawer" aria-hidden="true">
+      <div class="nav-drawer-inner">
+        <ul>
+          <li><a href="#what-is-pvc">About</a></li>
+          <li><a href="#goals">Our goals</a></li>
+          <li><a href="#stats">Legacy</a></li>
+          <li><a href="#how-to-join">How to join</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-drawer-cta">
+          <a href="#how-to-join" class="btn btn-primary">
+            Join Hytale server
+            <span class="btn-icon" aria-hidden="true">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </span>
+          </a>
+          <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <span class="btn-icon" aria-hidden="true">
+              <i class="fa-brands fa-discord"></i>
+            </span>
+            Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left animate-fade-up">
+            <div class="eyebrow">
+              <span class="eyebrow-pill">From Minecraft to Hytale</span>
+              <span>Peaceful vanilla survival since 2019</span>
+            </div>
+            <h1 class="hero-title">
+              The peaceful <span class="highlight">Hytale vanilla survival</span> server built by a long running community.
+            </h1>
+            <p class="hero-subtitle">
+              Peaceful Vanilla Club started as a Minecraft survival server and is now bringing the same no-PvP, no-grief, no pay to win philosophy to Hytale. One shared world, relaxed survival and a friendly community.
+            </p>
+            <div class="hero-badges">
+              <span class="badge">
+                <span class="badge-icon" aria-hidden="true">❤</span>
+                Inclusive and LGBTQ+ friendly
+              </span>
+              <span class="badge">
+                <span class="badge-icon" aria-hidden="true">🛡</span>
+                No grief, no random PvP
+              </span>
+              <span class="badge">
+                <span class="badge-icon" aria-hidden="true">⏳</span>
+                No planned world resets
+              </span>
+            </div>
+            <div class="hero-actions">
+              <a href="#how-to-join" class="btn btn-primary">
+                <span>How to join on Hytale</span>
+                <span class="btn-icon" aria-hidden="true">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                </span>
+              </a>
+              <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <span class="btn-icon" aria-hidden="true">
+                  <i class="fa-brands fa-discord"></i>
+                </span>
+                Join our Discord
+              </a>
+            </div>
+            <p class="hero-note">
+              The Hytale world will start fresh, but it is backed by years of experience running Peaceful Vanilla Club on Minecraft.
+            </p>
+          </div>
+
+          <div class="hero-right animate-fade-up">
+            <div class="join-card">
+              <div class="join-card-header">
+                <span class="join-card-title">Get ready in 3 steps</span>
+                <span class="join-chip">Hytale launch</span>
+              </div>
+              <ol>
+                <li class="join-step">
+                  <div class="join-step-number">1</div>
+                  <div>
+                    <div class="join-step-title">Join the Discord community</div>
+                  </div>
+                  <p class="join-step-text">
+                    Our Discord server is the hub for announcements, rules and support. Join now to get notified when the Hytale server goes live.
+                  </p>
+                </li>
+                <li class="join-step">
+                  <div class="join-step-number">2</div>
+                  <div>
+                    <div class="join-step-title">Read the rules and info</div>
+                  </div>
+                  <p class="join-step-text">
+                    The full rules and detailed info about the Hytale world will be published in the Discord. Reading them is required before playing.
+                  </p>
+                </li>
+                <li class="join-step">
+                  <div class="join-step-number">3</div>
+                  <div>
+                    <div class="join-step-title">Add the server in the Hytale client</div>
+                  </div>
+                  <p class="join-step-text">
+                    When Hytale servers open, you will find the official server address and connection instructions pinned in the Discord announcements.
+                  </p>
+                </li>
+              </ol>
+              <div class="ip-tag">
+                <span>Discord server address</span>
+                <span class="ip-copy" id="ip-copy">
+                  <code id="server-ip">https://discord.gg/2d9wPbrpEU</code>
+                  <span class="ip-copy-icon" aria-hidden="true">
+                    <i class="fa-regular fa-copy"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div class="hero-media">
+              <div class="media-frame">
+                <!-- Replace src with your actual Hytale hero image when available -->
+                <img src="assets/img/hytale-hero.webp" alt="Concept view of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
+              </div>
+              <div class="media-caption">
+                <span>
+                  <span class="pill-small">Hytale survival</span>
+                  One shared world, peaceful survival.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is PVC -->
+    <section id="what-is-pvc">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>What is Peaceful Vanilla Club in Hytale</h2>
+          <p>
+            Peaceful Vanilla Club is a peaceful vanilla survival community that has been running on Minecraft for years and is now preparing a shared survival world for Hytale.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <div class="two-col-text animate-fade-up">
+            <p>
+              On Hytale, Peaceful Vanilla Club will be a single shared survival world with no random PvP and no griefing. The focus is on exploration, building, long term towns and cooperative projects rather than minigames or fast seasons.
+            </p>
+            <p>
+              There are no pay to win ranks, no overpowered donor kits and no aggressive monetization. We keep the vanilla sandbox feeling intact and build a safe environment where players of all ages can relax and enjoy survival.
+            </p>
+            <p>
+              The community is inclusive and LGBTQ+ friendly. Moderation is strict against harassment, slurs and exploit abuse. Our goal is to offer a space that feels calm, cozy and reliable, whether you log in a few evenings per week or every day.
+            </p>
+            <div class="pill-row">
+              <span class="pill">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M10 3.2C6.9.1 1.6 2.3 1.6 6.7c0 3.2 2.9 5.8 7.3 9.7l1.1 1 1.1-1c4.4-3.9 7.3-6.5 7.3-9.7 0-4.4-5.3-6.6-8.4-3.5z" fill="currentColor"/>
+                </svg>
+                Friendly and LGBTQ+ inclusive
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M4 6h12v2H4zm0 4h7v2H4zm0 4h4v2H4z" fill="currentColor"/>
+                </svg>
+                No pay to win or unfair advantages
+              </span>
+              <span class="pill">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M4 9.5 10 4l6 5.5V16H4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                  <path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+                One persistent shared world
+              </span>
+            </div>
+          </div>
+
+          <div class="animate-fade-up">
+            <div class="mini-gallery">
+              <figure class="media-frame mini-gallery-main">
+                <img src="assets/img/hytale-village.webp" alt="Concept of a player village on the Peaceful Vanilla Club Hytale server" loading="lazy">
+              </figure>
+              <figure class="media-frame">
+                <img src="assets/img/hytale-forest.webp" alt="Forest landscape in a Hytale survival world" loading="lazy">
+              </figure>
+              <figure class="media-frame">
+                <img src="assets/img/hytale-town.webp" alt="Town center for the Hytale world community" loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our goals -->
+    <section id="goals">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Our goals</h2>
+          <p>
+            These are the core goals that guide how we run Peaceful Vanilla Club on Hytale. They are the same values that kept our Minecraft survival worlds alive for years.
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-hand-peace"></i>
+            </div>
+            <h3 class="principle-title">No random PvP</h3>
+            <p class="principle-text">
+              PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated. For everyday play you can explore and build without stress.
+            </p>
+            <span class="principle-tag">Stress free</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3 class="principle-title">No pay to win</h3>
+            <p class="principle-text">
+              We do not sell power. No overpowered donor kits, boosts or shortcuts that break the vanilla survival loop. Any future donations will support hosting costs and cosmetic ideas that do not affect gameplay balance.
+            </p>
+            <span class="principle-tag">Fairness</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-route"></i>
+            </div>
+            <h3 class="principle-title">No fast travel spam</h3>
+            <p class="principle-text">
+              There are no instant warps or random teleport commands that break the scale of the world. The world feels big and your builds feel grounded.
+            </p>
+            <span class="principle-tag">Exploration first</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <h3 class="principle-title">A peaceful place</h3>
+            <p class="principle-text">
+              We design the server so that you can log in, relax, make progress on your base or town and log out without drama or pressure. Chat, voice and events follow the same calm, respectful tone.
+            </p>
+            <span class="principle-tag">Mood</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="principle-title">Community-first decisions</h3>
+            <p class="principle-text">
+              Changes and new features are introduced slowly and discussed with the community. Stability and fairness come before hype. We prefer fewer systems that work well over a long list of unfinished features.
+            </p>
+            <span class="principle-tag">Governance</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true">
+              <i class="fa-solid fa-infinity"></i>
+            </div>
+            <h3 class="principle-title">Long term worlds</h3>
+            <p class="principle-text">
+              Our goal is to avoid routine world resets. When new Hytale content lands, we look for ways to integrate it without wiping everything, so that towns and landscapes can gain history over time.
+            </p>
+            <span class="principle-tag">Persistence</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legacy stats (Minecraft) -->
+    <section id="stats">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Our Minecraft legacy in numbers</h2>
+          <p>
+            Peaceful Vanilla Club is new to Hytale, but not new to running survival worlds. These numbers come from our long running Minecraft server and show the kind of stability and commitment you can expect.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">2019</p>
+            <p class="stat-label">Online since</p>
+            <p class="stat-text">
+              Our Minecraft survival server has been online since 2019, surviving major updates, technical changes and thousands of player projects without losing its core identity.
+            </p>
+          </article>
+
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">100k+</p>
+            <p class="stat-label">Unique players</p>
+            <p class="stat-text">
+              Over one hundred thousand players have joined Peaceful Vanilla Club on Minecraft. Many stayed for months or years, building towns, megabases and shared infrastructure.
+            </p>
+          </article>
+
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">24/7</p>
+            <p class="stat-label">Monitored uptime</p>
+            <p class="stat-text">
+              We already run dedicated infrastructure, monitoring and backups for the Minecraft server. The same level of care will be applied to the Hytale world when it launches.
+            </p>
+          </article>
+
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">Daily</p>
+            <p class="stat-label">Backups</p>
+            <p class="stat-text">
+              Automated backups and logs are part of our daily operations. Your builds and progress are treated seriously, not as disposable content for a short season.
+            </p>
+          </article>
+        </div>
+
+        <p class="stats-note">
+          The Hytale world will start fresh, but it is backed by the same team, tools and philosophy that kept Peaceful Vanilla Club alive on Minecraft for years.
+        </p>
+      </div>
+    </section>
+
+    <!-- How to join -->
+    <section id="how-to-join">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>How to join the Hytale server</h2>
+          <p>
+            Joining Peaceful Vanilla Club in Hytale will be simple. You will not need an application or paywall, but you will need to join the Discord and read the rules before connecting.
+          </p>
+        </div>
+
+        <div class="join-layout">
+          <div class="animate-fade-up">
+            <ol class="step-list">
+              <li class="step-item">
+                <div class="step-number">1</div>
+                <div>
+                  <h3 class="step-title">Join the Discord server</h3>
+                </div>
+                <p class="step-text">
+                  Discord is where we coordinate everything. Join the Peaceful Vanilla Club Discord using the link below and verify your account if required. This is where we will post the Hytale launch date and server address.
+                </p>
+              </li>
+
+              <li class="step-item">
+                <div class="step-number">2</div>
+                <div>
+                  <h3 class="step-title">Read the full rules</h3>
+                </div>
+                <p class="step-text">
+                  The complete rules will be published in a dedicated Discord channel. Reading them is required before playing. They explain how we handle griefing, chat behaviour, claims and community projects.
+                </p>
+              </li>
+
+              <li class="step-item">
+                <div class="step-number">3</div>
+                <div>
+                  <h3 class="step-title">Add the server when Hytale launches</h3>
+                </div>
+                <p class="step-text">
+                  When Hytale servers open, you will find the server address, recommended client settings and any technical notes pinned in the announcements channel. Add the server in the Hytale multiplayer menu and join the world.
+                </p>
+              </li>
+            </ol>
+            <p class="join-extra">
+              If you are already part of the Minecraft server, you will feel at home. If you are new to Peaceful Vanilla Club, the Discord is the best place to ask questions and understand how the Hytale world will work.
+            </p>
+          </div>
+
+          <div class="animate-fade-up">
+            <div class="mini-card">
+              <h3>Basic rules that keep things peaceful</h3>
+              <ul>
+                <li>No griefing or stealing from other players.</li>
+                <li>No unsolicited PvP, traps or kill machines targeting others.</li>
+                <li>No hacks, exploits or automation that breaks the survival loop.</li>
+                <li>No harassment, slurs or toxic behaviour in chat or voice.</li>
+                <li>Respect public builds, towns and infrastructure projects.</li>
+              </ul>
+              <p style="margin-top:0.6rem;">
+                The full rules are available in our Discord and you are required to read them before playing. The short version is simple: play fair, be kind and remember that you share the world with others.
+              </p>
+              <p style="margin-top:0.6rem;">
+                <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">
+                  Open the Discord rules channel
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Frequently asked questions about our Hytale server</h2>
+          <p>
+            A few quick answers to common questions. For more details, you can always ask directly in the Discord server.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+              <span class="faq-question-text">Is Peaceful Vanilla Club a pay to win Hytale server?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq1" hidden>
+              <p>
+                No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and purely cosmetic things that do not affect survival balance.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+              <span class="faq-question-text">Do I need an application or whitelist to join the Hytale server?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq2" hidden>
+              <p>
+                You will not need a classic written application. Joining the Discord and reading the rules will be enough for most players. Some areas, plots or staff roles might require extra steps, but the main survival world will be open to everyone who follows the rules.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+              <span class="faq-question-text">Is Peaceful Vanilla Club official or affiliated with Hytale?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq3" hidden>
+              <p>
+                No. Peaceful Vanilla Club is an independent fan project. We are not affiliated with or endorsed by Hypixel Studios or Riot Games. We respect their terms and guidelines and clearly separate our community identity from the official game.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+              <span class="faq-question-text">Will there be multiple worlds on the Hytale server?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq4" hidden>
+              <p>
+                Our plan is to run one main shared survival world at launch. We prefer one strong, active map instead of many half-empty worlds. In the future we might experiment with side worlds or events, but the core experience will stay focused on a single persistent world.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+              <span class="faq-question-text">What happens to the existing Minecraft server?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq5" hidden>
+              <p>
+                The Minecraft server remains an active and important part of Peaceful Vanilla Club. The Hytale world is an additional project, not a replacement. Many players will likely enjoy both games and both worlds, and we will keep them clearly separated and supported.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item animate-fade-up">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+              <span class="faq-question-text">How can I report griefing or problems on the Hytale server?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq6" hidden>
+              <p>
+                The fastest way will be to open a ticket or ping staff in the Discord server. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so that grief can be rolled back and problematic players can be identified and removed.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="discord">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Peaceful Vanilla Club</h3>
+          <p>
+            A peaceful vanilla survival community for sandbox games, born on Minecraft in 2019 and now preparing a shared survival world for Hytale.
+          </p>
+          <p>
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+            &nbsp;Discord:
+            <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">
+              discord.gg/2d9wPbrpEU
+            </a>
+          </p>
+          <p>
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            &nbsp;Business contact:
+            <a href="mailto:contact@peacefulvanilla.club" class="footer-link">contact@peacefulvanilla.club</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Hytale server</h3>
+          <ul>
+            <li><a href="#what-is-pvc" class="footer-link">About the Hytale server</a></li>
+            <li><a href="#goals" class="footer-link">Our goals and philosophy</a></li>
+            <li><a href="#stats" class="footer-link">Minecraft legacy</a></li>
+            <li><a href="#how-to-join" class="footer-link">How to join guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Discord server</a></li>
+            <li><a href="#faq" class="footer-link">FAQ and help</a></li>
+            <li><a href="#" class="footer-link">Hytale rules (Discord)</a></li>
+            <li><a href="#" class="footer-link">Guides and wiki (coming soon)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Other servers</h3>
+          <p>
+            Peaceful Vanilla Club also runs a long standing vanilla survival server for Minecraft, with its own worlds and community projects.
+          </p>
+          <ul>
+            <li><a href="#" class="footer-link"><i class="fa-solid fa-cube" aria-hidden="true"></i>&nbsp;Learn more about the Minecraft server</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <i class="fa-regular fa-copyright" aria-hidden="true"></i>
+          <small>
+            2019 - 2025 Peaceful Vanilla Club. All rights reserved. Peaceful Vanilla Club is an independent fan project and is not affiliated with or endorsed by
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            Hypixel Studios, Riot Games, Mojang or Microsoft. Hytale is a trademark of Hypixel Studios. All other trademarks are the property of their respective owners.
+          </small>
+        </div>
+        <div>
+          <div class="footer-social">
+            <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+          </div>
+          <div class="footer-mascots" aria-hidden="true">
+            <div class="mascot mascot-1">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="7" fill="#f9fafb"/>
+                <circle cx="10" cy="11" r="2.2" fill="#0f172a"/>
+                <circle cx="10.7" cy="10.4" r="0.6" fill="#f9fafb"/>
+              </svg>
+            </div>
+            <div class="mascot mascot-2">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="6" y="6" width="12" height="12" rx="3" fill="#f9fafb"/>
+                <path d="M9 13.5c.5.5 1.2.9 2 .9s1.5-.4 2-.9" stroke="#0f172a" stroke-width="1.3" stroke-linecap="round"/>
+                <circle cx="9" cy="11" r="1" fill="#0f172a"/>
+                <circle cx="15" cy="11" r="1" fill="#0f172a"/>
+              </svg>
+            </div>
+            <div class="mascot mascot-3">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="5" y="8" width="14" height="9" rx="2" fill="#f9fafb"/>
+                <path d="M7 10h10v3H7z" fill="#0f172a"/>
+                <path d="M9 16h6" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 20 20" fill="none">
+      <path d="M10 4 4 10h3v6h6v-6h3z" fill="currentColor"/>
+    </svg>
+  </button>
+</div>
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Peaceful Vanilla Club",
+  "url": "https://peacefulvanilla.club/hytale-server",
+  "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server created by the same team behind a long running Minecraft survival community.",
+  "sameAs": [
+    "https://discord.gg/2d9wPbrpEU"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Peaceful Vanilla Club a pay to win Hytale server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and purely cosmetic things that do not affect survival balance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an application or whitelist to join the Hytale server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will not need a classic written application. Joining the Discord and reading the rules will be enough for most players. Some areas, plots or staff roles might require extra steps, but the main survival world will be open to everyone who follows the rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Peaceful Vanilla Club official or affiliated with Hytale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Peaceful Vanilla Club is an independent fan project. We are not affiliated with or endorsed by Hypixel Studios or Riot Games. We respect their terms and guidelines and clearly separate our community identity from the official game."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will there be multiple worlds on the Hytale server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our plan is to run one main shared survival world at launch. We prefer one strong, active map instead of many half-empty worlds. In the future we might experiment with side worlds or events, but the core experience will stay focused on a single persistent world."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the existing Minecraft server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Minecraft server remains an active and important part of Peaceful Vanilla Club. The Hytale world is an additional project, not a replacement. Many players will likely enjoy both games and both worlds, and we will keep them clearly separated and supported."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I report griefing or problems on the Hytale server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fastest way will be to open a ticket or ping staff in the Discord server. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so that grief can be rolled back and problematic players can be identified and removed."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="module">
+  const navToggle = document.querySelector(".nav-toggle");
+  const navDrawer = document.querySelector(".nav-drawer");
+  const body = document.body;
+
+  if (navToggle && navDrawer) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navToggle.classList.toggle("is-open");
+      body.classList.toggle("nav-open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      navDrawer.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    });
+
+    // Close when clicking a link inside the drawer
+    navDrawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        body.classList.remove("nav-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navDrawer.setAttribute("aria-hidden", "true");
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (event) => {
+      if (!body.classList.contains("nav-open")) return;
+      const clickInside = navDrawer.contains(event.target) || navToggle.contains(event.target);
+      if (!clickInside) {
+        body.classList.remove("nav-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navDrawer.setAttribute("aria-hidden", "true");
+      }
+    });
+  }
+
+  // FAQ accordions
+  function initAccordions() {
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        const answerId = btn.getAttribute("aria-controls");
+        const answer = document.getElementById(answerId);
+        if (!answer) return;
+
+        btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+        answer.hidden = expanded;
+      });
+    });
+  }
+
+  // Scroll animations
+  function initScrollAnimations() {
+    const animated = document.querySelectorAll(".animate-fade-up");
+    if (!("IntersectionObserver" in window) || animated.length === 0) {
+      animated.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.16
+      }
+    );
+
+    animated.forEach((el) => observer.observe(el));
+  }
+
+  // Back to top button
+  function initBackToTop() {
+    const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY || window.pageYOffset;
+      if (y > 320) {
+        btn.classList.add("is-visible");
+      } else {
+        btn.classList.remove("is-visible");
+      }
+    });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Media placeholders (grey fallback)
+  function initMediaPlaceholders() {
+    const frames = document.querySelectorAll(".media-frame img");
+    frames.forEach((img) => {
+      img.addEventListener("load", () => {
+        img.classList.add("is-loaded");
+      });
+
+      img.addEventListener("error", () => {
+        img.classList.add("is-broken");
+      });
+
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add("is-loaded");
+      }
+    });
+  }
+
+  // IP copy helper
+  function initIpCopy() {
+    const wrapper = document.getElementById("ip-copy");
+    const ipCode = document.getElementById("server-ip");
+    if (!wrapper || !ipCode) return;
+
+    wrapper.addEventListener("click", async () => {
+      const text = ipCode.textContent.trim();
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        }
+        wrapper.classList.add("copied");
+        wrapper.style.color = "#bbf7d0";
+        setTimeout(() => {
+          wrapper.classList.remove("copied");
+          wrapper.style.color = "";
+        }, 1800);
+      } catch (err) {
+        console.warn("Could not copy server IP", err);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initAccordions();
+    initScrollAnimations();
+    initBackToTop();
+    initMediaPlaceholders();
+    initIpCopy();
+  });
+</script>
+</body>
+</html>
