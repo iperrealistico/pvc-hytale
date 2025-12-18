@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Peaceful Vanilla Club - Hytale vanilla survival server</title>
   <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale vanilla survival server. Pure vanilla SMP vibes, no pay to win, no griefing, no random PvP. Built by a long running Minecraft community since 2019.">
-
   <link rel="canonical" href="https://hytale.peacefulvanilla.club/">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
   <meta property="og:description" content="Cozy Hytale vanilla survival server without pay to win or griefing. Pure vanilla SMP with a long-term world and a friendly community.">
   <meta property="og:url" content="https://hytale.peacefulvanilla.club/">
   <meta property="og:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
   <meta name="twitter:description" content="Cozy Hytale vanilla survival server without pay to win or griefing. Pure vanilla SMP with a long-term world.">
   <meta name="twitter:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
-  <!-- Google Fonts: Nunito Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png">
 
   <style>
@@ -48,7 +40,6 @@
       --color-card-alt: #101728;
       --color-pill-bg: rgba(15,118,110,0.12);
       --color-pill-text: #a5f3fc;
-      --color-danger: #fb7185;
 
       --font-base: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -68,6 +59,10 @@
       --shadow-pill: 0 10px 30px rgba(0,0,0,0.45);
 
       --content-width: 1140px;
+
+      /* teaser height for the “faded continuation” */
+      --guide-teaser-height: 5.6rem;
+      --guide-fade-height: 3.2rem;
     }
 
     * { box-sizing: border-box; }
@@ -83,7 +78,6 @@
     }
 
     img { max-width: 100%; height: auto; display: block; }
-
     a { color: var(--color-primary); text-decoration: none; }
     a:hover, a:focus { text-decoration: none; }
     .footer-link:hover { text-decoration: underline; }
@@ -122,7 +116,6 @@
       font-size: 0.98rem;
     }
 
-    /* Header and nav */
     header.site-header {
       position: sticky;
       top: 0;
@@ -139,12 +132,14 @@
       padding: 0.4rem var(--space-md);
       max-width: var(--content-width);
       margin: 0 auto;
+      gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      min-width: 220px;
     }
 
     .brand-logo {
@@ -160,11 +155,7 @@
       flex-shrink: 0;
     }
 
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
 
     .brand-text {
       display: flex;
@@ -178,60 +169,39 @@
       font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--color-text);
     }
 
-    .brand-tagline {
-      font-size: 0.9rem;
-      color: var(--color-muted);
-    }
+    .brand-tagline { font-size: 0.9rem; color: var(--color-muted); }
 
     nav.main-nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      justify-content: flex-end;
+      flex: 1 1 auto;
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-text-soft);
-      transition: color 0.18s ease;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.35rem;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--color-primary);
-      transition: width 0.18s ease;
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after { width: 100%; }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--color-text); }
 
     .nav-cta {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      justify-content: flex-end;
+      gap: 1rem;
+      width: 100%;
     }
+
+    .nav-discord-link {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .nav-discord-link:hover,
+    .nav-discord-link:focus-visible { color: var(--color-text); }
 
     .btn {
       border-radius: var(--radius-full);
@@ -266,30 +236,9 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.6);
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--color-text-soft);
-      border-color: rgba(148,163,184,0.7);
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus-visible {
-      border-color: var(--color-primary);
-      color: var(--color-text);
-      background: rgba(15,23,42,0.7);
-    }
-
-    .btn-icon {
-      width: 1.3rem;
-      height: 1.3rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    .btn-icon { width: 1.3rem; height: 1.3rem; display: inline-flex; align-items: center; justify-content: center; }
     .btn-icon i { font-size: 0.9rem; }
 
-    /* Mobile nav */
     .nav-toggle {
       display: none;
       width: 36px;
@@ -525,7 +474,6 @@
     }
 
     .join-step-title { font-size: 0.85rem; font-weight: 600; }
-
     .join-step-text {
       grid-column: 2 / -1;
       font-size: 0.78rem;
@@ -620,12 +568,6 @@
       gap: 0.4rem;
     }
 
-    .media-caption span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
     .pill-small {
       padding: 0.14rem 0.45rem;
       border-radius: 999px;
@@ -637,7 +579,6 @@
       color: var(--color-text-soft);
     }
 
-    /* Intro */
     #what-is-pvc { background: radial-gradient(circle at top, #0f172a 0, #050509 70%); }
 
     .two-col {
@@ -688,7 +629,6 @@
       box-shadow: 0 14px 32px rgba(0,0,0,0.7);
     }
 
-    /* Server tags section (chips + SEO-friendly details) */
     #server-tags {
       background: #050509;
       border-top: 1px solid rgba(15,23,42,0.95);
@@ -774,7 +714,6 @@
     .tag-body p { margin: 0.75rem 0 0; }
     .tag-body strong { color: var(--color-text); }
 
-    /* Pure vanilla section */
     #pure-vanilla {
       background: radial-gradient(circle at top, #0f172a 0, #020617 60%);
     }
@@ -803,7 +742,6 @@
 
     .pure-vanilla-wrap li { margin-bottom: 0.35rem; }
 
-    /* Goals */
     #goals {
       background: #050509;
       border-top: 1px solid rgba(15,23,42,0.95);
@@ -867,7 +805,6 @@
       color: var(--color-muted);
     }
 
-    /* Legacy stats */
     #stats {
       background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35) 0, #020617 65%);
       border-top: 1px solid rgba(15,23,42,0.9);
@@ -904,7 +841,6 @@
     }
 
     .stat-text { margin: 0; font-size: 0.9rem; color: var(--color-muted); }
-
     .stats-note {
       margin-top: var(--space-md);
       font-size: 0.82rem;
@@ -912,7 +848,6 @@
       text-align: center;
     }
 
-    /* How to join */
     #how-to-join { background: #050509; }
 
     .join-layout {
@@ -968,11 +903,7 @@
       color: var(--color-text-soft);
     }
 
-    .join-extra {
-      font-size: 0.88rem;
-      color: var(--color-muted);
-      margin-top: var(--space-md);
-    }
+    .join-extra { font-size: 0.88rem; color: var(--color-muted); margin-top: var(--space-md); }
 
     .mini-card {
       background: var(--color-card-alt);
@@ -984,17 +915,11 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .mini-card h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
+    .mini-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 700; }
     .mini-card ul { padding-left: 1.1rem; margin: 0; }
     .mini-card li { margin-bottom: 0.35rem; }
 
-    /* Guides section */
+    /* Guides */
     #guides {
       background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
       border-top: 1px solid rgba(15,23,42,0.95);
@@ -1005,6 +930,8 @@
       display: flex;
       gap: var(--space-md);
       overflow-x: auto;
+      overflow-y: hidden;            /* fix scrollbar verticale */
+      align-items: flex-start;        /* fix “tutte le card si allungano” */
       padding: 0.25rem 0 0.9rem;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -1045,42 +972,34 @@
       font-size: 0.95rem;
     }
 
+    /* Read more as small grey italic text */
     .read-more {
-      margin-top: 0.9rem;
-      width: 100%;
-      background: rgba(15,23,42,0.92);
-      color: var(--color-text);
-      border: 1px solid rgba(148,163,184,0.7);
-      border-radius: var(--radius-full);
-      padding: 0.75rem 1rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      margin-top: 0.5rem;
+      background: transparent;
+      border: 0;
+      padding: 0.25rem 0;
+      color: rgba(156,163,175,0.9);
+      font-size: 0.78rem;
+      font-style: italic;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      transition: transform 0.12s ease, border-color 0.16s ease, background-color 0.16s ease;
-      min-height: 44px;
+      gap: 0.35rem;
+      user-select: none;
     }
 
     .read-more:hover,
-    .read-more:focus-visible {
-      border-color: var(--color-primary);
-      background: rgba(15,23,42,0.98);
-      transform: translateY(-1px);
-    }
+    .read-more:focus-visible { color: rgba(209,213,219,0.95); text-decoration: underline; }
 
     .read-more .chev {
-      width: 28px;
-      height: 28px;
+      width: 18px;
+      height: 18px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.7);
+      border: 1px solid rgba(148,163,184,0.5);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-muted);
+      color: rgba(156,163,175,0.9);
       transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
       flex-shrink: 0;
     }
@@ -1089,18 +1008,36 @@
       transform: rotate(180deg);
       background: var(--color-primary-soft);
       color: var(--color-primary);
+      border-color: rgba(255,155,60,0.35);
     }
 
+    /* Teaser with fade gradient */
     .guide-more {
-      height: 0;
       overflow: hidden;
-      margin-top: 0.85rem;
+      margin-top: 0.75rem;
       border-top: 1px solid rgba(31,41,55,0.85);
-      padding-top: 0;
+      padding-top: 0.85rem;
+
+      height: var(--guide-teaser-height);
+      position: relative;
     }
+
+    .guide-more::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--guide-fade-height);
+      background: linear-gradient(to bottom, rgba(5,5,9,0), rgba(5,5,9,0.95));
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.16s ease;
+    }
+
+    .guide-card.is-expanded .guide-more::after { opacity: 0; }
 
     .guide-more-inner {
-      padding-top: 0.85rem;
       color: var(--color-text-soft);
       font-size: 0.95rem;
     }
@@ -1177,7 +1114,6 @@
     .faq-answer { padding: 0 1rem 0.9rem; font-size: 0.9rem; color: var(--color-text-soft); }
     .faq-answer p { margin: 0.3rem 0; }
 
-    /* Footer */
     footer.site-footer {
       background: #020617;
       border-top: 1px solid rgba(15,23,42,0.95);
@@ -1202,7 +1138,6 @@
     }
 
     .footer-col p { margin: 0 0 0.35rem; }
-
     .footer-col ul { list-style: none; margin: 0; padding: 0; }
     .footer-col li { margin-bottom: 0.35rem; }
 
@@ -1248,30 +1183,6 @@
       font-size: 0.9rem;
     }
 
-    .footer-mascots {
-      margin-top: var(--space-md);
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .mascot {
-      width: 40px;
-      height: 40px;
-      border-radius: 0.9rem;
-      background: radial-gradient(circle at 30% 20%, #f9a8d4, #7c3aed);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.8);
-    }
-
-    .mascot.mascot-2 { background: radial-gradient(circle at 30% 20%, #fbbf24, #f97316); }
-    .mascot.mascot-3 { background: radial-gradient(circle at 30% 20%, #6ee7b7, #14b8a6); }
-
-    .mascot svg { width: 22px; height: 22px; color: #020617; }
-
     /* Back to top button */
     #back-to-top {
       position: fixed;
@@ -1309,7 +1220,6 @@
     /* Responsive */
     @media (max-width: 960px), (max-height: 600px) {
       .hero-inner { grid-template-columns: minmax(0, 1fr); }
-      .hero-right { order: 0; }
       .two-col { grid-template-columns: minmax(0, 1fr); }
       .join-layout { grid-template-columns: minmax(0, 1fr); }
 
@@ -1339,25 +1249,7 @@
         padding: 0.75rem var(--space-md) var(--space-md);
       }
 
-      .nav-drawer ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.35rem;
-      }
-
-      .nav-drawer ul a {
-        display: block;
-        padding: 0.4rem 0;
-        font-size: 0.88rem;
-        color: var(--color-text-soft);
-      }
-
-      .nav-drawer ul a:hover { color: var(--color-text); }
-
       .nav-drawer .nav-drawer-cta {
-        margin-top: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -1365,6 +1257,27 @@
       }
 
       .nav-drawer .nav-drawer-cta .btn { width: 100%; justify-content: center; }
+
+      .nav-drawer .nav-drawer-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-full);
+        border: 1px solid rgba(148,163,184,0.7);
+        background: rgba(15,23,42,0.92);
+        color: var(--color-text-soft);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+
+      .nav-drawer .nav-drawer-link:hover { border-color: var(--color-primary); color: var(--color-text); }
 
       body.nav-open .nav-drawer {
         max-height: 80vh;
@@ -1384,6 +1297,7 @@
     }
   </style>
 </head>
+
 <body>
 <div class="page">
   <header class="site-header">
@@ -1402,18 +1316,13 @@
         <span></span>
       </button>
 
+      <!-- Desktop nav: only Discord + Join button -->
       <nav class="main-nav" aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="#server-tags">Tags</a></li>
-          <li><a href="#pure-vanilla">Vanilla</a></li>
-          <li><a href="#what-is-pvc">About</a></li>
-          <li><a href="#goals">Our goals</a></li>
-          <li><a href="#stats">Legacy</a></li>
-          <li><a href="#how-to-join">How to join</a></li>
-          <li><a href="#guides">Guides</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
         <div class="nav-cta">
+          <a class="nav-discord-link" href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+            Join Discord
+          </a>
           <a href="#how-to-join" class="btn btn-primary">
             <span>Join Hytale server</span>
             <span class="btn-icon" aria-hidden="true">
@@ -1424,18 +1333,9 @@
       </nav>
     </div>
 
+    <!-- Mobile drawer: only Discord + Join button -->
     <div class="nav-drawer" aria-hidden="true">
       <div class="nav-drawer-inner">
-        <ul>
-          <li><a href="#server-tags">Tags</a></li>
-          <li><a href="#pure-vanilla">Vanilla</a></li>
-          <li><a href="#what-is-pvc">About</a></li>
-          <li><a href="#goals">Our goals</a></li>
-          <li><a href="#stats">Legacy</a></li>
-          <li><a href="#how-to-join">How to join</a></li>
-          <li><a href="#guides">Guides</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
         <div class="nav-drawer-cta">
           <a href="#how-to-join" class="btn btn-primary">
             Join Hytale server
@@ -1443,11 +1343,9 @@
               <i class="fa-solid fa-right-to-bracket"></i>
             </span>
           </a>
-          <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            <span class="btn-icon" aria-hidden="true">
-              <i class="fa-brands fa-discord"></i>
-            </span>
-            Discord
+          <a class="nav-drawer-link" href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+            Join Discord
           </a>
         </div>
       </div>
@@ -1473,30 +1371,17 @@
               One shared world, relaxed survival multiplayer, and a friendly vanilla SMP community.
             </p>
             <div class="hero-badges">
-              <span class="badge">
-                <span class="badge-icon" aria-hidden="true">❤</span>
-                Inclusive and LGBTQ+ friendly
-              </span>
-              <span class="badge">
-                <span class="badge-icon" aria-hidden="true">🛡</span>
-                No grief, no random PvP
-              </span>
-              <span class="badge">
-                <span class="badge-icon" aria-hidden="true">⏳</span>
-                No planned world resets
-              </span>
+              <span class="badge"><span class="badge-icon" aria-hidden="true">❤</span>Inclusive and LGBTQ+ friendly</span>
+              <span class="badge"><span class="badge-icon" aria-hidden="true">🛡</span>No grief, no random PvP</span>
+              <span class="badge"><span class="badge-icon" aria-hidden="true">⏳</span>No planned world resets</span>
             </div>
             <div class="hero-actions">
               <a href="#how-to-join" class="btn btn-primary">
                 <span>How to join on Hytale</span>
-                <span class="btn-icon" aria-hidden="true">
-                  <i class="fa-solid fa-right-to-bracket"></i>
-                </span>
+                <span class="btn-icon" aria-hidden="true"><i class="fa-solid fa-right-to-bracket"></i></span>
               </a>
-              <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                <span class="btn-icon" aria-hidden="true">
-                  <i class="fa-brands fa-discord"></i>
-                </span>
+              <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: rgba(15,23,42,0.92); color: var(--color-text); border: 1px solid rgba(148,163,184,0.7); box-shadow: none;">
+                <span class="btn-icon" aria-hidden="true"><i class="fa-brands fa-discord"></i></span>
                 Join our Discord
               </a>
             </div>
@@ -1514,39 +1399,25 @@
               <ol>
                 <li class="join-step">
                   <div class="join-step-number">1</div>
-                  <div>
-                    <div class="join-step-title">Join the Discord community</div>
-                  </div>
-                  <p class="join-step-text">
-                    Our Discord server is the hub for announcements, rules and support. Join now to get notified when the Hytale server goes live.
-                  </p>
+                  <div><div class="join-step-title">Join the Discord community</div></div>
+                  <p class="join-step-text">Our Discord server is the hub for announcements, rules and support. Join now to get notified when the Hytale server goes live.</p>
                 </li>
                 <li class="join-step">
                   <div class="join-step-number">2</div>
-                  <div>
-                    <div class="join-step-title">Read the rules and info</div>
-                  </div>
-                  <p class="join-step-text">
-                    The full rules and detailed info about the Hytale vanilla survival server will be published in Discord. Reading them is required before playing.
-                  </p>
+                  <div><div class="join-step-title">Read the rules and info</div></div>
+                  <p class="join-step-text">The full rules and detailed info about the Hytale vanilla survival server will be published in Discord. Reading them is required before playing.</p>
                 </li>
                 <li class="join-step">
                   <div class="join-step-number">3</div>
-                  <div>
-                    <div class="join-step-title">Add the server in the Hytale client</div>
-                  </div>
-                  <p class="join-step-text">
-                    When Hytale servers open, you will find the official server address and connection instructions pinned in Discord announcements.
-                  </p>
+                  <div><div class="join-step-title">Add the server in the Hytale client</div></div>
+                  <p class="join-step-text">When Hytale servers open, you will find the official server address and connection instructions pinned in Discord announcements.</p>
                 </li>
               </ol>
               <div class="ip-tag">
                 <span>Discord server address</span>
                 <span class="ip-copy" id="ip-copy">
                   <code id="server-ip">https://discord.gg/2d9wPbrpEU</code>
-                  <span class="ip-copy-icon" aria-hidden="true">
-                    <i class="fa-regular fa-copy"></i>
-                  </span>
+                  <span class="ip-copy-icon" aria-hidden="true"><i class="fa-regular fa-copy"></i></span>
                 </span>
               </div>
             </div>
@@ -1556,10 +1427,7 @@
                 <img src="assets/img/hytale-hero.webp" alt="Concept view of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
               </div>
               <div class="media-caption">
-                <span>
-                  <span class="pill-small">Hytale survival</span>
-                  One shared world, peaceful survival.
-                </span>
+                <span><span class="pill-small">Hytale survival</span>One shared world, peaceful survival.</span>
               </div>
             </div>
           </div>
@@ -1585,13 +1453,8 @@
               <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </summary>
             <div class="tag-body">
-              <p>
-                <strong>Pure vanilla</strong> means we aim for a true <strong>Hytale vanilla survival server</strong> feel: survival progression stays meaningful, travel matters, and the world is designed for long-term towns.
-                If you search for a <strong>pure vanilla Hytale server</strong> or a <strong>vanilla SMP</strong>, this is the core vibe.
-              </p>
-              <p>
-                We avoid feature spam that turns survival into a lobby. The focus is exploration, building, and community projects in a stable <strong>survival multiplayer</strong> world.
-              </p>
+              <p><strong>Pure vanilla</strong> means we aim for a true <strong>Hytale vanilla survival server</strong> feel: survival progression stays meaningful, travel matters, and the world is designed for long-term towns.</p>
+              <p>We avoid feature spam that turns survival into a lobby. The focus is exploration, building, and community projects in a stable <strong>survival multiplayer</strong> world.</p>
             </div>
           </details>
 
@@ -1601,10 +1464,7 @@
               <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </summary>
             <div class="tag-body">
-              <p>
-                <strong>No grief</strong> means no stealing, no destruction, no sabotage. If you search “<strong>Hytale no grief server</strong>”, you want your base and town to survive when you log off.
-                We treat grief reports seriously, and the goal is a safe <strong>peaceful survival multiplayer server</strong>.
-              </p>
+              <p><strong>No grief</strong> means no stealing, no destruction, no sabotage. If you search “<strong>Hytale no grief server</strong>”, you want your base and town to survive when you log off.</p>
             </div>
           </details>
 
@@ -1614,10 +1474,7 @@
               <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </summary>
             <div class="tag-body">
-              <p>
-                <strong>No random PvP</strong> means the open survival world stays calm. Builders and explorers can play without stress.
-                This is for players looking for a <strong>peaceful Hytale survival server</strong> and a builder-friendly <strong>Hytale SMP server</strong>.
-              </p>
+              <p><strong>No random PvP</strong> means the open survival world stays calm. Builders and explorers can play without stress. This is for players looking for a <strong>peaceful Hytale survival server</strong>.</p>
             </div>
           </details>
 
@@ -1627,10 +1484,7 @@
               <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </summary>
             <div class="tag-body">
-              <p>
-                <strong>No pay to win</strong> means we do not sell power, progression, or unfair advantages. A fair <strong>Hytale vanilla survival server</strong> protects the survival economy and keeps progression honest.
-                If you search for a <strong>not pay to win Hytale server</strong>, this is exactly what you want.
-              </p>
+              <p><strong>No pay to win</strong> means we do not sell power, progression, or unfair advantages. A fair <strong>Hytale vanilla survival server</strong> protects the survival economy.</p>
             </div>
           </details>
 
@@ -1640,10 +1494,7 @@
               <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </summary>
             <div class="tag-body">
-              <p>
-                <strong>No planned resets</strong> is the long-term mindset. We want a persistent world where towns gain history.
-                This is a key value for players searching a <strong>Hytale no reset survival server</strong> or a long-term <strong>vanilla SMP</strong>.
-              </p>
+              <p><strong>No planned resets</strong> is the long-term mindset. We want a persistent world where towns gain history. This is key for a <strong>Hytale no reset survival server</strong>.</p>
             </div>
           </details>
         </div>
@@ -1655,9 +1506,7 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Pure Vanilla</h2>
-          <p>
-            What “vanilla” means on a Hytale server, and why it matters if you want a real survival multiplayer experience.
-          </p>
+          <p>What “vanilla” means on a Hytale server, and why it matters if you want a real survival multiplayer experience.</p>
         </div>
 
         <div class="pure-vanilla-wrap animate-fade-up">
@@ -1667,7 +1516,6 @@
           </p>
           <p>
             A lot of players search for <strong>vanilla SMP</strong> because they want a stable community: long-term towns, calm survival multiplayer, and fair progression.
-            That’s why we aim for a pure vanilla identity that stays focused and readable.
           </p>
           <ul>
             <li><strong>Vanilla survival multiplayer</strong> progression stays meaningful.</li>
@@ -1675,12 +1523,7 @@
             <li>We prioritize a calm community, not drama or random PvP.</li>
             <li>We build for long-term towns, builders, and explorers.</li>
           </ul>
-          <p style="margin-top:0.8rem;">
-            If you want the full breakdown, scroll to the guides section. The guides are written for players searching: “hytale vanilla server”, “hytale smp server”, and “hytale no grief server”.
-          </p>
-          <p style="margin-top:0.6rem;">
-            <a class="footer-link" href="#guides">Jump to Guides</a>
-          </p>
+          <p style="margin-top:0.8rem;"><a class="footer-link" href="#guides">Jump to Guides</a></p>
         </div>
       </div>
     </section>
@@ -1690,40 +1533,26 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>What is Peaceful Vanilla Club in Hytale</h2>
-          <p>
-            Peaceful Vanilla Club is a peaceful vanilla survival community that has been running on Minecraft for years and is now preparing a shared survival world for Hytale.
-          </p>
+          <p>Peaceful Vanilla Club is a peaceful vanilla survival community that has been running on Minecraft for years and is now preparing a shared survival world for Hytale.</p>
         </div>
 
         <div class="two-col">
           <div class="two-col-text animate-fade-up">
-            <p>
-              On Hytale, Peaceful Vanilla Club will be a single shared survival world with no random PvP and no griefing. The focus is on exploration, building, long term towns and cooperative projects rather than minigames or fast seasons.
-            </p>
-            <p>
-              There are no pay to win ranks, no overpowered donor kits and no aggressive monetization. We keep the vanilla sandbox feeling intact and build a safe environment where players of all ages can relax and enjoy survival multiplayer.
-            </p>
-            <p>
-              The community is inclusive and LGBTQ+ friendly. Moderation is strict against harassment, slurs and exploit abuse. Our goal is to offer a space that feels calm, cozy and reliable, whether you log in a few evenings per week or every day.
-            </p>
+            <p>On Hytale, Peaceful Vanilla Club will be a single shared survival world with no random PvP and no griefing. The focus is on exploration, building, long term towns and cooperative projects rather than minigames or fast seasons.</p>
+            <p>There are no pay to win ranks, no overpowered donor kits and no aggressive monetization. We keep the vanilla sandbox feeling intact and build a safe environment where players of all ages can relax and enjoy survival multiplayer.</p>
+            <p>The community is inclusive and LGBTQ+ friendly. Moderation is strict against harassment, slurs and exploit abuse.</p>
+
             <div class="pill-row">
               <span class="pill">
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M10 3.2C6.9.1 1.6 2.3 1.6 6.7c0 3.2 2.9 5.8 7.3 9.7l1.1 1 1.1-1c4.4-3.9 7.3-6.5 7.3-9.7 0-4.4-5.3-6.6-8.4-3.5z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 20 20" fill="none"><path d="M10 3.2C6.9.1 1.6 2.3 1.6 6.7c0 3.2 2.9 5.8 7.3 9.7l1.1 1 1.1-1c4.4-3.9 7.3-6.5 7.3-9.7 0-4.4-5.3-6.6-8.4-3.5z" fill="currentColor"/></svg>
                 Friendly and LGBTQ+ inclusive
               </span>
               <span class="pill">
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 6h12v2H4zm0 4h7v2H4zm0 4h4v2H4z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 20 20" fill="none"><path d="M4 6h12v2H4zm0 4h7v2H4zm0 4h4v2H4z" fill="currentColor"/></svg>
                 No pay to win or unfair advantages
               </span>
               <span class="pill">
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path d="M4 9.5 10 4l6 5.5V16H4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
-                  <path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-                </svg>
+                <svg viewBox="0 0 20 20" fill="none"><path d="M4 9.5 10 4l6 5.5V16H4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 16v-4h4v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
                 One persistent shared world
               </span>
             </div>
@@ -1746,80 +1575,54 @@
       </div>
     </section>
 
-    <!-- Our goals -->
+    <!-- Goals -->
     <section id="goals">
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Our goals</h2>
-          <p>
-            These are the core goals that guide how we run Peaceful Vanilla Club on Hytale. They are the same values that kept our Minecraft survival worlds alive for years.
-          </p>
+          <p>These are the core goals that guide how we run Peaceful Vanilla Club on Hytale.</p>
         </div>
 
         <div class="principles-grid">
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-hand-peace"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-hand-peace"></i></div>
             <h3 class="principle-title">No random PvP</h3>
-            <p class="principle-text">
-              PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated. For everyday play you can explore and build without stress.
-            </p>
+            <p class="principle-text">PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated.</p>
             <span class="principle-tag">Stress free</span>
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-scale-balanced"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></div>
             <h3 class="principle-title">No pay to win</h3>
-            <p class="principle-text">
-              We do not sell power. No overpowered donor kits, boosts or shortcuts that break the vanilla survival loop. Any future donations will support hosting costs and cosmetic ideas that do not affect gameplay balance.
-            </p>
+            <p class="principle-text">We do not sell power. No overpowered donor kits, boosts or shortcuts that break the vanilla survival loop.</p>
             <span class="principle-tag">Fairness</span>
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-route"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-route"></i></div>
             <h3 class="principle-title">No fast travel spam</h3>
-            <p class="principle-text">
-              There are no instant warps or random teleport commands that break the scale of the world. The world feels big and your builds feel grounded.
-            </p>
+            <p class="principle-text">There are no instant warps or random teleport commands that break the scale of the world.</p>
             <span class="principle-tag">Exploration first</span>
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-mug-hot"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-mug-hot"></i></div>
             <h3 class="principle-title">A peaceful place</h3>
-            <p class="principle-text">
-              We design the server so that you can log in, relax, make progress on your base or town and log out without drama or pressure. Chat, voice and events follow the same calm, respectful tone.
-            </p>
+            <p class="principle-text">We design the server so that you can log in, relax, make progress and log out without drama.</p>
             <span class="principle-tag">Mood</span>
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-people-group"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
             <h3 class="principle-title">Community-first decisions</h3>
-            <p class="principle-text">
-              Changes and new features are introduced slowly and discussed with the community. Stability and fairness come before hype. We prefer fewer systems that work well over a long list of unfinished features.
-            </p>
+            <p class="principle-text">Changes are introduced slowly and discussed with the community. Stability comes before hype.</p>
             <span class="principle-tag">Governance</span>
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true">
-              <i class="fa-solid fa-infinity"></i>
-            </div>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-infinity"></i></div>
             <h3 class="principle-title">Long term worlds</h3>
-            <p class="principle-text">
-              Our goal is to avoid routine world resets. When new Hytale content lands, we look for ways to integrate it without wiping everything, so that towns and landscapes can gain history over time.
-            </p>
+            <p class="principle-text">We avoid routine world resets. Towns and landscapes should gain history over time.</p>
             <span class="principle-tag">Persistence</span>
           </article>
         </div>
@@ -1831,48 +1634,33 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Our Minecraft legacy in numbers</h2>
-          <p>
-            Peaceful Vanilla Club is new to Hytale, but not new to running survival worlds. These numbers come from our long running Minecraft server and show the kind of stability and commitment you can expect.
-          </p>
+          <p>Peaceful Vanilla Club is new to Hytale, but not new to running survival worlds.</p>
         </div>
 
         <div class="stats-grid">
           <article class="stat-card animate-fade-up">
             <p class="stat-number">2019</p>
             <p class="stat-label">Online since</p>
-            <p class="stat-text">
-              Our Minecraft vanilla survival server has been online since 2019, surviving major updates, technical changes and thousands of player projects without losing its core identity.
-            </p>
+            <p class="stat-text">Our Minecraft vanilla survival server has been online since 2019.</p>
           </article>
-
           <article class="stat-card animate-fade-up">
             <p class="stat-number">100k+</p>
             <p class="stat-label">Unique players</p>
-            <p class="stat-text">
-              Over one hundred thousand players have joined Peaceful Vanilla Club on Minecraft. Many stayed for months or years, building towns, megabases and shared infrastructure.
-            </p>
+            <p class="stat-text">Over one hundred thousand players have joined Peaceful Vanilla Club on Minecraft.</p>
           </article>
-
           <article class="stat-card animate-fade-up">
             <p class="stat-number">24/7</p>
             <p class="stat-label">Monitored uptime</p>
-            <p class="stat-text">
-              We already run dedicated infrastructure, monitoring and backups for the Minecraft server. The same level of care will be applied to the Hytale survival world when it launches.
-            </p>
+            <p class="stat-text">Dedicated infrastructure, monitoring and backups for stability.</p>
           </article>
-
           <article class="stat-card animate-fade-up">
             <p class="stat-number">Daily</p>
             <p class="stat-label">Backups</p>
-            <p class="stat-text">
-              Automated backups and logs are part of our daily operations. Your builds and progress are treated seriously, not as disposable content for a short season.
-            </p>
+            <p class="stat-text">Automated backups and logs are part of our daily operations.</p>
           </article>
         </div>
 
-        <p class="stats-note">
-          The Hytale world will start fresh, but it is backed by the same team, tools and philosophy that kept Peaceful Vanilla Club alive on Minecraft for years.
-        </p>
+        <p class="stats-note">The Hytale world will start fresh, but it is backed by the same team and long-term mindset.</p>
       </div>
     </section>
 
@@ -1881,9 +1669,7 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>How to join the Hytale server</h2>
-          <p>
-            Joining Peaceful Vanilla Club in Hytale will be simple. You will not need an application or paywall, but you will need to join Discord and read the rules before connecting.
-          </p>
+          <p>Joining Peaceful Vanilla Club in Hytale will be simple.</p>
         </div>
 
         <div class="join-layout">
@@ -1891,40 +1677,21 @@
             <ol class="step-list">
               <li class="step-item">
                 <div class="step-number">1</div>
-                <div>
-                  <h3 class="step-title">Join the Discord server</h3>
-                </div>
-                <p class="step-text">
-                  Discord is where we coordinate everything. Join the Peaceful Vanilla Club Discord using the link below and verify your account if required.
-                  This is where we will post the Hytale launch date and the official Hytale server address.
-                </p>
+                <div><h3 class="step-title">Join the Discord server</h3></div>
+                <p class="step-text">Discord is where we coordinate everything. Join now to get the launch date and the official Hytale server address.</p>
               </li>
-
               <li class="step-item">
                 <div class="step-number">2</div>
-                <div>
-                  <h3 class="step-title">Read the full rules</h3>
-                </div>
-                <p class="step-text">
-                  The complete rules will be published in a dedicated Discord channel. Reading them is required before playing.
-                  They explain how we handle griefing reports, chat behavior, survival fairness, and community builds.
-                </p>
+                <div><h3 class="step-title">Read the full rules</h3></div>
+                <p class="step-text">Rules will be published in a dedicated channel. Reading them is required before playing.</p>
               </li>
-
               <li class="step-item">
                 <div class="step-number">3</div>
-                <div>
-                  <h3 class="step-title">Add the server when Hytale launches</h3>
-                </div>
-                <p class="step-text">
-                  When Hytale servers open, you will find the server address, recommended client settings and any technical notes pinned in announcements.
-                  Add the server in the Hytale multiplayer menu and join the world.
-                </p>
+                <div><h3 class="step-title">Add the server when Hytale launches</h3></div>
+                <p class="step-text">When Hytale servers open, the server address and connection instructions will be pinned in announcements.</p>
               </li>
             </ol>
-            <p class="join-extra">
-              If you are already part of the Minecraft server, you will feel at home. If you are new to Peaceful Vanilla Club, the Discord is the best place to ask questions and understand how the Hytale vanilla survival multiplayer world will work.
-            </p>
+            <p class="join-extra">If you are new to Peaceful Vanilla Club, the Discord is the best place to ask questions.</p>
           </div>
 
           <div class="animate-fade-up">
@@ -1938,13 +1705,7 @@
                 <li>Respect public builds, towns and shared infrastructure projects.</li>
               </ul>
               <p style="margin-top:0.6rem;">
-                The full rules are available in our Discord and you are required to read them before playing.
-                The short version is simple: play fair, be kind and remember that you share the world with others.
-              </p>
-              <p style="margin-top:0.6rem;">
-                <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">
-                  Open the Discord rules channel
-                </a>
+                <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Open Discord</a>
               </p>
             </div>
           </div>
@@ -1957,24 +1718,19 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Guides</h2>
-          <p>
-            Real guides for players searching a <strong>Hytale vanilla server</strong>, a <strong>Hytale vanilla survival server</strong>, a <strong>Hytale SMP server</strong>,
-            a <strong>Hytale no grief server</strong>, and a calm <strong>vanilla SMP</strong> world built for towns and builders.
-          </p>
+          <p>Guides for players searching: <strong>hytale vanilla server</strong>, <strong>hytale vanilla survival server</strong>, <strong>hytale vanilla server</strong>, <strong>hytale smp server</strong>, <strong>hytale no grief server</strong>, <strong>hytale no reset survival server</strong>.</p>
         </div>
 
         <div class="guides-scroller" aria-label="Scrollable guide articles">
 
-          <!-- Guide 1 -->
           <article class="guide-card animate-fade-up">
             <h3>Pure vanilla Hytale server guide: what “vanilla survival multiplayer” really means</h3>
             <p>
               Many servers claim “vanilla”, but a true <strong>pure vanilla Hytale server</strong> keeps the survival loop intact: exploration, gathering, crafting, building, and social progression in a shared world.
-              This is what players mean when they search <strong>Hytale vanilla survival server</strong> and <strong>vanilla SMP</strong>.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-1">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -1987,40 +1743,22 @@
                   <li>No teleport spam that removes exploration and distance.</li>
                   <li>One persistent survival world where towns and builds matter.</li>
                 </ul>
-
                 <h4>What players actually want</h4>
                 <p>
                   People searching for a <strong>Hytale vanilla server</strong> usually want fairness, calm survival multiplayer, and a world that feels meaningful over time.
-                  Vanilla is not about “less content”. It is about preserving the core loop so every build, road, and town feels earned.
-                </p>
-
-                <h4>Practical questions before joining</h4>
-                <ul>
-                  <li>Is PvP random, or is it peaceful survival?</li>
-                  <li>Is there grief protection, rules, and reporting?</li>
-                  <li>Is the server long-term, or seasonal resets?</li>
-                  <li>Are donations cosmetic, or do they affect gameplay?</li>
-                </ul>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#server-tags">See our server tags</a>
-                  &nbsp;·&nbsp;
-                  <a class="footer-link" href="#how-to-join">How to join</a>
                 </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 2 -->
           <article class="guide-card animate-fade-up">
             <h3>Peaceful Hytale survival server guide: no griefing, no random PvP, long-term towns</h3>
             <p>
               If you search for a <strong>peaceful Hytale survival server</strong>, you probably want stability: your base survives, your town grows, and random PvP does not ruin weeks of progress.
-              This is why peaceful vanilla SMP communities tend to last longer.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-2">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2031,42 +1769,23 @@
                   <li><strong>No griefing</strong>: no stealing, no destruction, no sabotage.</li>
                   <li><strong>No random PvP</strong>: the open world stays PvE focused.</li>
                   <li>Clear reporting path and consistent moderation.</li>
-                  <li>Respect for towns, roads, and shared builds.</li>
                 </ul>
-
                 <h4>Why peaceful servers are builder-friendly</h4>
                 <p>
-                  A calm <strong>Hytale vanilla survival server</strong> is perfect for builders and explorers who want long-term projects:
-                  districts, markets, public farms, infrastructure, and cooperative towns.
-                  Peaceful rules are not “boring”. They protect the time investment that makes survival multiplayer meaningful.
-                </p>
-
-                <h4>How to spot the right community</h4>
-                <ul>
-                  <li>Rules are clear and written for real players, not vague marketing.</li>
-                  <li>Moderation is active and consistent, even when it is unpopular.</li>
-                  <li>The server identity is vanilla survival multiplayer, not feature overload.</li>
-                </ul>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#goals">Our goals</a>
-                  &nbsp;·&nbsp;
-                  <a class="footer-link" href="#faq">FAQ</a>
+                  A calm <strong>Hytale vanilla survival server</strong> is perfect for builders and explorers who want long-term projects, districts, markets, roads, and towns.
                 </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 3 -->
           <article class="guide-card animate-fade-up">
             <h3>Not pay to win Hytale server guide: how to spot fair vanilla SMP communities</h3>
             <p>
               A <strong>not pay to win Hytale server</strong> protects the survival economy and keeps progression meaningful.
-              Fairness is one of the main reasons players choose a <strong>pure vanilla survival</strong> server over a monetized “rank server”.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-3">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2077,38 +1796,23 @@
                   <li>Paid ranks that give items, boosts, power, or exclusive resources.</li>
                   <li>Paid teleport features that invalidate exploration.</li>
                   <li>Donor kits that skip early survival progression.</li>
-                  <li>“Premium” access to safer areas, better farms, or special mechanics.</li>
                 </ul>
-
                 <h4>What a fair vanilla server does instead</h4>
                 <p>
-                  Donations can be healthy if they support hosting costs and community work, but they should not touch gameplay balance.
-                  In a long-term <strong>Hytale SMP server</strong>, fairness matters even more because towns, trading, and shared infrastructure become part of the world.
-                </p>
-
-                <h4>Player intent keyword reality</h4>
-                <p>
-                  When someone searches “<strong>not pay to win Hytale server</strong>” they are asking: will my time matter here, or can someone buy progress?
-                  A real vanilla survival multiplayer server respects time.
-                </p>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#server-tags">See “No pay to win” tag</a>
+                  Donations can be fine if they support hosting costs, but they should not affect gameplay. That is how you keep a real <strong>Hytale vanilla survival server</strong>.
                 </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 4 -->
           <article class="guide-card animate-fade-up">
-            <h3>How to join a Hytale server guide: a simple checklist for vanilla survival multiplayer</h3>
+            <h3>How to join a Hytale server guide: checklist for vanilla survival multiplayer</h3>
             <p>
               If you are new to <strong>Hytale survival multiplayer</strong>, joining the right community is about clarity: rules, moderation, and a stable vanilla SMP approach.
-              Here’s a fast checklist that matches how real players search and decide.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-4">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2117,36 +1821,22 @@
                 <h4>Checklist before you join</h4>
                 <ul>
                   <li>Join Discord and read the rules first.</li>
-                  <li>Confirm it is a <strong>Hytale vanilla survival server</strong>, not a gimmick server.</li>
+                  <li>Confirm it is a <strong>Hytale vanilla survival server</strong>.</li>
                   <li>Check if it is peaceful: no random PvP, no griefing, no stealing.</li>
                   <li>Ask about resets: long-term world or seasonal world.</li>
                 </ul>
-
-                <h4>Why Discord matters for SMP servers</h4>
-                <p>
-                  Most modern vanilla SMP communities run their support and moderation through Discord because it is fast and structured.
-                  It is also where you get the correct <strong>Hytale server address</strong> at launch, plus announcements and rules updates.
-                </p>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#how-to-join">Join steps</a>
-                  &nbsp;·&nbsp;
-                  <a class="footer-link" href="#discord">Discord link</a>
-                </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 5 -->
           <article class="guide-card animate-fade-up">
             <h3>Vanilla SMP starter guide: building your first town on a Hytale vanilla survival server</h3>
             <p>
               A <strong>vanilla SMP</strong> is at its best when towns grow naturally. On a <strong>Hytale vanilla survival server</strong>, your first week sets the foundation for months of progress.
-              This guide is written for builders, explorers, and chill players.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-5">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2157,38 +1847,23 @@
                   <li>Choose a location with room to expand and readable paths.</li>
                   <li>Build a small hub first: storage, crafting, and safety.</li>
                   <li>Connect with neighbors and plan roads early.</li>
-                  <li>Start simple public builds: a dock, a market board, a road sign.</li>
                 </ul>
-
-                <h4>Why peaceful rules help builders</h4>
-                <p>
-                  In a <strong>peaceful survival multiplayer server</strong> with no griefing and no random PvP, town planning makes sense.
-                  Players invest more time in public builds, shared farms, infrastructure, and community projects because the world feels safe and stable.
-                </p>
-
                 <h4>Long-term mindset</h4>
                 <p>
                   A good <strong>Hytale SMP server</strong> becomes better over time. Towns gain history. Roads gain meaning.
-                  That is the difference between “survival for a weekend” and real vanilla survival multiplayer.
-                </p>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#goals">Our long-term approach</a>
                 </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 6 -->
           <article class="guide-card animate-fade-up">
             <h3>Choosing the best Hytale vanilla server guide: builders vs explorers vs chill players</h3>
             <p>
-              “Best” depends on your playstyle. The best <strong>Hytale vanilla server</strong> for builders is usually peaceful and long-term,
-              while explorers want stable progression and a world that stays meaningful.
+              “Best” depends on your playstyle. The best <strong>Hytale vanilla server</strong> for builders is usually peaceful and long-term.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-6">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2197,85 +1872,48 @@
                 <h4>Match server style to your goals</h4>
                 <ul>
                   <li><strong>Builders</strong>: peaceful rules, no resets, stable community, no grief.</li>
-                  <li><strong>Explorers</strong>: vanilla progression, meaningful travel, minimal teleport spam.</li>
-                  <li><strong>Chill players</strong>: friendly chat culture, clear moderation, no drama.</li>
+                  <li><strong>Explorers</strong>: vanilla progression, meaningful travel.</li>
+                  <li><strong>Chill players</strong>: friendly culture, clear moderation.</li>
                 </ul>
-
                 <h4>Signals you are in the right place</h4>
                 <p>
                   If the world has towns, roads, public builds, and ongoing community projects, you are likely in a real vanilla SMP community.
-                  Those are the signs of a stable <strong>Hytale vanilla survival server</strong>, not a short-lived seasonal server.
-                </p>
-
-                <h4>What we optimize for</h4>
-                <p>
-                  Peaceful Vanilla Club is designed for calm, long-term survival multiplayer. If you want a <strong>pure vanilla Hytale survival server</strong> that feels like a classic SMP,
-                  that is the direction.
-                </p>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#server-tags">Read tags</a>
-                  &nbsp;·&nbsp;
-                  <a class="footer-link" href="#faq">FAQ</a>
                 </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 7 -->
           <article class="guide-card animate-fade-up">
             <h3>Hytale vanilla server guide: how to choose a truly “pure vanilla” survival experience</h3>
             <p>
               People search “<strong>hytale vanilla server</strong>” because they want the default survival loop, not a theme park.
-              In practice, “vanilla” can mean very different things depending on the community.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-7">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
             <div class="guide-more" id="guide-more-7">
               <div class="guide-more-inner">
-                <h4>What “vanilla” should feel like</h4>
-                <p>
-                  A real vanilla survival multiplayer server keeps the world meaningful. Travel matters, progression matters, and building matters.
-                  Vanilla SMP is about players shaping the world through time, not skipping the world with shortcuts.
-                </p>
-
                 <h4>Common “fake vanilla” patterns</h4>
                 <ul>
                   <li>Big kit menus or starter bundles that bypass early game.</li>
                   <li>Paid ranks with gameplay boosts and resource advantages.</li>
                   <li>Teleport systems that remove exploration and distance.</li>
-                  <li>Feature overload that replaces survival with UI.</li>
                 </ul>
-
-                <h4>Questions that filter quality fast</h4>
-                <ul>
-                  <li>Is it peaceful survival, or random PvP?</li>
-                  <li>Is it no grief, or “we try our best”?</li>
-                  <li>Is it long-term, or constant resets?</li>
-                  <li>Is it not pay to win, including indirect perks?</li>
-                </ul>
-
-                <p style="margin-top:0.7rem;">
-                  <a class="footer-link" href="#pure-vanilla">Read our vanilla definition</a>
-                </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 8 -->
           <article class="guide-card animate-fade-up">
             <h3>Hytale SMP server guide: what to expect from a long-term survival multiplayer community</h3>
             <p>
-              “SMP” usually means a community world where players build towns, trade, and collaborate.
               People searching “<strong>Hytale SMP server</strong>” want a social survival multiplayer world, not a competitive PvP arena.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-8">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2285,37 +1923,20 @@
                 <ul>
                   <li>Stable playerbase and clear rules that protect towns.</li>
                   <li>Long-term world where builds gain history.</li>
-                  <li>Social building: roads, districts, infrastructure projects.</li>
                   <li>Friendly culture and consistent moderation.</li>
                 </ul>
-
-                <h4>SMP styles you should recognize</h4>
-                <ul>
-                  <li><strong>Peaceful SMP</strong>: no random PvP, builder-friendly, calm.</li>
-                  <li><strong>Hardcore SMP</strong>: more risk, more conflict, more competition.</li>
-                  <li><strong>Seasonal SMP</strong>: frequent resets and short-term progression.</li>
-                  <li><strong>Roleplay SMP</strong>: story focused, sometimes scripted.</li>
-                </ul>
-
-                <h4>The biggest SMP mistake</h4>
-                <p>
-                  Choosing a server that is “popular” but not aligned with your playstyle.
-                  If you are a builder or chill player, a peaceful vanilla SMP is usually a better match than a PvP heavy survival server.
-                </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 9 -->
           <article class="guide-card animate-fade-up">
             <h3>Hytale no grief server guide: what “no grief” should protect, and how servers enforce it</h3>
             <p>
               People search “<strong>hytale no grief server</strong>” because they want safety: their base, storage, farms, and town projects should survive when they log off.
-              “No grief” should be enforced, not just promised.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-9">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2325,36 +1946,20 @@
                 <ul>
                   <li>No breaking or altering other players’ builds.</li>
                   <li>No stealing from chests, farms, or storage.</li>
-                  <li>No trap killing in shared areas.</li>
                   <li>No sabotage of roads, towns, or public builds.</li>
                 </ul>
-
-                <h4>Enforcement signals that matter</h4>
-                <ul>
-                  <li>Clear reporting workflow (usually Discord tickets).</li>
-                  <li>Consistent moderation and penalties.</li>
-                  <li>Server culture that takes grief seriously.</li>
-                </ul>
-
-                <h4>Why it matters for vanilla SMP</h4>
-                <p>
-                  Vanilla survival multiplayer is time investment. If players feel unsafe, they build less, towns die, and the world never becomes meaningful.
-                  That’s why “Hytale no grief server” is a high intent keyword.
-                </p>
               </div>
             </div>
           </article>
 
-          <!-- Guide 10 -->
           <article class="guide-card animate-fade-up">
             <h3>Hytale no reset survival server guide: why persistent worlds are better for towns and builders</h3>
             <p>
               A “no reset” survival server means you can build for months or years without losing everything.
-              People searching “<strong>Hytale no reset survival server</strong>” want permanence, not short seasons.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-10">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2363,36 +1968,21 @@
                 <h4>What “no reset” usually means</h4>
                 <ul>
                   <li>The main world is intended to last long-term.</li>
-                  <li>Progress is treated as valuable, not disposable.</li>
                   <li>Updates are integrated carefully rather than wiping the map.</li>
-                </ul>
-
-                <h4>Why persistent worlds create better SMP</h4>
-                <p>
-                  Towns develop identity and geography, roads matter, and public builds gain meaning.
-                  A persistent <strong>Hytale vanilla survival server</strong> becomes a shared story, not a temporary lobby.
-                </p>
-
-                <h4>What to ask before joining</h4>
-                <ul>
-                  <li>Do you plan world resets at all, or only in extreme cases?</li>
-                  <li>How do you handle major updates without wiping progress?</li>
-                  <li>Do you have backups and a recovery plan?</li>
+                  <li>Backups and recovery plans are in place.</li>
                 </ul>
               </div>
             </div>
           </article>
 
-          <!-- Guide 11 -->
           <article class="guide-card animate-fade-up">
             <h3>Hytale survival server for builders guide: towns, megabases, and calm vanilla SMP</h3>
             <p>
-              Builders want a server where effort compounds: yesterday’s house becomes tomorrow’s district.
-              If you search “<strong>Hytale survival server for builders</strong>”, you want stable survival multiplayer, peaceful rules, and a community that respects long-term projects.
+              Builders want a server where effort compounds. If you search “<strong>Hytale survival server for builders</strong>”, you want stable survival multiplayer, peaceful rules, and a community that respects projects.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-11">
-              <span class="read-more-label">Read more</span>
+              <span class="read-more-label">read more</span>
               <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
             </button>
 
@@ -2403,20 +1993,6 @@
                   <li>No grief and no stealing, enforced consistently.</li>
                   <li>No random PvP, so building is stress-free.</li>
                   <li>No planned resets, so towns can grow for real.</li>
-                  <li>Minimal gimmicks, real vanilla progression.</li>
-                </ul>
-
-                <h4>Culture matters more than features</h4>
-                <p>
-                  A builder-friendly server is not about “more plugins”. It’s about respect for space, cooperation, and consistent moderation.
-                  That is what makes a vanilla SMP community stable and enjoyable.
-                </p>
-
-                <h4>Builder checklist</h4>
-                <ul>
-                  <li>Can I build a base and feel safe for weeks?</li>
-                  <li>Do towns exist, or is the map empty every month?</li>
-                  <li>Are there roads, hubs, public builds, and shared projects?</li>
                 </ul>
               </div>
             </div>
@@ -2426,7 +2002,8 @@
 
         <noscript>
           <style>
-            .guide-more { height: auto !important; overflow: visible !important; padding-top: 0.85rem !important; }
+            .guide-more { height: auto !important; overflow: visible !important; }
+            .guide-more::after { display: none !important; }
             .read-more { display: none !important; }
           </style>
         </noscript>
@@ -2438,9 +2015,7 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Frequently asked questions</h2>
-          <p>
-            Quick answers about our Hytale vanilla survival server. For more details, ask in Discord.
-          </p>
+          <p>Quick answers about our Hytale vanilla survival server.</p>
         </div>
 
         <div class="faq-list">
@@ -2450,9 +2025,7 @@
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq1" hidden>
-              <p>
-                No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and cosmetic ideas that do not affect survival balance.
-              </p>
+              <p>No. We do not sell overpowered items, gameplay advantages or unfair kits.</p>
             </div>
           </article>
 
@@ -2462,84 +2035,7 @@
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq2" hidden>
-              <p>
-                Our goal is a pure vanilla identity: a calm Hytale vanilla survival server focused on the core survival multiplayer loop. We keep the experience readable and avoid feature spam that replaces survival progression.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-              <span class="faq-question-text">Do you use mods or plugins on the Hytale server?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq3" hidden>
-              <p>
-                The server is designed to feel like a vanilla SMP. If we add tools, they will be minimal and aimed at safety, moderation, and long-term stability, not at turning survival into a menu-based experience.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
-              <span class="faq-question-text">Is there PvP on your Hytale survival server?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq4" hidden>
-              <p>
-                Random PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated. The default experience is peaceful survival multiplayer.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq5">
-              <span class="faq-question-text">Do I need an application or whitelist to join?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq5" hidden>
-              <p>
-                You will not need a classic written application. Joining Discord and reading the rules will be enough for most players. The main vanilla survival multiplayer world will be open to everyone who follows the rules.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq6">
-              <span class="faq-question-text">Where do I find the Hytale server address to join?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq6" hidden>
-              <p>
-                The official server address and connection instructions will be pinned in Discord announcements when Hytale servers open. Scroll up to the “How to join” section for the step-by-step flow.
-              </p>
-              <p style="margin-top:0.6rem;">
-                <a class="footer-link" href="#how-to-join">Go to How to join</a>
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq7">
-              <span class="faq-question-text">Will there be multiple worlds, or one main survival world?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq7" hidden>
-              <p>
-                Our plan is one main shared Hytale survival world at launch. We prefer one strong vanilla SMP map instead of many half-empty worlds. If we ever add side worlds or events, the core experience will still focus on one persistent world.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item animate-fade-up">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq8">
-              <span class="faq-question-text">How can I report griefing or problems?</span>
-              <span class="faq-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq8" hidden>
-              <p>
-                The fastest way is to open a ticket or ping staff in Discord. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so grief can be addressed and the world can stay stable.
-              </p>
+              <p>Our goal is a pure vanilla identity: calm Hytale vanilla survival focused on the core survival multiplayer loop.</p>
             </div>
           </article>
         </div>
@@ -2552,15 +2048,11 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h3>Peaceful Vanilla Club</h3>
-          <p>
-            A peaceful vanilla survival community for sandbox games, born on Minecraft in 2019 and now preparing a shared survival world for Hytale.
-          </p>
+          <p>A peaceful vanilla survival community for sandbox games, born on Minecraft in 2019 and now preparing a shared survival world for Hytale.</p>
           <p>
             <i class="fa-brands fa-discord" aria-hidden="true"></i>
             &nbsp;Discord:
-            <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">
-              discord.gg/2d9wPbrpEU
-            </a>
+            <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">discord.gg/2d9wPbrpEU</a>
           </p>
           <p>
             <i class="fa-regular fa-envelope" aria-hidden="true"></i>
@@ -2583,17 +2075,15 @@
           <h3>Community</h3>
           <ul>
             <li><a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Discord server</a></li>
-            <li><a href="#faq" class="footer-link">FAQ and help</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h3>Other servers</h3>
-          <p>
-            Peaceful Vanilla Club also runs a long standing vanilla survival server for Minecraft, with its own worlds and community projects.
-          </p>
+          <p>Peaceful Vanilla Club also runs a long standing vanilla survival server for Minecraft.</p>
           <ul>
-            <li><a href="https://peacefulvanilla.club/" class="footer-link"><i class="fa-solid fa-cube" aria-hidden="true"></i>&nbsp;Learn more about the Minecraft server</a></li>
+            <li><a href="https://peacefulvanilla.club/" class="footer-link"><i class="fa-solid fa-cube" aria-hidden="true"></i>&nbsp;Minecraft server</a></li>
           </ul>
         </div>
       </div>
@@ -2602,54 +2092,23 @@
         <div class="footer-legal">
           <i class="fa-regular fa-copyright" aria-hidden="true"></i>
           <small>
-            2019 - 2025 Peaceful Vanilla Club. All rights reserved. Peaceful Vanilla Club is an independent fan project and is not affiliated with or endorsed by
-            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
-            Hypixel Studios, Riot Games, Mojang or Microsoft. Hytale is a trademark of Hypixel Studios. All other trademarks are the property of their respective owners.
+            2019 - 2025 Peaceful Vanilla Club. Independent fan project, not affiliated with Hypixel Studios, Riot Games, Mojang or Microsoft.
           </small>
         </div>
-        <div>
-          <div class="footer-social">
-            <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord">
-              <i class="fa-brands fa-discord"></i>
-            </a>
-          </div>
-          <div class="footer-mascots" aria-hidden="true">
-            <div class="mascot mascot-1">
-              <svg viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="7" fill="#f9fafb"/>
-                <circle cx="10" cy="11" r="2.2" fill="#0f172a"/>
-                <circle cx="10.7" cy="10.4" r="0.6" fill="#f9fafb"/>
-              </svg>
-            </div>
-            <div class="mascot mascot-2">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="6" y="6" width="12" height="12" rx="3" fill="#f9fafb"/>
-                <path d="M9 13.5c.5.5 1.2.9 2 .9s1.5-.4 2-.9" stroke="#0f172a" stroke-width="1.3" stroke-linecap="round"/>
-                <circle cx="9" cy="11" r="1" fill="#0f172a"/>
-                <circle cx="15" cy="11" r="1" fill="#0f172a"/>
-              </svg>
-            </div>
-            <div class="mascot mascot-3">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="5" y="8" width="14" height="9" rx="2" fill="#f9fafb"/>
-                <path d="M7 10h10v3H7z" fill="#0f172a"/>
-                <path d="M9 16h6" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
+        <div class="footer-social">
+          <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Discord">
+            <i class="fa-brands fa-discord"></i>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
   <button id="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 20 20" fill="none">
-      <path d="M10 4 4 10h3v6h6v-6h3z" fill="currentColor"/>
-    </svg>
+    <svg viewBox="0 0 20 20" fill="none"><path d="M10 4 4 10h3v6h6v-6h3z" fill="currentColor"/></svg>
   </button>
 </div>
 
-<!-- JSON-LD structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2657,82 +2116,7 @@
   "name": "Peaceful Vanilla Club",
   "url": "https://hytale.peacefulvanilla.club/",
   "description": "Peaceful Vanilla Club is a peaceful Hytale vanilla survival server created by the same team behind a long running Minecraft vanilla survival community.",
-  "sameAs": [
-    "https://discord.gg/2d9wPbrpEU"
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Peaceful Vanilla Club a pay to win Hytale server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits. Any future donations will be used to support hosting costs and cosmetic ideas that do not affect survival balance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this a pure vanilla Hytale server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our goal is a pure vanilla identity: a calm Hytale vanilla survival server focused on the core survival multiplayer loop. We keep the experience readable and avoid feature spam that replaces survival progression."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you use mods or plugins on the Hytale server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The server is designed to feel like a vanilla SMP. If we add tools, they will be minimal and aimed at safety, moderation, and long-term stability, not at turning survival into a menu-based experience."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there PvP on your Hytale survival server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Random PvP is not enabled in the open survival world. If we host combat events, they are opt-in and clearly separated. The default experience is peaceful survival multiplayer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need an application or whitelist to join?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You will not need a classic written application. Joining Discord and reading the rules will be enough for most players. The main vanilla survival multiplayer world will be open to everyone who follows the rules."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where do I find the Hytale server address to join?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The official server address and connection instructions will be pinned in Discord announcements when Hytale servers open. Scroll up to the How to join section for the step-by-step flow."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will there be multiple worlds, or one main survival world?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our plan is one main shared Hytale survival world at launch. We prefer one strong vanilla SMP map instead of many half-empty worlds. If we ever add side worlds or events, the core experience will still focus on one persistent world."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can I report griefing or problems?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The fastest way is to open a ticket or ping staff in Discord. We already use logs and backups extensively on Minecraft, and we plan to apply the same approach on Hytale so grief can be addressed and the world can stay stable."
-      }
-    }
-  ]
+  "sameAs": ["https://discord.gg/2d9wPbrpEU"]
 }
 </script>
 
@@ -2770,7 +2154,6 @@
     });
   }
 
-  // FAQ accordions
   function initAccordions() {
     const questions = document.querySelectorAll(".faq-question");
     questions.forEach((btn) => {
@@ -2779,14 +2162,12 @@
         const answerId = btn.getAttribute("aria-controls");
         const answer = document.getElementById(answerId);
         if (!answer) return;
-
         btn.setAttribute("aria-expanded", expanded ? "false" : "true");
         answer.hidden = expanded;
       });
     });
   }
 
-  // Scroll animations
   function initScrollAnimations() {
     const animated = document.querySelectorAll(".animate-fade-up");
     if (!("IntersectionObserver" in window) || animated.length === 0) {
@@ -2809,7 +2190,6 @@
     animated.forEach((el) => observer.observe(el));
   }
 
-  // Back to top button
   function initBackToTop() {
     const btn = document.getElementById("back-to-top");
     if (!btn) return;
@@ -2825,7 +2205,6 @@
     });
   }
 
-  // Media placeholders
   function initMediaPlaceholders() {
     const frames = document.querySelectorAll(".media-frame img");
     frames.forEach((img) => {
@@ -2835,7 +2214,6 @@
     });
   }
 
-  // IP copy helper
   function initIpCopy() {
     const wrapper = document.getElementById("ip-copy");
     const ipCode = document.getElementById("server-ip");
@@ -2847,19 +2225,13 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           await navigator.clipboard.writeText(text);
         }
-        wrapper.classList.add("copied");
         wrapper.style.color = "#bbf7d0";
-        setTimeout(() => {
-          wrapper.classList.remove("copied");
-          wrapper.style.color = "";
-        }, 1800);
-      } catch (err) {
-        console.warn("Could not copy server IP", err);
-      }
+        setTimeout(() => { wrapper.style.color = ""; }, 1800);
+      } catch (err) {}
     });
   }
 
-  // Guides read more (SEO-friendly, content stays in DOM)
+  /* Read more: animate from teaser-height to full height, without affecting other cards */
   function initGuideReadMore() {
     const buttons = document.querySelectorAll(".read-more");
     buttons.forEach((btn) => {
@@ -2867,23 +2239,31 @@
       const panel = targetId ? document.getElementById(targetId) : null;
       if (!panel) return;
 
+      const card = btn.closest(".guide-card");
       const label = btn.querySelector(".read-more-label");
-      panel.style.height = "0px";
+
+      const collapsedPx = panel.getBoundingClientRect().height;
+      panel.dataset.collapsedHeight = String(collapsedPx);
 
       const setExpanded = (expanded) => {
         btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-        if (label) label.textContent = expanded ? "Read less" : "Read more";
+        if (label) label.textContent = expanded ? "read less" : "read more";
+        if (card) card.classList.toggle("is-expanded", expanded);
       };
+
+      setExpanded(false);
 
       btn.addEventListener("click", () => {
         const expanded = btn.getAttribute("aria-expanded") === "true";
 
         if (!expanded) {
           setExpanded(true);
-          const end = panel.scrollHeight;
 
+          const start = panel.getBoundingClientRect().height;
           panel.style.overflow = "hidden";
-          panel.style.height = "0px";
+          panel.style.height = `${start}px`;
+
+          const end = panel.scrollHeight;
 
           requestAnimationFrame(() => {
             panel.style.transition = "height 260ms ease";
@@ -2899,14 +2279,16 @@
 
         } else {
           setExpanded(false);
+
           const start = panel.scrollHeight;
+          const collapsed = parseFloat(panel.dataset.collapsedHeight || "0");
 
           panel.style.overflow = "hidden";
           panel.style.height = `${start}px`;
 
           requestAnimationFrame(() => {
             panel.style.transition = "height 220ms ease";
-            panel.style.height = "0px";
+            panel.style.height = `${collapsed}px`;
           });
 
           const onEnd = () => {
