@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Peaceful Vanilla Club - Hytale vanilla survival server</title>
-  <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale semi-vanilla survival server. Semi-vanilla SMP vibes, no pay to win, no griefing, no random PvP. Built by a long running Minecraft community since 2019.">
+  <title>Peaceful Vanilla Club - The Best Vanilla Hytale Server & SMP</title>
+  <meta name="description" content="Join Peaceful Vanilla Club, the premier vanilla Hytale server. Experience a cozy, no-griefing survival SMP with a friendly community and a long-term world.">
   <link rel="canonical" href="https://hytale.peacefulvanilla.club/">
 
   <meta property="og:type" content="website">
@@ -43,8 +43,6 @@
   <meta name="msapplication-square150x150logo" content="https://hytale.peacefulvanilla.club/mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="https://hytale.peacefulvanilla.club/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="https://hytale.peacefulvanilla.club/mstile-310x310.png" />
-
-  <script>document.documentElement.classList.add('js');</script>
 
   <style>
     :root {
@@ -575,6 +573,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .media-frame img.is-loaded {
+      opacity: 1;
     }
 
     .media-frame img.is-broken { display: none; }
@@ -1238,22 +1241,6 @@
       transform: translateY(0);
     }
 
-
-    /* Lazy image fade-in */
-    .js img.lazy-fade {
-      opacity: 0;
-      transform: translateY(8px);
-      filter: blur(10px);
-      transition: opacity 0.7s ease, transform 0.7s ease, filter 0.8s ease;
-      will-change: opacity, transform, filter;
-    }
-
-    .js img.lazy-fade.is-loaded {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-
     /* Responsive */
     @media (max-width: 960px), (max-height: 600px) {
       .hero-inner { grid-template-columns: minmax(0, 1fr); }
@@ -1482,7 +1469,7 @@
 
             <div class="hero-media">
               <div class="media-frame">
-                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_1.jpeg" alt="Concept view of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
+                <img src="" alt="Vanilla Hytale Server gameplay - Peaceful Vanilla Club community" data-src="img/hytale_vanilla_servers_list_1.jpeg" loading="lazy">
               </div>
               <div class="media-caption">
                 <span><span class="pill-small">Hytale survival</span>One shared world, peaceful survival.</span>
@@ -1621,13 +1608,13 @@
           <div class="animate-fade-up">
             <div class="mini-gallery">
               <figure class="media-frame mini-gallery-main">
-                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_2.jpeg" alt="Concept of a player village on the Peaceful Vanilla Club Hytale server" loading="lazy">
+                <img src="" alt="Exploring the vast world of our vanilla Hytale server" data-src="img/hytale_vanilla_servers_list_2.jpeg" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_3.jpeg" alt="Forest landscape in a Hytale survival world" loading="lazy">
+                <img src="" alt="Collaborative building on the best vanilla Hytale server" data-src="img/hytale_vanilla_servers_list_3.jpeg" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_4.jpeg" alt="Town center for the Hytale world community" loading="lazy">
+                <img src="" alt="Vanilla Hytale SMP experience with a friendly community" data-src="img/hytale_vanilla_servers_list_4.jpeg" loading="lazy">
               </figure>
             </div>
           </div>
@@ -2767,49 +2754,6 @@
     animated.forEach((el) => observer.observe(el));
   }
 
-  function initLazyFadeImages() {
-    const imgs = document.querySelectorAll("img.lazy-fade");
-    if (imgs.length === 0) return;
-
-    imgs.forEach((img) => {
-      img.dataset.lazyLoaded = img.complete && img.naturalWidth > 0 ? "1" : "0";
-
-      const onDone = () => {
-        img.dataset.lazyLoaded = "1";
-        if (img.dataset.inView === "1") img.classList.add("is-loaded");
-      };
-
-      if (!img.complete) {
-        img.addEventListener("load", onDone, { once: true });
-        img.addEventListener("error", onDone, { once: true });
-      }
-    });
-
-    if (!("IntersectionObserver" in window)) {
-      imgs.forEach((img) => {
-        img.dataset.inView = "1";
-        if (img.dataset.lazyLoaded === "1") img.classList.add("is-loaded");
-      });
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const img = entry.target;
-          img.dataset.inView = "1";
-          if (img.complete && img.naturalWidth > 0) img.dataset.lazyLoaded = "1";
-          if (img.dataset.lazyLoaded === "1") img.classList.add("is-loaded");
-          observer.unobserve(img);
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    imgs.forEach((img) => observer.observe(img));
-  }
-
   function initBackToTop() {
     const btn = document.getElementById("back-to-top");
     if (!btn) return;
@@ -2924,7 +2868,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     initAccordions();
     initScrollAnimations();
-    initLazyFadeImages();
     initBackToTop();
     initMediaPlaceholders();
     initIpCopy();
