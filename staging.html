@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Vanilla Hytale Server | Peaceful Vanilla Club</title>
-  <meta name="description" content="Looking for a vanilla hytale server? Peaceful Vanilla Club is a calm semi-vanilla survival server: no pay to win, no griefing, no random PvP. Built by a long running Minecraft community since 2019.">
+  <title>Peaceful Vanilla Club - Hytale vanilla survival server</title>
+  <meta name="description" content="Peaceful Vanilla Club is a peaceful Hytale semi-vanilla survival server. Semi-vanilla SMP vibes, no pay to win, no griefing, no random PvP. Built by a long running Minecraft community since 2019.">
   <link rel="canonical" href="https://hytale.peacefulvanilla.club/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Vanilla Hytale Server | Peaceful Vanilla Club">
-  <meta property="og:description" content="Looking for a vanilla hytale server? Join Peaceful Vanilla Club for calm semi-vanilla survival multiplayer: no pay to win, no griefing, no random PvP. One long-term world.">
+  <meta property="og:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
+  <meta property="og:description" content="Cozy Hytale semi-vanilla survival server without pay to win or griefing. Vanilla survival multiplayer vibes with a long-term world and a friendly community.">
   <meta property="og:url" content="https://hytale.peacefulvanilla.club/">
-  <meta property="og:image" content="https://hytale.peacefulvanilla.club/img/hytale_vanilla_servers_list_1.jpeg">
+  <meta property="og:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vanilla Hytale Server | Peaceful Vanilla Club">
-  <meta name="twitter:description" content="Looking for a vanilla hytale server? Peaceful Vanilla Club is calm semi-vanilla survival multiplayer: no pay to win, no griefing, no random PvP.">
-  <meta name="twitter:image" content="https://hytale.peacefulvanilla.club/img/hytale_vanilla_servers_list_1.jpeg">
+  <meta name="twitter:title" content="Peaceful Vanilla Club - Hytale vanilla survival server">
+  <meta name="twitter:description" content="Cozy Hytale semi-vanilla survival server without pay to win or griefing. Vanilla SMP vibes with a long-term world.">
+  <meta name="twitter:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,12 +38,13 @@
   <link rel="icon" type="image/png" href="https://hytale.peacefulvanilla.club/favicon-128.png" sizes="128x128" />
   <meta name="application-name" content="Peaceful Vanilla Club - Hytale vanilla survival server"/>
   <meta name="msapplication-TileColor" content="#ff9500" />
-  <meta name="theme-color" content="#ff9500" />
   <meta name="msapplication-TileImage" content="https://hytale.peacefulvanilla.club/mstile-144x144.png" />
   <meta name="msapplication-square70x70logo" content="https://hytale.peacefulvanilla.club/mstile-70x70.png" />
   <meta name="msapplication-square150x150logo" content="https://hytale.peacefulvanilla.club/mstile-150x150.png" />
   <meta name="msapplication-wide310x150logo" content="https://hytale.peacefulvanilla.club/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="https://hytale.peacefulvanilla.club/mstile-310x310.png" />
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <style>
     :root {
@@ -259,18 +260,17 @@
     .btn-icon { width: 1.3rem; height: 1.3rem; display: inline-flex; align-items: center; justify-content: center; }
     .btn-icon i { font-size: 0.9rem; }
 
-    /* Header nav toggle */
     .nav-toggle {
       display: none;
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148,163,184,0.3);
-      background: rgba(15,23,42,0.7);
-      cursor: pointer;
-      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
+      background: rgba(15,23,42,0.9);
+      color: var(--color-text-soft);
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
 
     .nav-toggle span,
@@ -280,24 +280,26 @@
       display: block;
       width: 18px;
       height: 2px;
-      background: rgba(226,232,240,0.9);
-      border-radius: 99px;
-      position: absolute;
-      transition: transform 0.18s ease, opacity 0.18s ease;
+      border-radius: 999px;
+      background: var(--color-text-soft);
+      transition: transform 0.16s ease, opacity 0.16s ease;
+      position: relative;
     }
 
-    .nav-toggle span::before { transform: translateY(-6px); }
-    .nav-toggle span::after { transform: translateY(6px); }
+    .nav-toggle span::before { position: absolute; top: -5px; }
+    .nav-toggle span::after { position: absolute; top: 5px; }
 
-    .nav-toggle.is-open span { opacity: 0; }
-    .nav-toggle.is-open span::before { transform: rotate(45deg); }
-    .nav-toggle.is-open span::after { transform: rotate(-45deg); }
+    .nav-toggle.is-open span { transform: rotate(45deg); }
+    .nav-toggle.is-open span::before { opacity: 0; }
+    .nav-toggle.is-open span::after { transform: rotate(-90deg); top: 0; }
+
+    .nav-drawer { display: none; }
 
     /* Hero */
     #hero {
       position: relative;
-      padding-top: 4.6rem;
-      padding-bottom: 3.4rem;
+      padding: var(--space-xl) 0 var(--space-2xl);
+      background: radial-gradient(circle at top, rgba(55,65,106,0.8) 0, #050509 55%);
       overflow: hidden;
     }
 
@@ -305,111 +307,130 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(5,5,9,0.65), rgba(5,5,9,0.92)),
-        radial-gradient(circle at 20% 0%, rgba(255,155,60,0.20), rgba(0,0,0,0) 55%),
-        radial-gradient(circle at 80% 12%, rgba(16,185,129,0.13), rgba(0,0,0,0) 60%);
+        linear-gradient(to bottom, var(--color-hero-overlay), rgba(5,5,9,0.96)),
+        radial-gradient(circle at top left, rgba(56,189,248,0.2), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(249,115,22,0.18), transparent 55%);
       pointer-events: none;
+      z-index: -2;
     }
 
     .hero-inner {
-      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: var(--space-xl);
-      align-items: start;
-      z-index: 1;
+      align-items: center;
     }
 
+    .hero-left { max-width: 40rem; }
+
     .eyebrow {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-      margin-bottom: var(--space-md);
+      gap: 0.5rem;
+      padding: 0.2rem 0.7rem 0.2rem 0.25rem;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      margin-bottom: var(--space-sm);
+      font-size: 0.78rem;
+      color: var(--color-text-soft);
     }
 
     .eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.35rem 0.75rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(255,155,60,0.35);
-      background: rgba(255,155,60,0.12);
-      color: rgba(255,215,186,0.95);
-      font-weight: 800;
-      letter-spacing: 0.07em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.16);
+      color: #6ee7b7;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      font-size: 0.75rem;
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
-      line-height: 1.05;
-      margin: 0 0 var(--space-md);
-      letter-spacing: 0.02em;
-      font-weight: 900;
+      font-size: clamp(2.25rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 var(--space-sm);
+      font-weight: 800;
     }
 
-    .highlight {
-      background: linear-gradient(90deg, #ffcf84, #ff9b3c);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero-title span.highlight {
+      color: var(--color-primary);
+      text-shadow: 0 0 22px rgba(248,250,252,0.18);
     }
 
     .hero-subtitle {
+      margin: 0 0 var(--space-md);
       color: var(--color-text-soft);
-      margin: 0 0 var(--space-lg);
-      font-size: 1.05rem;
-      max-width: 44rem;
+      font-size: 0.98rem;
+      max-width: 34rem;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: var(--space-lg);
+      gap: 0.5rem;
+      margin-bottom: var(--space-md);
     }
 
     .badge {
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(75,85,99,0.9);
+      font-size: 0.75rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 0.9rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148,163,184,0.20);
-      background: rgba(15,23,42,0.55);
-      color: rgba(226,232,240,0.95);
-      font-weight: 700;
-      font-size: 0.9rem;
+      gap: 0.4rem;
+      color: var(--color-text-soft);
     }
 
-    .badge-icon { opacity: 0.92; }
+    .badge-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(55,65,81,0.9);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
 
     .hero-actions {
       display: flex;
-      align-items: center;
-      gap: 0.9rem;
       flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
       margin-bottom: var(--space-sm);
     }
 
-    .hero-note {
-      margin: 0;
-      color: rgba(148,163,184,0.95);
-      font-size: 0.95rem;
-      max-width: 44rem;
+    .hero-note { font-size: 0.8rem; color: var(--color-muted); }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
     }
 
-    /* Join card */
     .join-card {
+      background: rgba(15,23,42,0.95);
       border-radius: var(--radius-lg);
-      background: rgba(11,15,25,0.78);
-      border: 1px solid rgba(148,163,184,0.16);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.55);
-      padding: 1.25rem 1.25rem 1rem;
-      backdrop-filter: blur(18px);
-      margin-bottom: 1.2rem;
+      padding: var(--space-md);
+      border: 1px solid rgba(148,163,184,0.6);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .join-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top right, rgba(248,250,252,0.08), transparent 55%);
+      pointer-events: none;
+      opacity: 0.8;
     }
 
     .join-card-header {
@@ -417,113 +438,119 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: var(--space-sm);
+      position: relative;
+      z-index: 1;
     }
 
     .join-card-title {
-      font-weight: 900;
+      font-size: 0.9rem;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.82rem;
-      color: rgba(226,232,240,0.92);
+      color: var(--color-text-soft);
     }
 
     .join-chip {
-      font-weight: 900;
-      letter-spacing: 0.08em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(22,163,74,0.18);
+      color: #bbf7d0;
+      font-size: 0.7rem;
+      font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.72rem;
-      color: rgba(165,243,252,0.95);
-      background: var(--color-pill-bg);
-      padding: 0.35rem 0.65rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(165,243,252,0.18);
-      white-space: nowrap;
+      letter-spacing: 0.06em;
     }
 
     .join-card ol {
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
       display: grid;
-      gap: 0.75rem;
+      gap: 0.7rem;
+      position: relative;
+      z-index: 1;
     }
 
     .join-step {
       display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 0.75rem;
-      padding: 0.7rem 0.75rem;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148,163,184,0.12);
-      background: rgba(15,23,42,0.35);
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem 0.85rem;
+      align-items: start;
     }
 
     .join-step-number {
-      width: 34px;
-      height: 34px;
-      border-radius: 0.9rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.75);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      color: rgba(17,24,39,0.96);
-      background: linear-gradient(135deg, rgba(255,174,95,1), rgba(255,155,60,1));
-      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-      flex-shrink: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
     }
 
-    .join-step-title {
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.25rem;
-    }
-
+    .join-step-title { font-size: 0.85rem; font-weight: 600; }
     .join-step-text {
-      margin: 0.15rem 0 0;
-      color: rgba(148,163,184,0.92);
-      font-size: 0.92rem;
+      grid-column: 2 / -1;
+      font-size: 0.78rem;
+      color: var(--color-text-soft);
+      margin: 0;
     }
 
     .ip-tag {
-      margin-top: 0.95rem;
+      margin-top: var(--space-sm);
+      border-radius: 0.6rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px dashed rgba(148,163,184,0.8);
+      padding: 0.5rem 0.7rem;
+      font-size: 0.78rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.65rem 0.75rem;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148,163,184,0.12);
-      background: rgba(2,6,23,0.55);
-      color: rgba(226,232,240,0.92);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      font-size: 0.88rem;
+      gap: 0.6rem;
+      color: var(--color-text-soft);
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .ip-tag code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      padding: 0.16rem 0.45rem;
+      border-radius: 0.4rem;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 0.78rem;
+      color: var(--color-text);
+      word-break: break-all;
+      max-width: 100%;
+      display: inline-block;
     }
 
     .ip-copy {
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--color-primary);
       cursor: pointer;
-      user-select: none;
-      color: rgba(226,232,240,0.92);
+      flex: 1 1 100%;
+      justify-content: flex-start;
     }
 
-    .ip-copy code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 0.88rem;
-      color: rgba(226,232,240,0.92);
-      background: rgba(15,23,42,0.70);
-      border: 1px solid rgba(148,163,184,0.18);
-      padding: 0.25rem 0.45rem;
-      border-radius: 0.65rem;
+    .ip-copy-icon { width: 0.9rem; height: 0.9rem; }
+
+    .hero-media {
+      background: radial-gradient(circle at top left, rgba(59,130,246,0.1), transparent 55%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(55,65,81,0.95);
+      padding: 0.6rem;
     }
-
-    .ip-copy-icon i { opacity: 0.85; }
-
-    /* Media */
-    .hero-media { margin-top: 0.9rem; }
 
     .media-frame {
       position: relative;
@@ -537,7 +564,9 @@
     .media-frame::before {
       content: "";
       display: block;
-      padding-top: 62%;
+      width: 100%;
+      padding-top: 56.25%;
+      background-color: #111827;
     }
 
     .media-frame img {
@@ -546,162 +575,110 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 380ms ease, transform 520ms ease;
-    }
-
-    .media-frame img.is-loaded {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .media-frame img.is-broken { display: none; }
 
     .media-caption {
       padding: 0.4rem 0.4rem 0;
-      font-size: 0.88rem;
-      color: rgba(148,163,184,0.95);
+      font-size: 0.74rem;
+      color: var(--color-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
     }
 
     .pill-small {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.55rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(165,243,252,0.20);
-      background: rgba(15,118,110,0.12);
-      color: rgba(165,243,252,0.95);
-      font-weight: 900;
-      letter-spacing: 0.08em;
+      padding: 0.14rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.9);
+      font-size: 0.68rem;
       text-transform: uppercase;
-      font-size: 0.72rem;
-      margin-right: 0.45rem;
+      letter-spacing: 0.08em;
+      color: var(--color-text-soft);
     }
 
-    /* What is PVC section */
+    #what-is-pvc { background: radial-gradient(circle at top, #0f172a 0, #050509 70%); }
+
     .two-col {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: var(--space-xl);
-      align-items: start;
+      align-items: flex-start;
     }
 
-    .two-col-text p { margin-top: 0; color: var(--color-text-soft); }
+    .two-col-text p {
+      margin-top: 0;
+      margin-bottom: var(--space-sm);
+      color: var(--color-text-soft);
+      font-size: 0.96rem;
+    }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: var(--space-lg);
+      gap: 0.5rem;
+      margin-top: var(--space-sm);
     }
 
     .pill {
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: var(--color-pill-bg);
+      color: var(--color-pill-text);
+      font-size: 0.78rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      padding: 0.65rem 0.9rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148,163,184,0.16);
-      background: rgba(15,23,42,0.55);
-      color: rgba(226,232,240,0.95);
-      font-weight: 800;
-      font-size: 0.92rem;
+      gap: 0.4rem;
     }
 
-    .pill svg { width: 18px; height: 18px; opacity: 0.9; }
+    .pill svg { width: 0.9rem; height: 0.9rem; }
 
     .mini-gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-md);
-      align-items: stretch;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 0.5rem;
     }
 
-    .mini-gallery-main { grid-column: 1 / -1; }
+    .mini-gallery-main { grid-row: span 2; }
 
-    /* Goals */
-    #goals { background: rgba(11,16,32,0.55); border-top: 1px solid rgba(31,41,51,0.7); border-bottom: 1px solid rgba(31,41,51,0.7); }
-
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-md);
+    .mini-gallery .media-frame {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.7);
     }
 
-    .principle-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      padding: 1.2rem 1.1rem 1.05rem;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
+    #server-tags {
+      background: #050509;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      border-bottom: 1px solid rgba(15,23,42,0.95);
     }
-
-    .principle-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 1rem;
-      background: rgba(255,155,60,0.14);
-      border: 1px solid rgba(255,155,60,0.26);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.85rem;
-    }
-
-    .principle-icon i { color: rgba(255,207,132,0.95); font-size: 1.05rem; }
-
-    .principle-title {
-      margin: 0 0 0.5rem;
-      font-size: 1.05rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .principle-text { margin: 0 0 0.85rem; color: rgba(148,163,184,0.95); font-size: 0.95rem; }
-
-    .principle-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148,163,184,0.16);
-      background: rgba(15,23,42,0.55);
-      color: rgba(226,232,240,0.92);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* Server Tags */
-    #server-tags { padding-top: 3.2rem; }
 
     .tag-grid {
+      max-width: 980px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-md);
+      gap: 0.75rem;
     }
 
     details.tag-chip {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      box-shadow: var(--shadow-soft);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(5,5,9,0.92);
       overflow: hidden;
     }
 
     details.tag-chip summary {
       list-style: none;
       cursor: pointer;
-      padding: 1.1rem 1.1rem;
+      padding: 0.8rem 0.9rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.8rem;
+      color: var(--color-text);
     }
 
     details.tag-chip summary::-webkit-details-marker { display: none; }
@@ -709,187 +686,361 @@
     .tag-label {
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
+      gap: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      font-size: 0.86rem;
     }
 
-    .tag-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 1rem;
-      background: rgba(16,185,129,0.12);
-      border: 1px solid rgba(16,185,129,0.20);
+    .tag-label .tag-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.7);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .tag-icon i { color: rgba(165,243,252,0.95); font-size: 1rem; }
-
-    .tag-toggle {
-      width: 36px;
-      height: 36px;
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.12);
-      background: rgba(15,23,42,0.35);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(148,163,184,0.95);
-      transition: transform 0.18s ease;
+      color: var(--color-primary);
       flex-shrink: 0;
     }
 
-    details[open] .tag-toggle { transform: rotate(180deg); }
+    .tag-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
+      flex-shrink: 0;
+    }
+
+    details.tag-chip[open] .tag-toggle {
+      transform: rotate(180deg);
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+    }
 
     .tag-body {
-      padding: 0 1.1rem 1.1rem;
-      color: rgba(148,163,184,0.95);
-      border-top: 1px solid rgba(148,163,184,0.12);
-      background: rgba(2,6,23,0.35);
+      padding: 0 0.95rem 0.95rem;
+      color: var(--color-text-soft);
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(31,41,55,0.85);
     }
 
     .tag-body p { margin: 0.75rem 0 0; }
+    .tag-body strong { color: var(--color-text); }
 
-    /* Pure vanilla section */
-    #pure-vanilla { background: rgba(11,16,32,0.55); border-top: 1px solid rgba(31,41,51,0.7); border-bottom: 1px solid rgba(31,41,51,0.7); }
+    #pure-vanilla {
+      background: radial-gradient(circle at top, #0f172a 0, #020617 60%);
+    }
 
-    .cards-grid {
+    .pure-vanilla-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(5,5,9,0.92);
+      border: 1px solid rgba(31,41,55,0.9);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pure-vanilla-wrap p {
+      margin: 0.6rem 0;
+      color: var(--color-text-soft);
+      font-size: 0.98rem;
+    }
+
+    .pure-vanilla-wrap ul {
+      margin: 0.7rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--color-muted);
+    }
+
+    .pure-vanilla-wrap li { margin-bottom: 0.35rem; }
+
+    #goals {
+      background: #050509;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      border-bottom: 1px solid rgba(15,23,42,0.95);
+    }
+
+    .principles-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: var(--space-md);
     }
 
-    .info-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.1rem 1.05rem;
+    .principle-card {
+      background: var(--color-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.1rem 0.85rem;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
     }
 
-    .info-card h3 {
-      margin: 0 0 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
+    .principle-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 0.9rem;
+      background: radial-gradient(circle at 25% 20%, #fefce8, #f97316 40%, #7c2d12 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+      color: #111827;
+      flex-shrink: 0;
+    }
+
+    .principle-icon i { font-size: 1.35rem; }
+
+    .principle-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin: 0.7rem 0 0;
+    }
+
+    .principle-text {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .principle-tag {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.4rem;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      font-size: 1.02rem;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
     }
 
-    .info-card p { margin: 0; color: rgba(148,163,184,0.95); }
+    #stats {
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35) 0, #020617 65%);
+      border-top: 1px solid rgba(15,23,42,0.9);
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+    }
 
-    /* How to join */
-    #how-to-join { padding-top: 3.2rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .stat-card {
+      background: rgba(15,23,42,0.92);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148,163,184,0.8);
+      padding: var(--space-md);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.8);
+    }
+
+    .stat-number {
+      margin: 0;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-label {
+      margin: 0.1rem 0 0.4rem;
+      font-size: 0.86rem;
+      color: var(--color-text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stat-text { margin: 0; font-size: 0.9rem; color: var(--color-muted); }
+    .stats-note {
+      margin-top: var(--space-md);
+      font-size: 0.82rem;
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    #how-to-join { background: #050509; }
 
     .join-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: var(--space-xl);
-      align-items: start;
+      align-items: flex-start;
     }
 
-    .join-steps {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.1rem 1.05rem;
-    }
-
-    .join-steps h3 {
-      margin: 0 0 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 1.02rem;
-    }
-
-    .join-steps p { margin: 0 0 0.85rem; color: rgba(148,163,184,0.95); }
-
-    .join-list {
+    .step-list {
+      list-style: none;
       margin: 0;
-      padding-left: 1.1rem;
-      color: rgba(148,163,184,0.95);
-    }
-
-    .join-list li { margin: 0.4rem 0; }
-
-    .join-sidebar {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.1rem 1.05rem;
-    }
-
-    .join-sidebar h3 {
-      margin: 0 0 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 1.02rem;
-    }
-
-    .join-sidebar p { margin: 0; color: rgba(148,163,184,0.95); }
-
-    /* Guides */
-    #guides { background: rgba(11,16,32,0.55); border-top: 1px solid rgba(31,41,51,0.7); border-bottom: 1px solid rgba(31,41,51,0.7); }
-
-    .guides-grid {
+      padding: 0;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: var(--space-md);
     }
 
-    .guide-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
+    .step-item {
+      background: var(--color-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.7rem 0.9rem;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.98);
+      border: 1px solid rgba(148,163,184,0.85);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .step-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-text {
+      grid-column: 2 / -1;
+      margin: 0.1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .join-extra { font-size: 0.88rem; color: var(--color-muted); margin-top: var(--space-md); }
+
+    .mini-card {
+      background: var(--color-card-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      padding: var(--space-md);
+      font-size: 0.88rem;
+      color: var(--color-text-soft);
       box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.1rem 0;
+    }
+
+    .mini-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 700; }
+    .mini-card ul { padding-left: 1.1rem; margin: 0; }
+    .mini-card li { margin-bottom: 0.35rem; }
+
+    /* Guides */
+    #guides {
+      background: radial-gradient(circle at top, #0f172a 0, #050509 70%);
+      border-top: 1px solid rgba(15,23,42,0.95);
+      border-bottom: 1px solid rgba(15,23,42,0.95);
+    }
+
+    .guides-scroller {
+      display: flex;
+      gap: var(--space-md);
+      overflow-x: auto;
+      overflow-y: hidden;
+      align-items: flex-start;
+      padding: 0.25rem 0 0.9rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .guides-scroller::-webkit-scrollbar { height: 10px; }
+    .guides-scroller::-webkit-scrollbar-thumb {
+      background: rgba(148,163,184,0.35);
+      border-radius: 999px;
+    }
+    .guides-scroller::-webkit-scrollbar-track {
+      background: rgba(15,23,42,0.6);
+      border-radius: 999px;
+    }
+
+    .guide-card {
+      flex: 0 0 min(460px, 88vw);
+      scroll-snap-align: start;
+      background: rgba(5,5,9,0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+      padding: var(--space-md);
       overflow: hidden;
     }
 
     .guide-card h3 {
-      margin: 0 0 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 1.02rem;
+      margin: 0 0 0.55rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
     }
 
-    .guide-card p { margin: 0 0 0.85rem; color: rgba(148,163,184,0.95); }
+    .guide-card p {
+      margin: 0.55rem 0;
+      color: var(--color-text-soft);
+      font-size: 0.95rem;
+    }
 
+    /* Read more as small grey italic text */
     .read-more {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
+      margin-top: 0.5rem;
+      background: transparent;
       border: 0;
-      border-top: 1px solid rgba(148,163,184,0.14);
-      background: rgba(2,6,23,0.35);
-      cursor: pointer;
-      padding: 0.85rem 1.1rem;
-      color: rgba(226,232,240,0.92);
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      padding: 0.25rem 0;
+      color: rgba(156,163,175,0.9);
       font-size: 0.78rem;
+      font-style: italic;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      user-select: none;
     }
 
-    .read-more .chev { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 0.9rem; border: 1px solid rgba(148,163,184,0.18); background: rgba(15,23,42,0.55); }
-    .read-more .chev i { font-size: 0.85rem; }
+    .read-more:hover,
+    .read-more:focus-visible { color: rgba(209,213,219,0.95); text-decoration: underline; }
 
+    .read-more .chev {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(156,163,175,0.9);
+      transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+      flex-shrink: 0;
+    }
+
+    .read-more[aria-expanded="true"] .chev {
+      transform: rotate(180deg);
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      border-color: rgba(255,155,60,0.35);
+    }
+
+    /* Teaser with fade gradient */
     .guide-more {
-      height: var(--guide-teaser-height);
       overflow: hidden;
+      margin-top: 0.75rem;
+      border-top: 1px solid rgba(31,41,55,0.85);
+      padding-top: 0.85rem;
+
+      height: var(--guide-teaser-height);
       position: relative;
-      transition: height 260ms ease;
-      border-top: 1px solid rgba(148,163,184,0.14);
-      background: rgba(2,6,23,0.35);
     }
 
     .guide-more::after {
@@ -899,184 +1050,208 @@
       right: 0;
       bottom: 0;
       height: var(--guide-fade-height);
-      background: linear-gradient(to bottom, rgba(2,6,23,0), rgba(2,6,23,0.92));
+      background: linear-gradient(to bottom, rgba(5,5,9,0), rgba(5,5,9,0.95));
       pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.16s ease;
     }
 
-    .guide-more-inner { padding: 0.95rem 1.1rem 1.1rem; color: rgba(148,163,184,0.95); }
+    .guide-card.is-expanded .guide-more::after { opacity: 0; }
+
+    .guide-more-inner {
+      color: var(--color-text-soft);
+      font-size: 0.95rem;
+    }
 
     .guide-more-inner h4 {
-      margin: 0.75rem 0 0.35rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
+      margin: 0.8rem 0 0.35rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(226,232,240,0.92);
-      font-size: 0.88rem;
+      color: var(--color-text);
     }
 
-    .guide-more-inner ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
-    .guide-more-inner li { margin: 0.35rem 0; }
+    .guide-more-inner ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--color-muted);
+    }
 
-    .guide-card.is-expanded .guide-more::after { display: none; }
+    .guide-more-inner li { margin-bottom: 0.35rem; }
 
     /* FAQ */
-    .faq-grid {
+    #faq { background: radial-gradient(circle at top, #0f172a 0, #020617 60%); }
+
+    .faq-list {
+      max-width: 860px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-md);
+      gap: 0.6rem;
     }
 
     .faq-item {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.14);
-      background: rgba(11,15,25,0.72);
-      box-shadow: var(--shadow-soft);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: rgba(5,5,9,0.95);
       overflow: hidden;
     }
 
     .faq-question {
       width: 100%;
-      border: 0;
       background: transparent;
-      cursor: pointer;
-      padding: 1.1rem 1.1rem;
+      border: 0;
+      padding: 0.9rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      color: rgba(226,232,240,0.92);
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--color-text);
       text-align: left;
-      font-size: 0.92rem;
     }
 
-    .faq-question-text { max-width: 30rem; }
+    .faq-question-text { font-size: 0.94rem; font-weight: 600; }
 
     .faq-toggle-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.12);
-      background: rgba(15,23,42,0.35);
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: rgba(148,163,184,0.95);
       flex-shrink: 0;
-      font-size: 1.1rem;
-      transition: transform 0.18s ease;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease;
     }
 
-    .faq-item[open] .faq-toggle-icon { transform: rotate(45deg); }
-
-    .faq-answer {
-      padding: 0 1.1rem 1.1rem;
-      color: rgba(148,163,184,0.95);
-      border-top: 1px solid rgba(148,163,184,0.12);
-      background: rgba(2,6,23,0.35);
+    .faq-question[aria-expanded="true"] .faq-toggle-icon {
+      transform: rotate(90deg);
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
     }
 
-    .faq-answer p { margin: 0.75rem 0 0; }
+    .faq-answer { padding: 0 1rem 0.9rem; font-size: 0.9rem; color: var(--color-text-soft); }
+    .faq-answer p { margin: 0.3rem 0; }
 
-    /* Footer */
-    .site-footer {
-      padding: 3.2rem 0 2rem;
-      border-top: 1px solid rgba(31,41,51,0.7);
-      background: rgba(2,6,23,0.65);
+    footer.site-footer {
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.95);
+      padding: var(--space-xl) 0 var(--space-md);
+      font-size: 0.86rem;
+      color: var(--color-muted);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      gap: var(--space-xl);
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
     }
 
     .footer-col h3 {
-      margin: 0 0 0.75rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.92rem;
-      color: rgba(226,232,240,0.92);
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.96rem;
+      color: var(--color-text);
+      font-weight: 700;
     }
 
-    .footer-col p, .footer-col li { color: rgba(148,163,184,0.95); margin: 0.45rem 0 0; }
-    .footer-col ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
-    .footer-col li { margin: 0.45rem 0; }
+    .footer-col p { margin: 0 0 0.35rem; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col li { margin-bottom: 0.35rem; }
+
+    .footer-link { color: var(--color-muted); font-size: 0.84rem; }
+    .footer-link:hover { color: var(--color-text); }
 
     .footer-bottom {
-      margin-top: 2rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(148,163,184,0.12);
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 0.75rem;
+      border-top: 1px solid rgba(31,41,55,0.85);
+      padding-top: var(--space-sm);
+      margin-top: var(--space-sm);
     }
 
-    .footer-legal { color: rgba(148,163,184,0.92); }
+    .footer-legal {
+      max-width: 34rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .footer-legal i { margin-top: 0.08rem; }
 
     .footer-social {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.5rem;
     }
 
     .social-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.12);
-      background: rgba(15,23,42,0.55);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(148,163,184,0.9);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: rgba(226,232,240,0.92);
-      transition: transform 0.12s ease, background-color 0.18s ease;
+      color: var(--color-muted);
+      font-size: 0.9rem;
     }
 
-    .social-icon:hover { transform: translateY(-1px); background: rgba(15,23,42,0.78); }
-
-    /* Back to top */
+    /* Back to top button */
     #back-to-top {
       position: fixed;
       right: 1.25rem;
       bottom: 1.25rem;
-      width: 46px;
-      height: 46px;
-      border-radius: 1.1rem;
-      border: 1px solid rgba(148,163,184,0.18);
-      background: rgba(15,23,42,0.78);
-      color: rgba(226,232,240,0.92);
-      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.9);
+      background: rgba(5,5,9,0.96);
+      color: var(--color-text-soft);
+      display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(6px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.85);
       z-index: 50;
     }
 
-    #back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-
     #back-to-top svg { width: 18px; height: 18px; }
+    #back-to-top.is-visible { display: inline-flex; }
 
-    /* Simple entrance animation */
+    /* Scroll animations */
     .animate-fade-up {
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .animate-fade-up.is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+
+    /* Lazy image fade-in */
+    .js img.lazy-fade {
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(10px);
+      transition: opacity 0.7s ease, transform 0.7s ease, filter 0.8s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .js img.lazy-fade.is-loaded {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
     }
 
     /* Responsive */
@@ -1158,57 +1333,6 @@
       #back-to-top { right: 0.9rem; bottom: 0.9rem; }
     }
   </style>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Peaceful Vanilla Club",
-  "url": "https://hytale.peacefulvanilla.club/",
-  "logo": "https://hytale.peacefulvanilla.club/logo.png",
-  "description": "Peaceful Vanilla Club is a peaceful vanilla survival community for sandbox games, born on Minecraft in 2019 and now running a shared semi-vanilla survival world for Hytale. Cozy survival multiplayer without pay to win, griefing or random PvP.",
-  "sameAs": ["https://discord.gg/2d9wPbrpEU"]
-}
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Peaceful Vanilla Club Hytale Guides",
-  "itemListOrder": "https://schema.org/ItemListOrderAscending",
-  "numberOfItems": 25,
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "url": "https://hytale.peacefulvanilla.club/#guide-1", "item": { "@type": "Article", "headline": "Hytale vanilla server vs modded server: how to choose the right survival multiplayer", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 2, "url": "https://hytale.peacefulvanilla.club/#guide-2", "item": { "@type": "Article", "headline": "What is a semi-vanilla Hytale server? Rules, moderation, and quality of life explained", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 3, "url": "https://hytale.peacefulvanilla.club/#guide-3", "item": { "@type": "Article", "headline": "Hytale no pay to win servers: how to spot unfair monetization and donor kits", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 4, "url": "https://hytale.peacefulvanilla.club/#guide-4", "item": { "@type": "Article", "headline": "How to join a Hytale vanilla server: checklist for survival multiplayer", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 5, "url": "https://hytale.peacefulvanilla.club/#guide-5", "item": { "@type": "Article", "headline": "Vanilla SMP starter guide: building your first town on a Hytale vanilla survival server", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-
-    { "@type": "ListItem", "position": 6, "url": "https://hytale.peacefulvanilla.club/#guide-6", "item": { "@type": "Article", "headline": "Peaceful Hytale servers: rules that stop griefing and random PvP", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 7, "url": "https://hytale.peacefulvanilla.club/#guide-7", "item": { "@type": "Article", "headline": "Hytale survival multiplayer etiquette: how to be a good neighbor in a shared world", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 8, "url": "https://hytale.peacefulvanilla.club/#guide-8", "item": { "@type": "Article", "headline": "Hytale SMP server tips: towns, community projects, and long-term progression", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 9, "url": "https://hytale.peacefulvanilla.club/#guide-9", "item": { "@type": "Article", "headline": "Hytale survival server rules: what to look for before you invest time in a world", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 10, "url": "https://hytale.peacefulvanilla.club/#guide-10", "item": { "@type": "Article", "headline": "Hytale no reset survival server guide: why persistent worlds are better for towns and builders", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 11, "url": "https://hytale.peacefulvanilla.club/#guide-11", "item": { "@type": "Article", "headline": "Hytale survival server for builders guide: towns, megabases, and calm vanilla SMP", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-
-    { "@type": "ListItem", "position": 12, "url": "https://hytale.peacefulvanilla.club/#guide-12", "item": { "@type": "Article", "headline": "Hytale Early Access 2026: Release Date, Pre-Purchase, Editions, and What You Actually Get", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 13, "url": "https://hytale.peacefulvanilla.club/#guide-13", "item": { "@type": "Article", "headline": "Is Hytale Coming to Steam? The Real Answer (and What It Means for Players)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 14, "url": "https://hytale.peacefulvanilla.club/#guide-14", "item": { "@type": "Article", "headline": "What Happened to Hytale? 2018 Trailer to 2026 Early Access (Timeline Explained)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 15, "url": "https://hytale.peacefulvanilla.club/#guide-15", "item": { "@type": "Article", "headline": "Hytale System Requirements: Minimum vs Recommended (Plus Laptop Tips)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 16, "url": "https://hytale.peacefulvanilla.club/#guide-16", "item": { "@type": "Article", "headline": "Best Hytale Settings for FPS: View Distance, Stutters, and Smooth Multiplayer", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 17, "url": "https://hytale.peacefulvanilla.club/#guide-17", "item": { "@type": "Article", "headline": "Hytale Server List Explained: How to Choose the Best Vanilla Hytale Server", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 18, "url": "https://hytale.peacefulvanilla.club/#guide-18", "item": { "@type": "Article", "headline": "Hytale Dedicated Server Hosting: Price, Regions, and What Actually Matters", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 19, "url": "https://hytale.peacefulvanilla.club/#guide-19", "item": { "@type": "Article", "headline": "Hytale Survival Server Etiquette: Avoid Drama and Keep Towns Peaceful", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 20, "url": "https://hytale.peacefulvanilla.club/#guide-20", "item": { "@type": "Article", "headline": "Hytale Grief Protection: What Servers Use to Stop Stealing and Destroying", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 21, "url": "https://hytale.peacefulvanilla.club/#guide-21", "item": { "@type": "Article", "headline": "Hytale Server IP vs Discord Invite: Why Many Servers Share Address in Discord", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 22, "url": "https://hytale.peacefulvanilla.club/#guide-22", "item": { "@type": "Article", "headline": "Hytale Roleplay vs Vanilla SMP: Choosing the Right Community Style", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 23, "url": "https://hytale.peacefulvanilla.club/#guide-23", "item": { "@type": "Article", "headline": "Hytale PvP Servers vs Peaceful Servers: Pros, Cons, and Who Each Is For", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 24, "url": "https://hytale.peacefulvanilla.club/#guide-24", "item": { "@type": "Article", "headline": "How to Find a No Pay to Win Hytale Server: Red Flags and Good Signs", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
-    { "@type": "ListItem", "position": 25, "url": "https://hytale.peacefulvanilla.club/#guide-25", "item": { "@type": "Article", "headline": "Hytale Server Rules That Actually Work: Keeping a Long-Term Vanilla SMP World", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } }
-  ]
-}
-  </script>
 </head>
 
 <body>
@@ -1230,7 +1354,7 @@
         </div>
         <div class="brand-text">
           <span class="brand-name">Peaceful Vanilla Club</span>
-          <span class="brand-tagline">vanilla Hytale server</span>
+          <span class="brand-tagline">Hytale vanilla survival server</span>
         </div>
       </a>
 
@@ -1298,10 +1422,10 @@
               <span>Peaceful vanilla survival since 2019</span>
             </div>
             <h1 class="hero-title">
-              The peaceful <span class="highlight">vanilla Hytale server</span> built by a long running community.
+              The peaceful <span class="highlight">Hytale vanilla survival</span> server built by a long running community.
             </h1>
             <p class="hero-subtitle">
-              Peaceful Vanilla Club started as a Minecraft survival server and now runs a calm <strong>vanilla hytale server</strong> with a <strong>semi-vanilla</strong> approach:
+              Peaceful Vanilla Club started as a Minecraft survival server and now runs a calm <strong>Hytale vanilla server</strong> with a <strong>semi-vanilla</strong> approach:
               no random PvP, no griefing, and no pay to win. One shared world, relaxed survival multiplayer, and a friendly <strong>Hytale vanilla SMP</strong> community.
             </p>
             <div class="hero-badges">
@@ -1358,13 +1482,108 @@
 
             <div class="hero-media">
               <div class="media-frame">
-                <img src="img/hytale_vanilla_servers_list_1.jpeg" alt="Vanilla Hytale server screenshot from Peaceful Vanilla Club (calm survival multiplayer)" loading="lazy" decoding="async">
+                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_1.jpeg" alt="Concept view of a cozy Hytale survival spawn on Peaceful Vanilla Club" loading="lazy">
               </div>
               <div class="media-caption">
                 <span><span class="pill-small">Hytale survival</span>One shared world, peaceful survival.</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Server Tags -->
+    <section id="server-tags">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Server tags</h2>
+          <p>
+            Expand any tag to see what it means in practice. The details are written for real players searching a
+            <strong>Hytale vanilla server</strong>, a <strong>Hytale vanilla survival server</strong>, a <strong>Hytale SMP server</strong>,
+            and a calm <strong>vanilla survival multiplayer server</strong>.
+          </p>
+        </div>
+
+        <div class="tag-grid">
+          <details class="tag-chip animate-fade-up">
+            <summary>
+              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>Semi-vanilla</span>
+              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="tag-body">
+              <p><strong>Semi-vanilla</strong> means we keep a true <strong>Hytale vanilla survival server</strong> feel, but we allow small quality-of-life choices and strong moderation to protect the experience.</p>
+              <p>Survival progression stays meaningful, travel matters, and the world is designed for long-term towns in a stable <strong>Hytale vanilla SMP</strong> environment.</p>
+            </div>
+          </details>
+
+          <details class="tag-chip animate-fade-up">
+            <summary>
+              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></span>No grief</span>
+              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="tag-body">
+              <p><strong>No grief</strong> means no stealing, no destruction, no sabotage. If you search “<strong>Hytale no grief server</strong>”, you want your base and town to survive when you log off.</p>
+            </div>
+          </details>
+
+          <details class="tag-chip animate-fade-up">
+            <summary>
+              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-hand-peace"></i></span>No random PvP</span>
+              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="tag-body">
+              <p><strong>No random PvP</strong> means the open survival world stays calm. Builders and explorers can play without stress. This is for players looking for a <strong>peaceful Hytale survival server</strong> or a <strong>Hytale peaceful SMP</strong>.</p>
+            </div>
+          </details>
+
+          <details class="tag-chip animate-fade-up">
+            <summary>
+              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>No pay to win</span>
+              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="tag-body">
+              <p><strong>No pay to win</strong> means we do not sell power, progression, or unfair advantages. A fair <strong>Hytale vanilla server</strong> protects survival balance and any community economy.</p>
+            </div>
+          </details>
+
+          <details class="tag-chip animate-fade-up">
+            <summary>
+              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-infinity"></i></span>Long-term world</span>
+              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="tag-body">
+              <p><strong>Long-term world</strong> is the mindset. We want a persistent map where towns gain history. This is important for players searching a <strong>Hytale no reset survival server</strong> or a long-term <strong>Hytale vanilla SMP server</strong>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Semi-vanilla -->
+    <section id="pure-vanilla">
+      <div class="container">
+        <div class="section-heading animate-fade-up">
+          <h2>Semi-vanilla</h2>
+          <p>What “vanilla” means on a Hytale server, what “semi-vanilla” adds, and why it matters for a real survival multiplayer experience.</p>
+        </div>
+
+        <div class="pure-vanilla-wrap animate-fade-up">
+          <p>
+            “Vanilla” is not just a label. On a good <strong>Hytale vanilla server</strong>, the core loop stays intact: you explore, gather, craft, build, and collaborate.
+            A strong <strong>Hytale vanilla survival server</strong> feels like a real world, not a list of commands.
+          </p>
+          <p>
+            Our <strong>semi-vanilla Hytale server</strong> keeps the sandbox feeling intact while using moderation and small quality-of-life choices to protect towns, builders, and long-term projects.
+            Many players search for <strong>vanilla SMP</strong>, <strong>Hytale SMP</strong>, or “<strong>best Hytale vanilla server</strong>” because they want calm survival multiplayer, fair progression, and a community that lasts.
+          </p>
+          <ul>
+            <li><strong>Vanilla survival multiplayer</strong> progression stays meaningful.</li>
+            <li>We avoid feature spam that replaces survival with menus.</li>
+            <li>We prioritize a calm community, not drama or random PvP.</li>
+            <li>We build for long-term towns, builders, explorers, and chill players.</li>
+          </ul>
+          <p style="margin-top:0.8rem;"><a class="footer-link" href="#guides">Jump to Guides</a></p>
         </div>
       </div>
     </section>
@@ -1402,13 +1621,13 @@
           <div class="animate-fade-up">
             <div class="mini-gallery">
               <figure class="media-frame mini-gallery-main">
-                <img src="img/hytale_vanilla_servers_list_2.jpeg" alt="Vanilla Hytale server screenshot: Peaceful Vanilla Club community world (no griefing)" loading="lazy" decoding="async">
+                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_2.jpeg" alt="Concept of a player village on the Peaceful Vanilla Club Hytale server" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img src="img/hytale_vanilla_servers_list_3.jpeg" alt="Vanilla Hytale server screenshot: calm survival exploration on Peaceful Vanilla Club" loading="lazy" decoding="async">
+                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_3.jpeg" alt="Forest landscape in a Hytale survival world" loading="lazy">
               </figure>
               <figure class="media-frame">
-                <img src="img/hytale_vanilla_servers_list_4.jpeg" alt="Vanilla Hytale server screenshot: long-term town building on Peaceful Vanilla Club" loading="lazy" decoding="async">
+                <img class="lazy-fade" src="img/hytale_vanilla_servers_list_4.jpeg" alt="Town center for the Hytale world community" loading="lazy">
               </figure>
             </div>
           </div>
@@ -1440,99 +1659,68 @@
           </article>
 
           <article class="principle-card animate-fade-up">
-            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3 class="principle-title">No griefing</h3>
-            <p class="principle-text">We protect builds and towns with strict moderation and anti-grief policies. No stealing, no destroying projects.</p>
-            <span class="principle-tag">Builders safe</span>
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-route"></i></div>
+            <h3 class="principle-title">No fast travel spam</h3>
+            <p class="principle-text">We avoid teleport spam that removes exploration and distance. Travel should still mean something on a Hytale vanilla SMP.</p>
+            <span class="principle-tag">Exploration first</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-mug-hot"></i></div>
+            <h3 class="principle-title">A peaceful place</h3>
+            <p class="principle-text">We design the server so that you can log in, relax, make progress and log out without drama.</p>
+            <span class="principle-tag">Mood</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
+            <h3 class="principle-title">Community-first decisions</h3>
+            <p class="principle-text">Changes are introduced slowly and discussed with the community. Stability comes before hype.</p>
+            <span class="principle-tag">Governance</span>
+          </article>
+
+          <article class="principle-card animate-fade-up">
+            <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-infinity"></i></div>
+            <h3 class="principle-title">Long term worlds</h3>
+            <p class="principle-text">We support long-term towns and persistent progress. Backups, logs, and fair moderation are part of the plan.</p>
+            <span class="principle-tag">Persistence</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Server Tags -->
-    <section id="server-tags">
+    <!-- Legacy stats -->
+    <section id="stats">
       <div class="container">
         <div class="section-heading animate-fade-up">
-          <h2>Server tags</h2>
-          <p>
-            Expand any tag to see what it means in practice. The details are written for real players searching a
-            <strong>Hytale vanilla server</strong>, a <strong>Hytale vanilla survival server</strong>, a <strong>Hytale SMP server</strong>,
-            and a calm <strong>vanilla survival multiplayer server</strong>.
-          </p>
+          <h2>Our Minecraft legacy in numbers</h2>
+          <p>Peaceful Vanilla Club is established as a vanilla SMP community, now bringing the same long-term mindset to Hytale.</p>
         </div>
 
-        <div class="tag-grid">
-          <details class="tag-chip animate-fade-up">
-            <summary>
-              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>Semi-vanilla</span>
-              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="tag-body">
-              <p><strong>Semi-vanilla</strong> means we keep a true <strong>Hytale vanilla survival server</strong> feel, but we allow small quality-of-life choices and strong moderation to protect the experience.</p>
-              <p>Survival progression stays meaningful, travel matters, and the world is designed for long-term towns in a stable <strong>Hytale vanilla SMP</strong> environment.</p>
-            </div>
-          </details>
-
-          <details class="tag-chip animate-fade-up">
-            <summary>
-              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>Peaceful</span>
-              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="tag-body">
-              <p><strong>Peaceful</strong> means no random PvP, no griefing, no stealing, and a moderation style designed to keep builders and explorers comfortable.</p>
-              <p>This is not a hardcore PvP server. If we host events, they are opt-in and clearly separated from the main survival world.</p>
-            </div>
-          </details>
-
-          <details class="tag-chip animate-fade-up">
-            <summary>
-              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-sack-dollar"></i></span>No pay to win</span>
-              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="tag-body">
-              <p><strong>No pay to win</strong> means we do not sell power, items, boosts or shortcuts. We do not run donor kits that break progression.</p>
-              <p>Support can exist to cover hosting costs, but it never affects gameplay in our Hytale survival multiplayer world.</p>
-            </div>
-          </details>
-
-          <details class="tag-chip animate-fade-up">
-            <summary>
-              <span class="tag-label"><span class="tag-icon" aria-hidden="true"><i class="fa-solid fa-map"></i></span>Long-term world</span>
-              <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="tag-body">
-              <p><strong>Long-term world</strong> means the map is intended to last. We aim to avoid frequent resets so towns and projects can grow over time.</p>
-              <p>Updates are integrated carefully, and we keep backups and recovery plans.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pure vanilla / semi-vanilla explanation -->
-    <section id="pure-vanilla">
-      <div class="container">
-        <div class="section-heading animate-fade-up">
-          <h2>Is it pure vanilla</h2>
-          <p>Peaceful Vanilla Club is semi-vanilla: minimal quality of life choices and strong moderation, while keeping true vanilla survival progression.</p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="info-card animate-fade-up">
-            <h3>What stays vanilla</h3>
-            <p>Survival progression, exploration, combat, building, and resource gathering are kept true to vanilla. No overpowered perks, kits, or shortcuts.</p>
+        <div class="stats-grid">
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">2019</p>
+            <p class="stat-label">Online since</p>
+            <p class="stat-text">Our Minecraft vanilla survival server has been online since 2019.</p>
           </article>
-
-          <article class="info-card animate-fade-up">
-            <h3>What is added</h3>
-            <p>Small quality of life rules and moderation to stop griefing, stealing, harassment, and exploit abuse. We protect towns and builders.</p>
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">100k+</p>
+            <p class="stat-label">Unique players</p>
+            <p class="stat-text">Over one hundred thousand players have joined Peaceful Vanilla Club on Minecraft.</p>
           </article>
-
-          <article class="info-card animate-fade-up">
-            <h3>What is avoided</h3>
-            <p>Pay to win ranks, donor kits, aggressive monetization, random PvP, and chaotic wipe cycles. This is a calm, long-term survival multiplayer world.</p>
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">24/7</p>
+            <p class="stat-label">Monitored uptime</p>
+            <p class="stat-text">Dedicated infrastructure, monitoring and backups for stability.</p>
+          </article>
+          <article class="stat-card animate-fade-up">
+            <p class="stat-number">Daily</p>
+            <p class="stat-label">Backups</p>
+            <p class="stat-text">Automated backups and logs are part of our daily operations.</p>
           </article>
         </div>
+
+        <p class="stats-note">Our Hytale world is a fresh map, backed by the same team and long-term operations mindset.</p>
       </div>
     </section>
 
@@ -1540,24 +1728,49 @@
     <section id="how-to-join">
       <div class="container">
         <div class="section-heading animate-fade-up">
-          <h2>How to join</h2>
-          <p>We share the server address in Discord, so the join steps and support are always up to date.</p>
+          <h2>How to join the vanilla Hytale server</h2>
+          <p>Joining Peaceful Vanilla Club is simple. If you are looking for the server IP, the server address, or a quick join link, start with Discord.</p>
         </div>
 
         <div class="join-layout">
-          <div class="join-steps animate-fade-up">
-            <h3>Join steps</h3>
-            <p>Start with Discord. The pinned post includes the current server address and connection instructions.</p>
-            <ol class="join-list">
-              <li>Join Discord: <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">discord.gg/2d9wPbrpEU</a></li>
-              <li>Read the rules and announcements.</li>
-              <li>Follow the pinned connection steps to join the Hytale server.</li>
+          <div class="animate-fade-up">
+            <ol class="step-list">
+              <li class="step-item">
+                <div class="step-number">1</div>
+                <div><h3 class="step-title">Join the Discord server</h3></div>
+                <p class="step-text">
+                  Discord is where we coordinate everything: rules, support, and the live server address.
+                  <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Join Discord</a>.
+                </p>
+              </li>
+              <li class="step-item">
+                <div class="step-number">2</div>
+                <div><h3 class="step-title">Read the full rules</h3></div>
+                <p class="step-text">Read the rules before playing. This keeps the Hytale semi-vanilla survival server peaceful, builder-friendly, and fair.</p>
+              </li>
+              <li class="step-item">
+                <div class="step-number">3</div>
+                <div><h3 class="step-title">Connect using the pinned instructions</h3></div>
+                <p class="step-text">Use the pinned connection post in Discord for the Hytale server IP, address, and join steps.</p>
+              </li>
             </ol>
+            <p class="join-extra">If you are new to Peaceful Vanilla Club, the Discord is the best place to ask questions and join safely.</p>
           </div>
 
-          <div class="join-sidebar animate-fade-up">
-            <h3>Why Discord</h3>
-            <p>Hytale is evolving quickly. Discord lets us keep the server IP and connection steps current, and it is also where the community lives.</p>
+          <div class="animate-fade-up">
+            <div class="mini-card">
+              <h3>Basic rules that keep things peaceful</h3>
+              <ul>
+                <li>No griefing or stealing from other players.</li>
+                <li>No unsolicited PvP, traps or kill machines targeting others.</li>
+                <li>No hacks, exploits or automation that breaks the survival loop.</li>
+                <li>No harassment, slurs or toxic behavior in chat or voice.</li>
+                <li>Respect public builds, towns and shared infrastructure projects.</li>
+              </ul>
+              <p style="margin-top:0.6rem;">
+                <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Open Discord</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1568,15 +1781,19 @@
       <div class="container">
         <div class="section-heading animate-fade-up">
           <h2>Guides</h2>
-          <p>Helpful guides for choosing a Hytale vanilla survival server and understanding semi-vanilla rules.</p>
+          <p>
+            Guides for players searching: <strong>Hytale vanilla server</strong>, <strong>best Hytale vanilla server</strong>, <strong>Hytale vanilla survival server</strong>,
+            <strong>Hytale SMP server</strong>, <strong>Hytale semi-vanilla server</strong>, <strong>Hytale no grief server</strong>, <strong>Hytale no reset survival server</strong>.
+          </p>
         </div>
 
-        <div class="guides-grid">
+        <div class="guides-scroller" aria-label="Scrollable guide articles">
+
+          <!-- Existing guides, expanded + updated to semi-vanilla wording -->
           <article class="guide-card animate-fade-up" id="guide-1">
-            <h3>Hytale vanilla server vs modded server: how to choose the right survival multiplayer</h3>
+            <h3>Semi-vanilla Hytale server guide: what “vanilla survival multiplayer” really means</h3>
             <p>
-              Choosing between vanilla and modded servers comes down to what you want: pure survival pacing, stability, and towns that last, or heavy feature changes.
-              Peaceful Vanilla Club focuses on calm vanilla SMP progression with minimal changes.
+              Many servers claim “vanilla”, but a good <strong>Hytale vanilla server</strong> keeps the survival loop intact while staying fair, readable, and community-first. A semi-vanilla Hytale SMP should feel like a real world, not a command list.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-1">
@@ -1586,26 +1803,26 @@
 
             <div class="guide-more" id="guide-more-1">
               <div class="guide-more-inner">
-                <h4>Vanilla server strengths</h4>
+                <h4>Signs of a true vanilla SMP</h4>
                 <ul>
-                  <li>Stable rules and progression.</li>
-                  <li>Long-term towns and shared history.</li>
-                  <li>Lower barrier for new players.</li>
+                  <li>No kit menus that replace survival progression.</li>
+                  <li>No paid shortcuts that turn survival into pay to win.</li>
+                  <li>No teleport spam that removes exploration and distance.</li>
+                  <li>One persistent survival world where towns and builds matter.</li>
                 </ul>
-                <h4>Modded server strengths</h4>
-                <ul>
-                  <li>More mechanics, faster power scaling.</li>
-                  <li>Custom content and unique metas.</li>
-                  <li>Can be great for short seasons.</li>
-                </ul>
+                <h4>What players actually want</h4>
+                <p>
+                  People searching for a <strong>Hytale vanilla survival server</strong> usually want fairness, calm survival multiplayer, and a world that feels meaningful over time.
+                  That is the core of a builder-friendly <strong>Hytale vanilla SMP</strong>.
+                </p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-2">
-            <h3>What is a semi-vanilla Hytale server? Rules, moderation, and quality of life explained</h3>
+            <h3>Peaceful Hytale survival server guide: no griefing, no random PvP, long-term towns</h3>
             <p>
-              Semi-vanilla means minimal changes, mostly moderation and rules that protect players, towns, and projects. The survival loop stays vanilla.
+              If you search for a <strong>peaceful Hytale survival server</strong> or a <strong>Hytale vanilla SMP server</strong>, you probably want stability: your base survives, your town grows, and random PvP does not ruin weeks of progress.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-2">
@@ -1615,20 +1832,24 @@
 
             <div class="guide-more" id="guide-more-2">
               <div class="guide-more-inner">
-                <h4>What semi-vanilla usually includes</h4>
+                <h4>What “peaceful” should mean</h4>
                 <ul>
-                  <li>Anti-grief moderation and clear rules.</li>
-                  <li>Quality of life choices that do not affect progression.</li>
-                  <li>Community-first approach and town protection.</li>
+                  <li><strong>No griefing</strong>: no stealing, no destruction, no sabotage.</li>
+                  <li><strong>No random PvP</strong>: the open world stays PvE focused.</li>
+                  <li>Clear reporting path and consistent moderation.</li>
                 </ul>
+                <h4>Why peaceful servers are builder-friendly</h4>
+                <p>
+                  A calm <strong>Hytale vanilla survival server</strong> is perfect for builders and explorers who want long-term projects, districts, markets, roads, and towns.
+                </p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-3">
-            <h3>Hytale no pay to win servers: how to spot unfair monetization and donor kits</h3>
+            <h3>Not pay to win Hytale server guide: how to spot fair vanilla SMP communities</h3>
             <p>
-              If you want a fair vanilla SMP, avoid donor kits that give items or boosts. Look for servers where support is optional and cosmetic.
+              A <strong>not pay to win Hytale server</strong> protects survival balance and keeps progression meaningful. If you search for a fair <strong>Hytale vanilla server</strong>, monetization should never affect gameplay.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-3">
@@ -1690,20 +1911,24 @@
 
             <div class="guide-more" id="guide-more-5">
               <div class="guide-more-inner">
-                <h4>First town priorities</h4>
+                <h4>Week 1 strategy for a shared world</h4>
                 <ul>
-                  <li>Pick a safe, scenic location and plan storage.</li>
-                  <li>Build roads and shared areas early.</li>
-                  <li>Communicate with neighbors and avoid conflicts.</li>
+                  <li>Choose a location with room to expand and readable paths.</li>
+                  <li>Build a small hub first: storage, crafting, and safety.</li>
+                  <li>Connect with neighbors and plan roads early.</li>
                 </ul>
+                <h4>Long-term mindset</h4>
+                <p>
+                  A good <strong>Hytale SMP server</strong> becomes better over time. Towns gain history. Roads gain meaning. That is why long-term servers feel like real worlds.
+                </p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-6">
-            <h3>Peaceful Hytale servers: rules that stop griefing and random PvP</h3>
+            <h3>Choosing the best Hytale vanilla server: builders vs explorers vs chill players</h3>
             <p>
-              Peaceful servers are defined by enforcement, not slogans. Look for clear no-grief rules and active moderation.
+              “Best” depends on your playstyle. The best <strong>Hytale vanilla server</strong> for builders is usually peaceful, long-term, and strongly moderated against grief. That also matches what many players mean by “semi-vanilla”.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-6">
@@ -1713,20 +1938,24 @@
 
             <div class="guide-more" id="guide-more-6">
               <div class="guide-more-inner">
-                <h4>Rules that actually help</h4>
+                <h4>Match server style to your goals</h4>
                 <ul>
-                  <li>No stealing and no destruction of builds.</li>
-                  <li>No random PvP, opt-in events only.</li>
-                  <li>Clear escalation for harassment and exploit abuse.</li>
+                  <li><strong>Builders</strong>: peaceful rules, long-term map, stable community, no grief.</li>
+                  <li><strong>Explorers</strong>: vanilla progression, meaningful travel.</li>
+                  <li><strong>Chill players</strong>: friendly culture, clear moderation.</li>
                 </ul>
+                <h4>Signals you are in the right place</h4>
+                <p>
+                  If the world has towns, roads, public builds, and ongoing community projects, you are likely in a real vanilla SMP community.
+                </p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-7">
-            <h3>Hytale survival multiplayer etiquette: how to be a good neighbor in a shared world</h3>
+            <h3>Hytale vanilla server guide: how to choose a truly “semi-vanilla” survival experience</h3>
             <p>
-              Shared worlds are built on trust. Respect towns, claim areas fairly, and communicate before big projects.
+              People search “<strong>Hytale vanilla server</strong>” because they want the default survival loop, not a theme park. Semi-vanilla should stay close to vanilla while protecting the community.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-7">
@@ -1736,20 +1965,24 @@
 
             <div class="guide-more" id="guide-more-7">
               <div class="guide-more-inner">
-                <h4>Good neighbor habits</h4>
+                <h4>Common “fake vanilla” patterns</h4>
                 <ul>
-                  <li>Ask before building near someone’s base.</li>
-                  <li>Don’t take resources from community projects.</li>
-                  <li>Help newcomers with simple supplies and directions.</li>
+                  <li>Big kit menus or starter bundles that bypass early game.</li>
+                  <li>Paid ranks with gameplay boosts and resource advantages.</li>
+                  <li>Teleport systems that remove exploration and distance.</li>
                 </ul>
+                <h4>What semi-vanilla should be</h4>
+                <p>
+                  Semi-vanilla is not “everything plus menus”. It should be vanilla survival multiplayer first, with light quality-of-life choices and strong moderation.
+                </p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-8">
-            <h3>Hytale SMP server tips: towns, community projects, and long-term progression</h3>
+            <h3>Hytale SMP server guide: what to expect from a long-term survival multiplayer community</h3>
             <p>
-              The best SMP servers feel like living worlds. Long-term progression needs stable rules, no wipes, and a culture that respects projects.
+              People searching “<strong>Hytale SMP server</strong>” want a social survival multiplayer world, not a competitive PvP arena. A good SMP is stable, fair, and community-driven.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-8">
@@ -1759,20 +1992,20 @@
 
             <div class="guide-more" id="guide-more-8">
               <div class="guide-more-inner">
-                <h4>Town building tips</h4>
+                <h4>What defines a good SMP</h4>
                 <ul>
-                  <li>Plan roads, farms, and shared storage.</li>
-                  <li>Keep a public board for projects and rules.</li>
-                  <li>Build slowly and keep styles consistent.</li>
+                  <li>Stable playerbase and clear rules that protect towns.</li>
+                  <li>Long-term world where builds gain history.</li>
+                  <li>Friendly culture and consistent moderation.</li>
                 </ul>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-9">
-            <h3>Hytale survival server rules: what to look for before you invest time in a world</h3>
+            <h3>Hytale no grief server guide: what “no grief” should protect, and how servers enforce it</h3>
             <p>
-              Before you invest months into a world, check the rules. Good servers have clear anti-grief policies, moderation, and stable direction.
+              People search “<strong>Hytale no grief server</strong>” because they want safety: their base, storage, farms, and town projects should survive when they log off.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-9">
@@ -1782,12 +2015,11 @@
 
             <div class="guide-more" id="guide-more-9">
               <div class="guide-more-inner">
-                <h4>Rules checklist</h4>
+                <h4>What “no grief” should cover</h4>
                 <ul>
-                  <li>No griefing and no stealing.</li>
-                  <li>No random PvP.</li>
-                  <li>No pay to win kits or boosts.</li>
-                  <li>Clear policy for resets and backups.</li>
+                  <li>No breaking or altering other players’ builds.</li>
+                  <li>No stealing from chests, farms, or storage.</li>
+                  <li>No sabotage of roads, towns, or public builds.</li>
                 </ul>
               </div>
             </div>
@@ -1796,7 +2028,7 @@
           <article class="guide-card animate-fade-up" id="guide-10">
             <h3>Hytale no reset survival server guide: why persistent worlds are better for towns and builders</h3>
             <p>
-              Persistent worlds are where towns become real. If a server wipes often, big builds and community history never have time to grow.
+              A “no reset” survival server means you can build for months or years without losing everything. This is why long-term <strong>Hytale vanilla SMP</strong> communities feel stronger over time.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-10">
@@ -1863,7 +2095,12 @@
                 <h4>Where you buy Hytale</h4>
                 <p>The team has said Hytale will not be on Steam initially. Expect the official store to be the main place to buy and access the game during Early Access.</p>
                 <h4>Editions and upgrades</h4>
-                <p>Hytale will offer multiple editions during Early Access. Expect upgrades for cosmetics, creator tools, and optional content, but core gameplay should remain accessible.</p>
+                <p>Hytale will offer multiple editions during Early Access. The plan is that you will be able to upgrade later and only pay the difference between editions.</p>
+                <h4>Should you pre-purchase or wait?</h4>
+                <p>Pre-purchase makes sense if you want to play day one, enjoy early community discovery, or plan to create content, run servers, or mod early.</p>
+                <p>Waiting makes sense if you want a stable experience, hate balance shifts and frequent patches, or want clearer answers on platforms, localization, and roadmap.</p>
+                <h4>Bottom line</h4>
+                <p>Treat January 13, 2026 as the beginning of Hytale’s public journey, not the finish line.</p>
               </div>
             </div>
           </article>
@@ -1871,7 +2108,7 @@
           <article class="guide-card animate-fade-up" id="guide-13">
             <h3>Is Hytale Coming to Steam? The Real Answer (and What It Means for Players)</h3>
             <p>
-              Many players assume Hytale will launch on Steam. The team has said it will not be on Steam initially, and that has real implications for community servers and joining.
+              Short version: Hytale is not coming to Steam at the start of Early Access. Plan for the official store and launcher during the Early Access phase.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-13">
@@ -1881,12 +2118,18 @@
 
             <div class="guide-more" id="guide-more-13">
               <div class="guide-more-inner">
-                <h4>What this means</h4>
+                <h4>Why Hytale is not on Steam initially</h4>
+                <p>The team’s explanation is that they want Early Access to be shaped by players who understand the game’s development background, not by a massive wave of cold first impressions.</p>
+                <h4>Does that mean Hytale will never be on Steam?</h4>
+                <p>Not necessarily. The team has said Steam is a great platform, but they do not see a need for it right now. Steam could be considered later.</p>
+                <h4>What you should do as a player</h4>
                 <ul>
-                  <li>Official account system is likely separate from Steam.</li>
-                  <li>Joining servers may use the game’s built-in server browser.</li>
-                  <li>Discord communities will still be the main hub for support and rules.</li>
+                  <li>Expect the official store and launcher to be the main route for Early Access.</li>
+                  <li>Be careful with fake “Hytale on Steam” pages, scams, and key resellers.</li>
+                  <li>If Steam is a must-have for you, waiting is a reasonable move.</li>
                 </ul>
+                <h4>Bottom line</h4>
+                <p>No Steam at the start is a strategic choice, not automatically a red flag.</p>
               </div>
             </div>
           </article>
@@ -1894,7 +2137,7 @@
           <article class="guide-card animate-fade-up" id="guide-14">
             <h3>What Happened to Hytale? 2018 Trailer to 2026 Early Access (Timeline Explained)</h3>
             <p>
-              Hytale’s development has been long and public. Understanding the timeline helps set expectations for Early Access and why community servers matter.
+              If you discovered Hytale from the 2018 trailer, you are not alone. Here is a clean timeline from the reveal to the 2026 Early Access, without drama.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-14">
@@ -1904,13 +2147,16 @@
 
             <div class="guide-more" id="guide-more-14">
               <div class="guide-more-inner">
-                <h4>Quick timeline</h4>
-                <ul>
-                  <li>2018: trailer and huge hype wave.</li>
-                  <li>2019-2024: engine rewrite and shifting plans.</li>
-                  <li>2025: Early Access confirmed and pre-purchase opens.</li>
-                  <li>2026: Early Access launch and community growth.</li>
-                </ul>
+                <h4>2018: Hytale reveal</h4>
+                <p>Hytale was unveiled in December 2018 with a trailer that highlighted adventure, RPG systems, block building, and powerful creator tools.</p>
+                <h4>2020: Riot Games acquisition</h4>
+                <p>Riot acquired Hypixel Studios in 2020 and the studio kept working on Hytale under Riot.</p>
+                <h4>2025: Cancellation and reversal</h4>
+                <p>Later, the founders stated that months after the project was cancelled, they repurchased Hytale and revived it.</p>
+                <h4>2026: Early Access launch</h4>
+                <p>Early Access is set for January 13, 2026, with pre-purchase opening on December 13, 2025.</p>
+                <h4>Bottom line</h4>
+                <p>Join Early Access with the right mindset: it is an active public development phase, not a polished final release.</p>
               </div>
             </div>
           </article>
@@ -1918,7 +2164,7 @@
           <article class="guide-card animate-fade-up" id="guide-15">
             <h3>Hytale System Requirements: Minimum vs Recommended (Plus Laptop Tips)</h3>
             <p>
-              Hytale should scale across many PCs, but early builds can be heavy. Knowing requirements helps you avoid stutters and bad settings.
+              If you are asking “Can my PC run Hytale?” you are asking the right question. In voxel sandbox games, CPU and RAM often matter more than people expect.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-15">
@@ -1928,12 +2174,21 @@
 
             <div class="guide-more" id="guide-more-15">
               <div class="guide-more-inner">
-                <h4>Performance tips</h4>
+                <h4>What matters most</h4>
                 <ul>
-                  <li>Lower view distance if FPS drops.</li>
-                  <li>Close overlays and heavy background apps.</li>
-                  <li>Prefer a stable FPS over max settings.</li>
+                  <li><strong>CPU</strong>: world generation, NPC simulation, and voxel logic.</li>
+                  <li><strong>RAM</strong>: view distance, content, and memory use.</li>
+                  <li><strong>GPU</strong>: helps, but CPU and RAM are often the first bottleneck.</li>
+                  <li><strong>SSD</strong>: strongly recommended for loads and assets.</li>
                 </ul>
+                <h4>Laptop tips that actually help</h4>
+                <ul>
+                  <li>Prefer a laptop with a dedicated GPU, even a modest one.</li>
+                  <li>Close background apps and heavy browsers to reduce stutter.</li>
+                  <li>Keep free SSD space available.</li>
+                </ul>
+                <h4>Bottom line</h4>
+                <p>If your PC meets typical modern mid-range gaming specs, you should be fine. If you are on integrated graphics, expect conservative settings.</p>
               </div>
             </div>
           </article>
@@ -1941,7 +2196,7 @@
           <article class="guide-card animate-fade-up" id="guide-16">
             <h3>Best Hytale Settings for FPS: View Distance, Stutters, and Smooth Multiplayer</h3>
             <p>
-              Smooth multiplayer matters more than ultra visuals. Start with view distance and effects, then tune up slowly.
+              If Hytale feels heavy, do not start by changing twenty settings. Start with the one setting that multiplies everything: view distance.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-16">
@@ -1951,20 +2206,24 @@
 
             <div class="guide-more" id="guide-more-16">
               <div class="guide-more-inner">
-                <h4>What to adjust first</h4>
+                <h4>Why view distance is the biggest performance lever</h4>
+                <p>View distance determines how much world is visible, loaded, and simulated. Increasing it can multiply CPU, RAM, and VRAM work and cause stutters.</p>
+                <h4>Recommended approach</h4>
                 <ul>
-                  <li>View distance and shadows.</li>
-                  <li>Particles and post-processing.</li>
-                  <li>Texture quality if VRAM is low.</li>
+                  <li>Lower view distance first if you stutter.</li>
+                  <li>Watch for VRAM hitching when turning quickly or exploring new areas.</li>
+                  <li>Multiplayer can run smoother than singleplayer because server load is remote.</li>
                 </ul>
+                <h4>Bottom line</h4>
+                <p>Lower view distance until stutters disappear, then raise visuals slowly.</p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-17">
-            <h3>Hytale Server List Explained: How to Choose the Best Vanilla Hytale Server</h3>
+            <h3>How Multiplayer Works in Hytale: Servers, Server Browser, and Playing With Friends</h3>
             <p>
-              A server list is useful, but the real signal is the rules and culture. Look for a stable vanilla SMP identity and clear anti-grief policy.
+              Hytale is built around multiplayer communities, and it aims to make servers easier to discover and join without leaving the game.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-17">
@@ -1974,21 +2233,25 @@
 
             <div class="guide-more" id="guide-more-17">
               <div class="guide-more-inner">
-                <h4>Server list checklist</h4>
+                <h4>Server browser basics</h4>
+                <p>Hytale plans an in-game server browser to help players find servers by category and join quickly.</p>
+                <h4>What to look for in a good server</h4>
                 <ul>
-                  <li>Does it say “no pay to win” and actually follow it?</li>
-                  <li>Is griefing clearly banned and enforced?</li>
-                  <li>Is the world long-term or seasonal?</li>
-                  <li>Is Discord active and moderated?</li>
+                  <li>Clear rules and moderation</li>
+                  <li>Short description of gameplay style (vanilla, semi-vanilla, modded, RPG, minigames)</li>
+                  <li>Fair monetization and no pay-to-win mechanics</li>
+                  <li>Good onboarding and active admins</li>
                 </ul>
+                <h4>Bottom line</h4>
+                <p>Multiplayer is often the smoothest way to play on mid-range hardware and it is where communities will define Hytale’s culture early.</p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-18">
-            <h3>Hytale Dedicated Server Hosting: Price, Regions, and What Actually Matters</h3>
+            <h3>Best Hytale Servers: How to Choose the Right One (Vanilla Survival vs Modded vs Minigames)</h3>
             <p>
-              Hosting quality affects lag and stability. Regions, CPU, and bandwidth matter more than flashy dashboards.
+              “Best Hytale servers” depends on your mood. Vanilla survival and semi-vanilla SMP are best for long-term builders, while modded and minigames serve different goals.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-18">
@@ -1998,20 +2261,30 @@
 
             <div class="guide-more" id="guide-more-18">
               <div class="guide-more-inner">
-                <h4>What matters most</h4>
+                <h4>Server types you will see most</h4>
                 <ul>
-                  <li>Region close to your player base.</li>
-                  <li>Strong single-core performance for tick stability.</li>
-                  <li>Enough bandwidth for peak hours.</li>
+                  <li><strong>Vanilla survival servers</strong>: building, exploration, survival progression.</li>
+                  <li><strong>RPG adventure servers</strong>: quests, factions, bosses.</li>
+                  <li><strong>Minigame servers</strong>: short matches and competitive modes.</li>
+                  <li><strong>Modded servers</strong>: custom assets and mechanics.</li>
                 </ul>
+                <h4>Red flags</h4>
+                <ul>
+                  <li>No rules, no staff, no public community spaces</li>
+                  <li>Pay-to-win sales or power advantages</li>
+                  <li>Aggressive popups, spammy links, shady downloads</li>
+                  <li>Unclear ownership or anonymous monetization</li>
+                </ul>
+                <h4>Bottom line</h4>
+                <p>Start with a server that matches your core mood, then branch out. Early Access is a great time to explore, and also the time to be picky.</p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-19">
-            <h3>Hytale Survival Server Etiquette: Avoid Drama and Keep Towns Peaceful</h3>
+            <h3>Hytale Modding for Players: Asset Packs, Plugins, and Joining Modded Servers Safely</h3>
             <p>
-              Most drama comes from unclear boundaries. Talk early, respect space, and follow the server’s moderation culture.
+              Hytale is designed to be creator-friendly. For players, many custom experiences will come from servers, not from manually installing huge modpacks.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-19">
@@ -2021,20 +2294,24 @@
 
             <div class="guide-more" id="guide-more-19">
               <div class="guide-more-inner">
-                <h4>Simple rules to avoid drama</h4>
+                <h4>The “server-side first” concept</h4>
+                <p>The intended approach is handshake-style: connecting to a custom server can deliver the files needed for that server’s experience.</p>
+                <h4>Safe habits for players</h4>
                 <ul>
-                  <li>Do not build too close to others without asking.</li>
-                  <li>Keep shared resources labeled and organized.</li>
-                  <li>Use Discord to communicate about big projects.</li>
+                  <li>Prefer reputable communities with public Discords and clear staff.</li>
+                  <li>Avoid downloading executables from unknown sources.</li>
+                  <li>Expect frequent updates during Early Access, especially on modded servers.</li>
                 </ul>
+                <h4>Bottom line</h4>
+                <p>Modded Hytale will be huge. Join cautiously, start with reputable servers, and embrace experimentation.</p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-20">
-            <h3>Hytale Grief Protection: What Servers Use to Stop Stealing and Destroying</h3>
+            <h3>Hosting a Hytale Server: What We Know (Linux, Performance, and Shared-Source Plans)</h3>
             <p>
-              Real grief protection is a mix of policies, logs, backups, and moderation. Tools help, but enforcement is the core.
+              If you plan to host a Hytale server, prepare a foundation, then iterate fast. Early Access moves quickly and communities that survive have clear identity and good operations.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-20">
@@ -2044,20 +2321,30 @@
 
             <div class="guide-more" id="guide-more-20">
               <div class="guide-more-inner">
-                <h4>Common protections</h4>
+                <h4>Linux and performance expectations</h4>
                 <ul>
-                  <li>Clear no-grief rules and strong moderation.</li>
-                  <li>Audit logs and investigation tools.</li>
-                  <li>Backups and rollback plans for emergencies.</li>
+                  <li>Vanilla survival with moderate view distance is manageable.</li>
+                  <li>Heavy NPC logic, big builds, and high view distance raise CPU and RAM needs quickly.</li>
+                  <li>View distance impacts server load too, not only client performance.</li>
                 </ul>
+                <h4>A launch-day checklist</h4>
+                <ul>
+                  <li>Clear server identity and rules</li>
+                  <li>Staff coverage for first week</li>
+                  <li>Simple onboarding for new players</li>
+                  <li>Logging and moderation tools ready</li>
+                  <li>Backups and a rollback plan</li>
+                </ul>
+                <h4>Bottom line</h4>
+                <p>The technical side matters, but community management matters more. A simple, stable server with a strong vibe usually wins.</p>
               </div>
             </div>
           </article>
 
           <article class="guide-card animate-fade-up" id="guide-21">
-            <h3>Hytale Server IP vs Discord Invite: Why Many Servers Share Address in Discord</h3>
+            <h3>Hytale Creative Tools: Blockbench Workflow, Animations, and Machinima Basics</h3>
             <p>
-              Sharing the server IP in Discord keeps it current and reduces copycat scraping. It also centralizes support and announcements.
+              Hytale aims to be a creator platform. If you like building worlds, making assets, or producing videos, Early Access is a rare chance to get in early and build a name.
             </p>
 
             <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-21">
@@ -2067,108 +2354,30 @@
 
             <div class="guide-more" id="guide-more-21">
               <div class="guide-more-inner">
-                <h4>Why Discord works</h4>
+                <h4>Blockbench and model workflows</h4>
+                <p>Blockbench is a popular tool for voxel-style modeling and animation workflows: create a model, texture it, animate it, then import it into your project or server pipeline.</p>
+                <h4>Machinima tips for Hytale</h4>
                 <ul>
-                  <li>Rules and moderation tools are easy to find.</li>
-                  <li>Announcements and changes are visible instantly.</li>
-                  <li>New players get guided onboarding.</li>
+                  <li>Build a small set you can reuse.</li>
+                  <li>Plan shots like a film: wide, medium, close.</li>
+                  <li>Move the camera slowly and keep motion intentional.</li>
+                  <li>Record multiple takes, then cut hard in editing.</li>
                 </ul>
+                <h4>Bottom line</h4>
+                <p>Early Access is a moment when creators can stand out quickly. Build small projects, ship them, and improve in public.</p>
               </div>
             </div>
           </article>
 
-          <article class="guide-card animate-fade-up" id="guide-22">
-            <h3>Hytale Roleplay vs Vanilla SMP: Choosing the Right Community Style</h3>
-            <p>
-              Roleplay servers are story-driven. Vanilla SMP servers are more freeform and town focused. Pick what matches your playstyle.
-            </p>
-
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-22">
-              <span class="read-more-label">read more</span>
-              <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </button>
-
-            <div class="guide-more" id="guide-more-22">
-              <div class="guide-more-inner">
-                <h4>Quick comparison</h4>
-                <ul>
-                  <li>Roleplay: events, story arcs, character rules.</li>
-                  <li>Vanilla SMP: towns, exploration, long-term builds.</li>
-                  <li>Hybrid servers exist, but check rules carefully.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="guide-card animate-fade-up" id="guide-23">
-            <h3>Hytale PvP Servers vs Peaceful Servers: Pros, Cons, and Who Each Is For</h3>
-            <p>
-              PvP servers are competitive and risk-heavy. Peaceful servers are builder friendly and long-term. Choose based on what you want from survival.
-            </p>
-
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-23">
-              <span class="read-more-label">read more</span>
-              <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </button>
-
-            <div class="guide-more" id="guide-more-23">
-              <div class="guide-more-inner">
-                <h4>Who each style fits</h4>
-                <ul>
-                  <li>PvP: rivalry, raids, fast resets, combat metas.</li>
-                  <li>Peaceful: towns, community builds, stable worlds.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="guide-card animate-fade-up" id="guide-24">
-            <h3>How to Find a No Pay to Win Hytale Server: Red Flags and Good Signs</h3>
-            <p>
-              “No pay to win” is often marketing. Look for details: what is sold, how progression is protected, and whether donors get gameplay advantages.
-            </p>
-
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-24">
-              <span class="read-more-label">read more</span>
-              <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </button>
-
-            <div class="guide-more" id="guide-more-24">
-              <div class="guide-more-inner">
-                <h4>Good signs</h4>
-                <ul>
-                  <li>Only cosmetics or community perks are sold.</li>
-                  <li>No kits, no boosts, no paid items.</li>
-                  <li>Clear transparency about costs and donations.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="guide-card animate-fade-up" id="guide-25">
-            <h3>Hytale Server Rules That Actually Work: Keeping a Long-Term Vanilla SMP World</h3>
-            <p>
-              Rules work when they are enforced consistently. Long-term worlds need stable leadership, clear boundaries, and community culture that respects projects.
-            </p>
-
-            <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-25">
-              <span class="read-more-label">read more</span>
-              <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-            </button>
-
-            <div class="guide-more" id="guide-more-25">
-              <div class="guide-more-inner">
-                <h4>Effective rules</h4>
-                <ul>
-                  <li>No griefing and no stealing.</li>
-                  <li>No random PvP.</li>
-                  <li>Respect towns and keep disputes in moderation channels.</li>
-                  <li>Clear policy for backups and resets.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
         </div>
+
+        <noscript>
+          <style>
+            .guide-more { height: auto !important; overflow: visible !important; }
+            .guide-more::after { display: none !important; }
+            .read-more { display: none !important; }
+          </style>
+        </noscript>
       </div>
     </section>
 
@@ -2176,174 +2385,185 @@
     <section id="faq">
       <div class="container">
         <div class="section-heading animate-fade-up">
-          <h2>FAQ</h2>
-          <p>Common questions about our Hytale vanilla survival server and how to join.</p>
+          <h2>Frequently asked questions</h2>
+          <p>Quick answers about our Hytale vanilla survival server, semi-vanilla rules, and Early Access basics.</p>
         </div>
 
-        <div class="faq-grid">
+        <div class="faq-list">
+          <!-- Integrated + expanded FAQ: Pay to win -->
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq1">
-              <span class="faq-question-text">Is this an official Hytale server</span>
+              <span class="faq-question-text">Is Peaceful Vanilla Club a pay to win Hytale server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq1" hidden>
-              <p>No. Peaceful Vanilla Club is a community-run server and an independent fan project. We are not affiliated with Hypixel Studios or Riot Games.</p>
+              <p>No. Peaceful Vanilla Club is not pay to win. We do not sell overpowered items, gameplay advantages or unfair kits.</p>
+              <p>Any future donations will support hosting costs and purely cosmetic things that do not affect survival balance. If you search “no pay to win Hytale vanilla server” or “fair Hytale SMP”, this is exactly the point.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq2">
-              <span class="faq-question-text">Is it pure vanilla or semi-vanilla</span>
+              <span class="faq-question-text">Is this a semi-vanilla Hytale server or a pure vanilla server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq2" hidden>
-              <p>It is semi-vanilla: the survival loop stays vanilla, but we enforce peaceful rules and moderation to prevent griefing, stealing, and harassment.</p>
+              <p>We are a <strong>semi-vanilla Hytale server</strong>. The goal is a calm vanilla survival multiplayer identity, with minimal changes and strong moderation to protect towns, builders, and long-term progress.</p>
+              <p>If you search “Hytale vanilla survival server” or “Hytale vanilla SMP server”, expect a close-to-vanilla experience that stays fair and readable.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-              <span class="faq-question-text">Do you allow pay to win ranks</span>
+              <span class="faq-question-text">Do I need an application or whitelist to join the Hytale server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq3" hidden>
-              <p>No. We do not sell items, boosts, or donor kits. We aim to keep the server fair and focused on vanilla progression.</p>
+              <p>You will not need a classic written application. Joining the Discord and reading the rules is enough for most players.</p>
+              <p>Some areas, plots or staff roles might require extra steps, but the main survival world is open to everyone who follows the rules. For the join steps and server address, go to the <a href="#hero" class="footer-link">top section</a> and join Discord.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq4">
-              <span class="faq-question-text">Is PvP enabled</span>
+              <span class="faq-question-text">Is Peaceful Vanilla Club official or affiliated with Hytale?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq4" hidden>
-              <p>No random PvP in the open survival world. If we host combat events, they are opt-in and clearly separated.</p>
+              <p>No. Peaceful Vanilla Club is an independent fan project. We are not affiliated with or endorsed by Hypixel Studios or Riot Games.</p>
+              <p>We respect their terms and guidelines and clearly separate our community identity from the official game.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq5">
-              <span class="faq-question-text">Will the world reset</span>
+              <span class="faq-question-text">Will there be multiple worlds on the Hytale server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq5" hidden>
-              <p>The main world is intended to be long-term. We avoid frequent resets so towns and projects can last. Backups and recovery plans are in place.</p>
+              <p>Our plan is one main shared survival world. We prefer one strong, active map instead of many half-empty worlds.</p>
+              <p>In the future we might experiment with side worlds or events, but the core experience stays focused on a single persistent world for our Hytale vanilla SMP community.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq6">
-              <span class="faq-question-text">How do I join</span>
+              <span class="faq-question-text">What happens to the existing Minecraft server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq6" hidden>
-              <p>Join our Discord first: <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">discord.gg/2d9wPbrpEU</a>. The pinned post includes the current server address and connection steps.</p>
+              <p>The Minecraft server remains active and important. The Hytale world is an additional project, not a replacement.</p>
+              <p>Many players enjoy both games and both worlds. We keep them clearly separated and supported.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq7">
-              <span class="faq-question-text">Is it friendly for builders</span>
+              <span class="faq-question-text">How can I report griefing or problems on the Hytale server?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq7" hidden>
-              <p>Yes. The server is designed for long-term towns, cooperative projects, and calm survival progression with strong anti-grief moderation.</p>
+              <p>The fastest way is to open a ticket or ping staff in the Discord server.</p>
+              <p>We use logs and backups extensively and we apply the same approach here, so grief can be rolled back and problematic players can be identified and removed.</p>
             </div>
           </article>
 
+          <!-- Early Access / general Hytale FAQs (added) -->
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq8">
-              <span class="faq-question-text">Do you allow stealing</span>
+              <span class="faq-question-text">When does Hytale Early Access release?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq8" hidden>
-              <p>No. Stealing is not allowed. We keep the world peaceful and protect community progress.</p>
+              <p>Hytale launches in Early Access on January 13, 2026.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq9">
-              <span class="faq-question-text">Do you have rules against harassment</span>
+              <span class="faq-question-text">Is Hytale pre-purchase available right now?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq9" hidden>
-              <p>Yes. Moderation is strict against harassment, slurs, and exploit abuse. The community is inclusive and LGBTQ+ friendly.</p>
+              <p>Yes. Pre-purchase opened on December 13, 2025.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq10">
-              <span class="faq-question-text">Is Hytale out yet</span>
+              <span class="faq-question-text">Will Hytale be on Steam?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq10" hidden>
-              <p>Hytale is launching in Early Access on January 13, 2026. During Early Access, things will evolve and change over time.</p>
+              <p>Not initially. The team says Early Access will launch outside Steam, with Steam considered later.</p>
+              <p>If you search “Hytale Steam release” or “is Hytale on Steam”, plan for the official store and launcher first.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq11">
-              <span class="faq-question-text">What is a vanilla SMP</span>
+              <span class="faq-question-text">Is there a console version of Hytale?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq11" hidden>
-              <p>A vanilla SMP is a survival multiplayer server that keeps the base game mechanics and progression, focusing on towns, exploration, and long-term builds rather than heavy mods or fast wipe cycles.</p>
+              <p>Not for Early Access. Console plans are for a later stage.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq12">
-              <span class="faq-question-text">Do you support roleplay</span>
+              <span class="faq-question-text">Can I play Hytale on mobile?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq12" hidden>
-              <p>We are primarily a vanilla SMP style server. Roleplay can happen naturally, but we are not a structured RP server with enforced character rules.</p>
+              <p>No mobile version is planned for Early Access.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq13">
-              <span class="faq-question-text">Do you have seasons</span>
+              <span class="faq-question-text">Can I upgrade my edition later?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq13" hidden>
-              <p>No. We focus on one persistent long-term world. The goal is continuity, towns, and a shared history rather than seasonal wipes.</p>
+              <p>Yes. The plan is to let you upgrade and only pay the difference.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq14">
-              <span class="faq-question-text">Is it safe to join</span>
+              <span class="faq-question-text">What language will Hytale support at launch?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq14" hidden>
-              <p>Yes. We keep the join steps and server address in Discord to reduce scraping and keep instructions up to date. Moderation and rules are clear.</p>
+              <p>The team says the initial version will be in English, with localization planned later.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq15">
-              <span class="faq-question-text">Do you allow mods</span>
+              <span class="faq-question-text">What PC specs do I need for Hytale?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq15" hidden>
-              <p>We aim for a vanilla survival experience. Client-side mods are typically fine if they do not provide unfair advantages, but always check Discord rules.</p>
+              <p>Hytale requires a 64-bit CPU and OS. The team has published minimum and recommended targets for 1080p, plus extra guidance for recording and streaming.</p>
+              <p>If you want quick practical guidance, the “safe zone” is usually: 16 GB RAM, a mid-range CPU from recent years, a dedicated GPU, and SSD storage.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq16">
-              <span class="faq-question-text">Is this server for adults only</span>
+              <span class="faq-question-text">Why does Hytale performance depend so much on view distance?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq16" hidden>
-              <p>No strict age gate, but the community culture is mature, calm, and focused on long-term building and respectful play.</p>
+              <p>View distance increases the amount of world loaded and simulated around you. Increasing it can multiply CPU, RAM, and VRAM usage, which can cause stutters or lower FPS.</p>
             </div>
           </article>
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq17">
-              <span class="faq-question-text">Will Hytale support modding and custom servers</span>
+              <span class="faq-question-text">Will Hytale support modding and custom servers?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq17" hidden>
@@ -2353,7 +2573,7 @@
 
           <article class="faq-item animate-fade-up">
             <button class="faq-question" aria-expanded="false" aria-controls="faq18">
-              <span class="faq-question-text">How do I join the Peaceful Vanilla Club Hytale server? Where is the server IP</span>
+              <span class="faq-question-text">How do I join the Peaceful Vanilla Club Hytale server? Where is the server IP?</span>
               <span class="faq-toggle-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer" id="faq18" hidden>
@@ -2432,18 +2652,71 @@
   </button>
 </div>
 
-<script>
-  function initNav() {
-    const body = document.body;
-    const navToggle = document.querySelector(".nav-toggle");
-    const navDrawer = document.querySelector(".nav-drawer");
-    if (!navToggle || !navDrawer) return;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Peaceful Vanilla Club",
+  "url": "https://hytale.peacefulvanilla.club/",
+  "description": "Peaceful Vanilla Club is a peaceful Hytale semi-vanilla survival server created by the same team behind a long running Minecraft vanilla survival community.",
+  "sameAs": ["https://discord.gg/2d9wPbrpEU"]
+}
+</script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Peaceful Vanilla Club Hytale Guides",
+  "itemListOrder": "http://schema.org/ItemListOrderAscending",
+  "numberOfItems": 21,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "url": "https://hytale.peacefulvanilla.club/#guide-1", "item": { "@type": "Article", "headline": "Semi-vanilla Hytale server guide: what “vanilla survival multiplayer” really means", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 2, "url": "https://hytale.peacefulvanilla.club/#guide-2", "item": { "@type": "Article", "headline": "Peaceful Hytale survival server guide: no griefing, no random PvP, long-term towns", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 3, "url": "https://hytale.peacefulvanilla.club/#guide-3", "item": { "@type": "Article", "headline": "Not pay to win Hytale server guide: how to spot fair vanilla SMP communities", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 4, "url": "https://hytale.peacefulvanilla.club/#guide-4", "item": { "@type": "Article", "headline": "How to join a Hytale vanilla server: checklist for survival multiplayer", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 5, "url": "https://hytale.peacefulvanilla.club/#guide-5", "item": { "@type": "Article", "headline": "Vanilla SMP starter guide: building your first town on a Hytale vanilla survival server", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 6, "url": "https://hytale.peacefulvanilla.club/#guide-6", "item": { "@type": "Article", "headline": "Choosing the best Hytale vanilla server: builders vs explorers vs chill players", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 7, "url": "https://hytale.peacefulvanilla.club/#guide-7", "item": { "@type": "Article", "headline": "Hytale vanilla server guide: how to choose a truly “semi-vanilla” survival experience", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 8, "url": "https://hytale.peacefulvanilla.club/#guide-8", "item": { "@type": "Article", "headline": "Hytale SMP server guide: what to expect from a long-term survival multiplayer community", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 9, "url": "https://hytale.peacefulvanilla.club/#guide-9", "item": { "@type": "Article", "headline": "Hytale no grief server guide: what “no grief” should protect, and how servers enforce it", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 10, "url": "https://hytale.peacefulvanilla.club/#guide-10", "item": { "@type": "Article", "headline": "Hytale no reset survival server guide: why persistent worlds are better for towns and builders", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 11, "url": "https://hytale.peacefulvanilla.club/#guide-11", "item": { "@type": "Article", "headline": "Hytale survival server for builders guide: towns, megabases, and calm vanilla SMP", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+
+    { "@type": "ListItem", "position": 12, "url": "https://hytale.peacefulvanilla.club/#guide-12", "item": { "@type": "Article", "headline": "Hytale Early Access 2026: Release Date, Pre-Purchase, Editions, and What You Actually Get", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 13, "url": "https://hytale.peacefulvanilla.club/#guide-13", "item": { "@type": "Article", "headline": "Is Hytale Coming to Steam? The Real Answer (and What It Means for Players)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 14, "url": "https://hytale.peacefulvanilla.club/#guide-14", "item": { "@type": "Article", "headline": "What Happened to Hytale? 2018 Trailer to 2026 Early Access (Timeline Explained)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 15, "url": "https://hytale.peacefulvanilla.club/#guide-15", "item": { "@type": "Article", "headline": "Hytale System Requirements: Minimum vs Recommended (Plus Laptop Tips)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 16, "url": "https://hytale.peacefulvanilla.club/#guide-16", "item": { "@type": "Article", "headline": "Best Hytale Settings for FPS: View Distance, Stutters, and Smooth Multiplayer", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 17, "url": "https://hytale.peacefulvanilla.club/#guide-17", "item": { "@type": "Article", "headline": "How Multiplayer Works in Hytale: Servers, Server Browser, and Playing With Friends", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 18, "url": "https://hytale.peacefulvanilla.club/#guide-18", "item": { "@type": "Article", "headline": "Best Hytale Servers: How to Choose the Right One (Vanilla Survival vs Modded vs Minigames)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 19, "url": "https://hytale.peacefulvanilla.club/#guide-19", "item": { "@type": "Article", "headline": "Hytale Modding for Players: Asset Packs, Plugins, and Joining Modded Servers Safely", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 20, "url": "https://hytale.peacefulvanilla.club/#guide-20", "item": { "@type": "Article", "headline": "Hosting a Hytale Server: What We Know (Linux, Performance, and Shared-Source Plans)", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } },
+    { "@type": "ListItem", "position": 21, "url": "https://hytale.peacefulvanilla.club/#guide-21", "item": { "@type": "Article", "headline": "Hytale Creative Tools: Blockbench Workflow, Animations, and Machinima Basics", "inLanguage": "en", "author": { "@type": "Organization", "name": "Peaceful Vanilla Club" }, "publisher": { "@type": "Organization", "name": "Peaceful Vanilla Club" } } }
+  ]
+}
+</script>
+
+<script type="module">
+  const navToggle = document.querySelector(".nav-toggle");
+  const navDrawer = document.querySelector(".nav-drawer");
+  const body = document.body;
+
+  if (navToggle && navDrawer) {
     navToggle.addEventListener("click", () => {
-      const isOpen = body.classList.toggle("nav-open");
-      navToggle.classList.toggle("is-open", isOpen);
+      const isOpen = navToggle.classList.toggle("is-open");
+      body.classList.toggle("nav-open", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       navDrawer.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    });
+
+    navDrawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        body.classList.remove("nav-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navDrawer.setAttribute("aria-hidden", "true");
+      });
     });
 
     document.addEventListener("click", (event) => {
@@ -2492,6 +2765,49 @@
     );
 
     animated.forEach((el) => observer.observe(el));
+  }
+
+  function initLazyFadeImages() {
+    const imgs = document.querySelectorAll("img.lazy-fade");
+    if (imgs.length === 0) return;
+
+    imgs.forEach((img) => {
+      img.dataset.lazyLoaded = img.complete && img.naturalWidth > 0 ? "1" : "0";
+
+      const onDone = () => {
+        img.dataset.lazyLoaded = "1";
+        if (img.dataset.inView === "1") img.classList.add("is-loaded");
+      };
+
+      if (!img.complete) {
+        img.addEventListener("load", onDone, { once: true });
+        img.addEventListener("error", onDone, { once: true });
+      }
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      imgs.forEach((img) => {
+        img.dataset.inView = "1";
+        if (img.dataset.lazyLoaded === "1") img.classList.add("is-loaded");
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const img = entry.target;
+          img.dataset.inView = "1";
+          if (img.complete && img.naturalWidth > 0) img.dataset.lazyLoaded = "1";
+          if (img.dataset.lazyLoaded === "1") img.classList.add("is-loaded");
+          observer.unobserve(img);
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    imgs.forEach((img) => observer.observe(img));
   }
 
   function initBackToTop() {
@@ -2606,9 +2922,9 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    initNav();
     initAccordions();
     initScrollAnimations();
+    initLazyFadeImages();
     initBackToTop();
     initMediaPlaceholders();
     initIpCopy();
