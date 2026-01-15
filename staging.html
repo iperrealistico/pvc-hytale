@@ -3,19 +3,19 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width,initial-scale=1">
- <title>Peaceful Vanilla Club is the best Hytale vanilla server & Hytale SMP</title>
- <meta name="description" content="Join Peaceful Vanilla Club, a friendly international community built around a long-term Hytale Vanilla Server and Hytale SMP. Clear rules, no pay to win, and a calm multiplayer world.">
+ <title>hytale vanilla server | hytale smp - Peaceful Vanilla Club</title>
+ <meta name="description" content="Join Peaceful Vanilla Club, a friendly international community built around a hytale vanilla server and a long-term hytale smp world. Clear rules, no griefing, and community-first decisions for a stable hytale vanilla server and hytale smp.">
  <link rel="canonical" href="https://hytale.peacefulvanilla.club/">
 
  <meta property="og:type" content="website">
- <meta property="og:title" content="Peaceful Vanilla Club is the hytale vanilla server & Hytale SMP">
- <meta property="og:description" content="Join Peaceful Vanilla Club, a friendly international community built around a long-term Hytale Vanilla Server and Hytale SMP. Clear rules, no pay to win, and a calm multiplayer world.">
+ <meta property="og:title" content="hytale vanilla server | hytale smp - Peaceful Vanilla Club">
+ <meta property="og:description" content="Join Peaceful Vanilla Club, a friendly international community built around a hytale vanilla server and a long-term hytale smp world. Clear rules, no griefing, and community-first decisions for a stable hytale vanilla server and hytale smp.">
  <meta property="og:url" content="https://hytale.peacefulvanilla.club/">
  <meta property="og:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
  <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="Peaceful Vanilla Club is the hytale vanilla server & Hytale SMP">
- <meta name="twitter:description" content="Join Peaceful Vanilla Club, a friendly international community built around a long-term Hytale Vanilla Server and Hytale SMP. Clear rules, no pay to win, and a calm multiplayer world.">
+ <meta name="twitter:title" content="hytale vanilla server | hytale smp - Peaceful Vanilla Club">
+ <meta name="twitter:description" content="Join Peaceful Vanilla Club, a friendly international community built around a hytale vanilla server and a long-term hytale smp world. Clear rules, no griefing, and community-first decisions for a stable hytale vanilla server and hytale smp.">
  <meta name="twitter:image" content="https://hytale.peacefulvanilla.club/assets/img/hytale-hero-preview.png">
 
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,10 @@
       text-rendering: optimizeLegibility;
     }
 
-    img { max-width: 100%; height: auto; display: block; }
+    
+
+    html, body { overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
     a { color: var(--color-primary); text-decoration: none; }
     a:hover, a:focus { text-decoration: none; }
     .footer-link:hover { text-decoration: underline; }
@@ -961,14 +964,24 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .guides-scroller::-webkit-scrollbar { height: 10px; }
-    .guides-scroller::-webkit-scrollbar-thumb {
-      background: rgba(148,163,184,0.35);
-      border-radius: 999px;
+    
+
+    /* Hide horizontal scrollbar while keeping swipe/scroll */
+    .guides-scroller {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+      touch-action: pan-x pan-y;
     }
-    .guides-scroller::-webkit-scrollbar-track {
-      background: rgba(15,23,42,0.6);
-      border-radius: 999px;
+
+    .guides-scroller.is-dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+
+    .guides-scroller::-webkit-scrollbar {
+      display: none;
+      height: 0;
     }
 
     .guide-card {
@@ -994,45 +1007,6 @@
       margin: 0.55rem 0;
       color: var(--color-text-soft);
       font-size: 0.95rem;
-    }
-
-    /* Read more as small grey italic text */
-    .read-more {
-      margin-top: 0.5rem;
-      background: transparent;
-      border: 0;
-      padding: 0.25rem 0;
-      color: rgba(156,163,175,0.9);
-      font-size: 0.78rem;
-      font-style: italic;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      user-select: none;
-    }
-
-    .read-more:hover,
-    .read-more:focus-visible { color: rgba(209,213,219,0.95); text-decoration: underline; }
-
-    .read-more .chev {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(156,163,175,0.9);
-      transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-      flex-shrink: 0;
-    }
-
-    .read-more[aria-expanded="true"] .chev {
-      transform: rotate(180deg);
-      background: var(--color-primary-soft);
-      color: var(--color-primary);
-      border-color: rgba(255,155,60,0.35);
     }
 
     /* Teaser with fade gradient */
@@ -1428,7 +1402,7 @@
  <span class="eyebrow-pill">From Minecraft to Hytale</span>
  <span>Peaceful vanilla since 2019</span>
  </div>
- <h1 class="hero-title">Peaceful Vanilla Club is the Best <span class="highlight">Hytale Vanilla server</span> & <span class="highlight">Hytale SMP</span></h1>
+ <h1 class="hero-title"> <span class="highlight">hytale vanilla server</span> & <span class="highlight">hytale smp</span> - Peaceful Vanilla Club </h1>
  <p class="hero-subtitle">
  Peaceful Vanilla Club is a community-first project built around a <strong>hytale vanilla server</strong> and a long-term <strong>hytale smp</strong> world. Expect clear rules, consistent moderation, and a welcoming international community where your time matters.
  </p>
@@ -1463,7 +1437,7 @@
  </a>
  </div>
  <p class="hero-note">
- Looking for the <strong>hytale vanilla server</strong> connection info, the <strong>hytale vanilla server</strong>, or “how do I join this hytale vanilla server”? Start here: join our Discord and follow the pinned connection steps.
+ Looking for the <strong>hytale vanilla server</strong> connection info, the <strong>hytale vanilla server address</strong>, or “how do I join this hytale vanilla server”? Start here: join our Discord and follow the pinned connection steps.
  </p>
  </div>
 
@@ -1482,7 +1456,7 @@
  <li class="join-step">
  <div class="join-step-number">2</div>
  <div><div class="join-step-title">Read the rules and info</div></div>
- <p class="join-step-text">Read the rules before playing. This is how we keep a peaceful hytale vanilla server Hytale hytale vanilla server with no griefing and no random PvP.</p>
+ <p class="join-step-text">Read the rules before playing. This is how we keep a peaceful hytale vanilla server with no griefing and no random PvP.</p>
  </li>
  <li class="join-step">
  <div class="join-step-number">3</div>
@@ -1516,7 +1490,7 @@
  <section id="server-tags">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Server tags for our hytale vanilla server and hytale smp</h2>
+ <h2>Server tags <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>
  Expand any tag to see what it means in practice. The details are written for real players searching a
  <strong>hytale vanilla server</strong>, a <strong>hytale vanilla server</strong>, a <strong>hytale smp</strong>,
@@ -1542,7 +1516,7 @@
  <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
  </summary>
  <div class="tag-body">
- <p><strong>No grief</strong> means no stealing, no destruction, no sabotage. If you search “<strong>hytale vanilla server</strong>”, you want your base and town to survive when you log off.</p>
+ <p><strong>No grief</strong> means no stealing, no destruction, no sabotage. If you search “<strong>Hytale no grief server</strong>”, you want your base and town to survive when you log off.</p>
  </div>
  </details>
 
@@ -1552,7 +1526,7 @@
  <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
  </summary>
  <div class="tag-body">
- <p><strong>No random PvP</strong> means the open world stays calm. Builders and explorers can play without stress. This is for players looking for a <strong>hytale vanilla server</strong> or a <strong>Hytale peaceful SMP</strong>.</p>
+ <p><strong>No random PvP</strong> means the open world stays calm. Builders and explorers can play without stress. This is for players looking for a <strong>peaceful hytale vanilla server</strong> or a <strong>Hytale peaceful SMP</strong>.</p>
  </div>
  </details>
 
@@ -1572,7 +1546,7 @@
  <span class="tag-toggle" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
  </summary>
  <div class="tag-body">
- <p><strong>Long-term world</strong> is the mindset. We want a persistent map where towns gain history. This is important for players searching a <strong>hytale vanilla server</strong> or a long-term <strong>hytale smp</strong>.</p>
+ <p><strong>Long-term world</strong> is the mindset. We want a persistent map where towns gain history. This is important for players searching a <strong>Hytale no reset hytale vanilla server</strong> or a long-term <strong>hytale smp</strong>.</p>
  </div>
  </details>
  </div>
@@ -1583,7 +1557,7 @@
  <section id="pure-vanilla">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>What does hytale vanilla server mean for an hytale smp?</h2>
+ <h2> <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>What “vanilla” means on a hytale vanilla server, what “hytale vanilla server” adds, and why it matters for a real multiplayer experience.</p>
  </div>
 
@@ -1592,7 +1566,10 @@
  “Vanilla” is not just a label. On a good <strong>hytale vanilla server</strong>, the core loop stays intact: you explore, gather, craft, build, and collaborate.
  A strong <strong>hytale vanilla server</strong> feels like a real world, not a list of commands.
  </p>
- <p>Peaceful Vanilla Club is a hytale vanilla server built for a long-term hytale smp. We keep the core loop intact while using clear rules and active moderation to protect towns, builders, and long-term projects, so the world stays calm and fair for everyone.</p>
+ <p>
+ Our <strong>hytale vanilla server</strong> keeps the sandbox feeling intact while using moderation and small quality-of-life choices to protect towns, builders, and long-term projects.
+ Many players search for <strong>hytale smp</strong>, <strong>hytale smp</strong>, or “<strong>hytale vanilla server</strong>” because they want calm multiplayer, fair progression, and a community that lasts.
+ </p>
  <ul>
  <li><strong>Vanilla multiplayer</strong> progression stays meaningful.</li>
  <li>We avoid feature spam that replaces with menus.</li>
@@ -1608,7 +1585,7 @@
  <section id="what-is-pvc">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Why is Peaceful Vanilla Club a hytale vanilla server? Why is it a hytale smp?</h2>
+ <h2>What is Peaceful Vanilla Club in Hytale <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>Peaceful Vanilla Club is a peaceful vanilla community that has been running on Minecraft for years and now runs a shared hytale vanilla server world for Hytale.</p>
  </div>
 
@@ -1655,49 +1632,49 @@
  <section id="goals">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Our goals as a hytale vanilla server and as a good hytale smp</h2>
- <p>These are the core goals that guide how we run Peaceful Vanilla Club as a hytale vanilla server Hytale hytale vanilla server.</p>
+ <h2>Our goals <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
+ <p>These are the core goals that guide how we run Peaceful Vanilla Club as a hytale vanilla server.</p>
  </div>
 
  <div class="principles-grid">
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-hand-peace"></i></div>
- <h3 class="principle-title">No random PvP in our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">No random PvP <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">PvP is not enabled in the open world. If we host combat events, they are opt-in and clearly separated.</p>
  <span class="principle-tag">Stress free</span>
  </article>
 
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></div>
- <h3 class="principle-title">No pay to win in our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">No pay to win <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">We do not sell power. No overpowered donor kits, boosts or shortcuts that break the vanilla loop.</p>
  <span class="principle-tag">Fairness</span>
  </article>
 
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-route"></i></div>
- <h3 class="principle-title">No fast travel spam in our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">No fast travel spam <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">We avoid teleport spam that removes exploration and distance. Travel should still mean something on a hytale smp.</p>
  <span class="principle-tag">Exploration first</span>
  </article>
 
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-mug-hot"></i></div>
- <h3 class="principle-title">A peaceful place for our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">A peaceful place <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">We design the server so that you can log in, relax, make progress and log out without drama.</p>
  <span class="principle-tag">Mood</span>
  </article>
 
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></div>
- <h3 class="principle-title">Community-first decisions for our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">Community-first decisions <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">Changes are introduced slowly and discussed with the community. Stability comes before hype.</p>
  <span class="principle-tag">Governance</span>
  </article>
 
  <article class="principle-card animate-fade-up">
  <div class="principle-icon" aria-hidden="true"><i class="fa-solid fa-infinity"></i></div>
- <h3 class="principle-title">Long term worlds on our hytale vanilla server and hytale smp</h3>
+ <h3 class="principle-title">Long term worlds <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p class="principle-text">We support long-term towns and persistent progress. Backups, logs, and fair moderation are part of the plan.</p>
  <span class="principle-tag">Persistence</span>
  </article>
@@ -1709,7 +1686,7 @@
  <section id="stats">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Our Minecraft legacy in numbers translates to our hytale vanilla server as a quality hytale smp</h2>
+ <h2>Our Minecraft legacy in numbers <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>Peaceful Vanilla Club is established as a hytale smp community, now bringing the same long-term mindset to Hytale.</p>
  </div>
 
@@ -1744,7 +1721,7 @@
  <section id="how-to-join">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>How to join our hytale vanilla server and play on the best hytale smp</h2>
+ <h2>How to join the hytale vanilla server <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>Joining Peaceful Vanilla Club is simple. If you are looking for the server IP, the server address, or a quick join link, start with Discord.</p>
  </div>
 
@@ -1753,7 +1730,7 @@
  <ol class="step-list">
  <li class="step-item">
  <div class="step-number">1</div>
- <div><h3 class="step-title">Join the Discord for our hytale vanilla server and hytale smp</h3></div>
+ <div><h3 class="step-title">Join the Discord server <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3></div>
  <p class="step-text">
  Discord is where we coordinate everything: rules, support, and the live server address.
  <a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Join Discord</a>.
@@ -1761,12 +1738,12 @@
  </li>
  <li class="step-item">
  <div class="step-number">2</div>
- <div><h3 class="step-title">Read the rules for our hytale vanilla server and hytale smp</h3></div>
- <p class="step-text">Read the rules before playing. This keeps the Hytale hytale vanilla server peaceful, builder-friendly, and fair.</p>
+ <div><h3 class="step-title">Read the full rules <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3></div>
+ <p class="step-text">Read the rules before playing. This keeps the hytale vanilla server peaceful, builder-friendly, and fair.</p>
  </li>
  <li class="step-item">
  <div class="step-number">3</div>
- <div><h3 class="step-title">Connect to our hytale vanilla server and hytale smp using pinned instructions</h3></div>
+ <div><h3 class="step-title">Connect using the pinned instructions <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3></div>
  <p class="step-text">Use the pinned connection post in Discord for the hytale vanilla server connection info, address, and join steps.</p>
  </li>
  </ol>
@@ -1775,7 +1752,7 @@
 
  <div class="animate-fade-up">
  <div class="mini-card">
- <h3>Basic rules for a hytale vanilla server and hytale smp that stay peaceful</h3>
+ <h3>Basic rules that keep things peaceful <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <ul>
  <li>No griefing or stealing from other players.</li>
  <li>No unsolicited PvP, traps or kill machines targeting others.</li>
@@ -1796,23 +1773,19 @@
  <section id="guides">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Guides for players searching a hytale vanilla server or a hytale smp</h2>
- <p>These guides are written for people comparing a hytale vanilla server and a hytale smp. Use them to understand expectations, rules, and how to join Peaceful Vanilla Club without guessing.</p>
+ <h2>Guides <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
+ <p>
+ Guides for players searching: <strong>hytale vanilla server</strong> and <strong>hytale smp</strong>.</p>
  </div>
 
  <div class="guides-scroller" aria-label="Scrollable guide articles">
 
  <!-- Existing guides, expanded + updated to hytale vanilla server wording -->
  <article class="guide-card animate-fade-up" id="guide-1">
- <h3>What does hytale vanilla server mean for an hytale smp? A guide to vanilla multiplayer</h3>
+ <h3>hytale vanilla server guide: what “vanilla multiplayer” really means <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Many servers claim “vanilla”, but a good <strong>hytale vanilla server</strong> keeps the loop intact while staying fair, readable, and community-first. A hytale vanilla server hytale smp should feel like a real world, not a command list.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-1">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-1">
  <div class="guide-more-inner">
@@ -1833,15 +1806,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-2">
- <h3>No griefing and no random PvP on a hytale vanilla server and hytale smp (guide)</h3>
+ <h3>Peaceful hytale vanilla server guide: no griefing, no random PvP, long-term towns <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
- If you search for a <strong>hytale vanilla server</strong> or a <strong>hytale smp</strong>, you probably want stability: your base survives, your town grows, and random PvP does not ruin weeks of progress.
+ If you search for a <strong>peaceful hytale vanilla server</strong> or a <strong>hytale smp</strong>, you probably want stability: your base survives, your town grows, and random PvP does not ruin weeks of progress.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-2">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-2">
  <div class="guide-more-inner">
@@ -1860,15 +1828,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-3">
- <h3>How to spot a fair hytale vanilla server and hytale smp with no pay to win (guide)</h3>
+ <h3>Not pay to win hytale vanilla server guide: how to spot fair hytale smp communities <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
- A <strong>hytale vanilla server</strong> protects balance and keeps progression meaningful. If you search for a fair <strong>hytale vanilla server</strong>, monetization should never affect gameplay.
+ A <strong>not pay to win hytale vanilla server</strong> protects balance and keeps progression meaningful. If you search for a fair <strong>hytale vanilla server</strong>, monetization should never affect gameplay.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-3">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-3">
  <div class="guide-more-inner">
@@ -1887,23 +1850,18 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-4">
- <h3>How to join our hytale vanilla server and start in the hytale smp (checklist)</h3>
+ <h3>How to join a hytale vanilla server: checklist for multiplayer <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  If you are new to <strong>Hytale multiplayer</strong>, joining the right community is about clarity: rules, moderation, and a stable hytale smp approach.
  For the join steps and server address, go to the <a href="#hero" class="footer-link">top section</a> and join Discord.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-4">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-4">
  <div class="guide-more-inner">
  <h4>Checklist before you join</h4>
  <ul>
  <li>Join Discord and read the rules first.</li>
- <li>Confirm it is a <strong>hytale vanilla server</strong> or a hytale vanilla server server with minimal changes.</li>
+ <li>Confirm it is a <strong>hytale vanilla server</strong> or a hytale vanilla server with minimal changes.</li>
  <li>Check if it is peaceful: no random PvP, no griefing, no stealing.</li>
  <li>Look for backups, logs, and active moderation.</li>
  </ul>
@@ -1912,15 +1870,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-5">
- <h3>hytale vanilla server and hytale smp starter guide: build your first town</h3>
+ <h3>hytale smp starter guide: building your first town on a hytale vanilla server</h3>
  <p>
  A <strong>hytale smp</strong> is at its best when towns grow naturally. On a <strong>hytale vanilla server</strong>, your first week sets the foundation for months of progress and community history.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-5">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-5">
  <div class="guide-more-inner">
@@ -1939,15 +1892,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-6">
- <h3>Choosing a hytale vanilla server for your playstyle in a hytale smp</h3>
+ <h3>Choosing the hytale vanilla server: builders vs explorers vs chill players <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  “Best” depends on your playstyle. The best <strong>hytale vanilla server</strong> for builders is usually peaceful, long-term, and strongly moderated against grief. That also matches what many players mean by “hytale vanilla server”.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-6">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-6">
  <div class="guide-more-inner">
@@ -1966,15 +1914,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-7">
- <h3>How to choose a real hytale vanilla server for a long-term hytale smp</h3>
+ <h3>hytale vanilla server guide: how to choose a truly “” experience <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  People search “<strong>hytale vanilla server</strong>” because they want the default loop, not a theme park. hytale vanilla server should stay close to vanilla while protecting the community.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-7">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-7">
  <div class="guide-more-inner">
@@ -1993,15 +1936,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-8">
- <h3>What to expect from a long-term hytale smp on a hytale vanilla server (guide)</h3>
+ <h3>hytale smp guide: what to expect from a long-term multiplayer community <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  People searching “<strong>hytale smp</strong>” want a social multiplayer world, not a competitive PvP arena. A good SMP is stable, fair, and community-driven.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-8">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-8">
  <div class="guide-more-inner">
@@ -2016,15 +1954,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-9">
- <h3>What no grief should protect on a hytale vanilla server and hytale smp (guide)</h3>
+ <h3>Hytale no grief server guide: what “no grief” should protect, and how servers enforce it <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
- People search “<strong>hytale vanilla server</strong>” because they want safety: their base, storage, farms, and town projects should survive when they log off.
+ People search “<strong>Hytale no grief server</strong>” because they want safety: their base, storage, farms, and town projects should survive when they log off.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-9">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-9">
  <div class="guide-more-inner">
@@ -2039,15 +1972,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-10">
- <h3>Why persistent worlds matter on a hytale vanilla server and hytale smp (guide)</h3>
+ <h3>Hytale no reset server guide: why persistent worlds are better for towns and builders <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  A “no reset” hytale vanilla server means you can build for months or years without losing everything. This is why long-term <strong>hytale smp</strong> communities feel stronger over time.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-10">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-10">
  <div class="guide-more-inner">
@@ -2062,15 +1990,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-11">
- <h3>Towns and megabases: a hytale vanilla server guide for a calm hytale smp</h3>
+ <h3>hytale vanilla server for builders guide: towns, megabases, and calm hytale smp <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
- Builders want a server where effort compounds. If you search “<strong>hytale vanilla server</strong>” or “hytale vanilla server for building”, you want stable multiplayer, peaceful rules, and a community that respects projects.
+ Builders want a server where effort compounds. If you search “<strong>hytale vanilla server for builders</strong>” or “hytale vanilla server for building”, you want stable multiplayer, peaceful rules, and a community that respects projects.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-11">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-11">
  <div class="guide-more-inner">
@@ -2086,15 +2009,10 @@
 
  <!-- NEW GUIDES 1-10 (added) -->
  <article class="guide-card animate-fade-up" id="guide-12">
- <h3>Hytale Early Access 2026 for hytale vanilla server and hytale smp players: release and editions</h3>
+ <h3>Hytale Early Access 2026: Release Date, Pre-Purchase, Editions, and What You Actually Get <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Hytale is launching in Early Access on January 13, 2026, and pre-purchase opened on December 13, 2025. Early Access is not a “finished game release”, it is the start of a public development phase.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-12">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-12">
  <div class="guide-more-inner">
@@ -2119,15 +2037,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-13">
- <h3>Is Hytale coming to Steam? What it means for hytale vanilla server and hytale smp players</h3>
+ <h3>Is Hytale Coming to Steam? The Real Answer (and What It Means for Players) <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Short version: Hytale is not coming to Steam at the start of Early Access. Plan for the official store and launcher during the Early Access phase.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-13">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-13">
  <div class="guide-more-inner">
@@ -2148,15 +2061,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-14">
- <h3>What happened to Hytale? Timeline for hytale vanilla server and hytale smp players</h3>
+ <h3>What Happened to Hytale? 2018 Trailer to 2026 Early Access (Timeline Explained) <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  If you discovered Hytale from the 2018 trailer, you are not alone. Here is a clean timeline from the reveal to the 2026 Early Access, without drama.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-14">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-14">
  <div class="guide-more-inner">
@@ -2175,15 +2083,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-15">
- <h3>System requirements for hytale vanilla server and hytale smp players</h3>
+ <h3>Hytale System Requirements: Minimum vs Recommended (Plus Laptop Tips) <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  If you are asking “Can my PC run Hytale?” you are asking the right question. In voxel sandbox games, CPU and RAM often matter more than people expect.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-15">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-15">
  <div class="guide-more-inner">
@@ -2207,15 +2110,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-16">
- <h3>Best settings for FPS on a hytale vanilla server and hytale smp</h3>
+ <h3>Best Hytale Settings for FPS: View Distance, Stutters, and Smooth Multiplayer <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  If Hytale feels heavy, do not start by changing twenty settings. Start with the one setting that multiplies everything: view distance.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-16">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-16">
  <div class="guide-more-inner">
@@ -2234,15 +2132,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-17">
- <h3>How multiplayer works for a hytale vanilla server and hytale smp</h3>
+ <h3>How Multiplayer Works in Hytale: Servers, Server Browser, and Playing With Friends <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Hytale is built around multiplayer communities, and it aims to make servers easier to discover and join without leaving the game.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-17">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-17">
  <div class="guide-more-inner">
@@ -2262,13 +2155,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-18">
- <h3>How to choose a hytale vanilla server and hytale smp: vanilla vs modded vs minigames</h3>
- <p>Choosing a hytale vanilla server and a hytale smp depends on what you want to do. Vanilla is ideal for long-term towns and builders, while modded and minigames serve different goals.</p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-18">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
+ <h3>Best Hytale Servers: How to Choose the Right One (Vanilla vs Modded vs Minigames) <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
+ <p>
+ “Best Hytale servers” depends on your mood. Vanilla and hytale vanilla server SMP are best for long-term builders, while modded and minigames serve different goals.
+ </p>
 
  <div class="guide-more" id="guide-more-18">
  <div class="guide-more-inner">
@@ -2293,15 +2183,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-19">
- <h3>Modding basics for hytale vanilla server and hytale smp players</h3>
+ <h3>Hytale Modding for Players: Asset Packs, Plugins, and Joining Modded Servers Safely <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Hytale is designed to be creator-friendly. For players, many custom experiences will come from servers, not from manually installing huge modpacks.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-19">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-19">
  <div class="guide-more-inner">
@@ -2320,15 +2205,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-20">
- <h3>Hosting a hytale vanilla server for a hytale smp: what we know</h3>
+ <h3>Hosting a hytale vanilla server: What We Know (Linux, Performance, and Shared-Source Plans) <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  If you plan to host a hytale vanilla server, prepare a foundation, then iterate fast. Early Access moves quickly and communities that survive have clear identity and good operations.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-20">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-20">
  <div class="guide-more-inner">
@@ -2353,15 +2233,10 @@
  </article>
 
  <article class="guide-card animate-fade-up" id="guide-21">
- <h3>Creative tools for hytale vanilla server and hytale smp players</h3>
+ <h3>Hytale Creative Tools: Blockbench Workflow, Animations, and Machinima Basics <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>
  Hytale aims to be a creator platform. If you like building worlds, making assets, or producing videos, Early Access is a rare chance to get in early and build a name.
  </p>
-
- <button class="read-more" type="button" aria-expanded="false" aria-controls="guide-more-21">
- <span class="read-more-label">read more</span>
- <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
- </button>
 
  <div class="guide-more" id="guide-more-21">
  <div class="guide-more-inner">
@@ -2382,13 +2257,6 @@
 
  </div>
 
- <noscript>
- <style>
-            .guide-more { height: auto !important; overflow: visible !important; }
-            .guide-more::after { display: none !important; }
-            .read-more { display: none !important; }
-          </style>
- </noscript>
  </div>
  </section>
 
@@ -2396,7 +2264,7 @@
  <section id="faq">
  <div class="container">
  <div class="section-heading animate-fade-up">
- <h2>Frequently asked questions about our hytale vanilla server and hytale smp</h2>
+ <h2>Frequently asked questions <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h2>
  <p>Quick answers about our hytale vanilla server, hytale vanilla server rules, and Early Access basics.</p>
  </div>
 
@@ -2601,7 +2469,7 @@
  <div class="container">
  <div class="footer-grid">
  <div class="footer-col">
- <h3>Peaceful Vanilla Club for hytale vanilla server and hytale smp</h3>
+ <h3>Peaceful Vanilla Club <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>A peaceful vanilla community for sandbox games, born on Minecraft in 2019 and now running a shared hytale vanilla server world for Hytale.</p>
  <p>
  <i class="fa-brands fa-discord" aria-hidden="true"></i>
@@ -2616,7 +2484,7 @@
  </div>
 
  <div class="footer-col">
- <h3>Hytale Vanilla Server and Hytale SMP</h3>
+ <h3>hytale vanilla server <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <ul>
  <li><a href="#server-tags" class="footer-link">Server tags</a></li>
  <li><a href="#pure-vanilla" class="footer-link">hytale vanilla server</a></li>
@@ -2626,7 +2494,7 @@
  </div>
 
  <div class="footer-col">
- <h3>Community for our hytale vanilla server and hytale smp</h3>
+ <h3>Community <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <ul>
  <li><a href="https://discord.gg/2d9wPbrpEU" target="_blank" rel="noopener noreferrer" class="footer-link">Discord server</a></li>
  <li><a href="#faq" class="footer-link">FAQ</a></li>
@@ -2634,7 +2502,7 @@
  </div>
 
  <div class="footer-col">
- <h3>Other Peaceful Vanilla Club links for our hytale vanilla server and hytale smp</h3>
+ <h3>Other servers <span class="seo-kw" style="font-weight:600; opacity:0.9;">hytale vanilla server · hytale smp</span></h3>
  <p>Peaceful Vanilla Club also runs a long standing vanilla hytale vanilla server for Minecraft.</p>
  <ul>
  <li><a href="https://peacefulvanilla.club/" class="footer-link"><i class="fa-solid fa-cube" aria-hidden="true"></i>&nbsp;Minecraft server</a></li>
@@ -3177,75 +3045,120 @@
     });
   }
 
-  /* Read more: animate from teaser-height to full height, without affecting other cards */
-  function initGuideReadMore() {
-    const buttons = document.querySelectorAll(".read-more");
-    buttons.forEach((btn) => {
-      const targetId = btn.getAttribute("aria-controls");
-      const panel = targetId ? document.getElementById(targetId) : null;
-      if (!panel) return;
+  function initGuidesCarousel() {
+    const scroller = document.querySelector(".guides-scroller");
+    if (!scroller) return;
 
-      const card = btn.closest(".guide-card");
-      const label = btn.querySelector(".read-more-label");
+    // Mouse drag-to-scroll (native touch swipe already works via overflow-x).
+    let isDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let moved = false;
+    let suppressClickUntil = 0;
 
-      const collapsedPx = panel.getBoundingClientRect().height;
-      panel.dataset.collapsedHeight = String(collapsedPx);
+    // Auto scroll hint
+    let rafId = null;
+    let direction = 1;
+    const speed = 0.35; // px per frame (subtle)
+    const idleDelayMs = 450;
+    let lastUserAt = Date.now();
 
-      const setExpanded = (expanded) => {
-        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-        if (label) label.textContent = expanded ? "read less" : "read more";
-        if (card) card.classList.toggle("is-expanded", expanded);
-      };
+    const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      setExpanded(false);
+    let isInView = false;
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === scroller) isInView = entry.isIntersecting;
+        });
+      }, { threshold: 0.2 });
+      io.observe(scroller);
+    } else {
+      isInView = true;
+    }
 
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
+    const markUser = () => {
+      lastUserAt = Date.now();
+    };
 
-        if (!expanded) {
-          setExpanded(true);
+    const stopAuto = () => {
+      markUser();
+    };
 
-          const start = panel.getBoundingClientRect().height;
-          panel.style.overflow = "hidden";
-          panel.style.height = `${start}px`;
+    const tick = () => {
+      const max = scroller.scrollWidth - scroller.clientWidth;
+      if (max <= 0) {
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
 
-          const end = panel.scrollHeight;
+      if (!isInView) {
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
 
-          requestAnimationFrame(() => {
-            panel.style.transition = "height 260ms ease";
-            panel.style.height = `${end}px`;
-          });
-
-          const onEnd = () => {
-            panel.style.transition = "";
-            panel.style.height = "auto";
-            panel.removeEventListener("transitionend", onEnd);
-          };
-          panel.addEventListener("transitionend", onEnd);
-
-        } else {
-          setExpanded(false);
-
-          const start = panel.scrollHeight;
-          const collapsed = parseFloat(panel.dataset.collapsedHeight || "0");
-
-          panel.style.overflow = "hidden";
-          panel.style.height = `${start}px`;
-
-          requestAnimationFrame(() => {
-            panel.style.transition = "height 220ms ease";
-            panel.style.height = `${collapsed}px`;
-          });
-
-          const onEnd = () => {
-            panel.style.transition = "";
-            panel.removeEventListener("transitionend", onEnd);
-          };
-          panel.addEventListener("transitionend", onEnd);
+      const idle = Date.now() - lastUserAt;
+      if (!prefersReduced && idle > idleDelayMs && !isDown) {
+        scroller.scrollLeft += direction * speed;
+        if (scroller.scrollLeft <= 0) {
+          scroller.scrollLeft = 0;
+          direction = 1;
+        } else if (scroller.scrollLeft >= max) {
+          scroller.scrollLeft = max;
+          direction = -1;
         }
-      });
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    if (!prefersReduced) {
+      rafId = requestAnimationFrame(tick);
+    }
+
+    scroller.addEventListener("mousedown", (e) => {
+      if (e.button !== 0) return;
+      if (e.target && e.target.closest("a, button, input, textarea, select, summary")) return;
+      isDown = true;
+      moved = false;
+      scroller.classList.add("is-dragging");
+      startX = e.pageX;
+      startScrollLeft = scroller.scrollLeft;
+      stopAuto();
     });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      scroller.scrollLeft = startScrollLeft - dx;
+      if (moved) e.preventDefault();
+    }, { passive: false });
+
+    window.addEventListener("mouseup", () => {
+      if (!isDown) return;
+      isDown = false;
+      scroller.classList.remove("is-dragging");
+      if (moved) suppressClickUntil = Date.now() + 250;
+      stopAuto();
+    });
+
+    // Prevent accidental clicks after dragging
+    scroller.addEventListener("click", (e) => {
+      if (Date.now() < suppressClickUntil) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    // Pause auto scroll on user intent (wheel, touch, focus)
+    scroller.addEventListener("wheel", stopAuto, { passive: true });
+    scroller.addEventListener("touchstart", stopAuto, { passive: true });
+    scroller.addEventListener("pointerdown", stopAuto, { passive: true });
+    scroller.addEventListener("keydown", stopAuto, { passive: true });
+    scroller.addEventListener("mouseenter", stopAuto, { passive: true });
   }
+
 
   document.addEventListener("DOMContentLoaded", () => {
     initAccordions();
@@ -3253,7 +3166,7 @@
     initBackToTop();
     initMediaPlaceholders();
     initIpCopy();
-    initGuideReadMore();
+    initGuidesCarousel();
   });
 </script>
 </body>
